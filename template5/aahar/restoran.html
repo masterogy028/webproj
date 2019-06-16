@@ -1,0 +1,525 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Restoran</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/icon.png">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Cusom css -->
+   <link rel="stylesheet" href="css/custom.css">
+
+	<!-- Modernizer js -->
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script>
+        function onLoad(){
+            
+            /////////////// kod iznad samo privremeno
+            var str=JSON.parse(localStorage.getItem('restoran'));
+            //alert(str.Opis);
+            $("[name*='opstina']").text(str.Opstina);
+            $("[name*='opis']").text(str.Opis);
+            $("[name*='naziv_restorana']").text(str.Naziv);
+            
+        }
+        $(document).ready(
+            function(){
+                $()
+            }
+        )
+    </script>
+</head>
+<body onload="onLoad()">
+	<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+
+	<!-- Add your site or application content here -->
+	
+	<!-- <div class="fakeloader"></div> -->
+
+	<!-- Main wrapper -->
+	<div class="wrapper" id="wrapper">
+		<!-- Start Header Area -->
+        <header class="htc__header bg--white">
+                <!-- Start Mainmenu Area -->
+                <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
+                                <div class="logo">
+                                    <a href="index.html" >
+                                        <img src="images/logo/foody.png" alt="logo images">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-sm-4 col-md-2 order-3 order-lg-2">
+                                <div class="main__menu__wrap">
+                                    <nav class="main__menu__nav d-none d-lg-block">
+                                        <ul class="mainmenu">
+                                            <li class="drop"><a href="index.html">Home</a></li>
+                                            
+                                            <li class="drop"><a href="#">Restaurants</a>
+                                                <ul class="dropdown__menu">
+                                                    <li><a href="vracar-district.html">Vračar district</a></li>
+                                                    <li><a href="zvezdara-district.html">Zvezdara district</a></li>
+                                                    <li><a href="stari-grad-district.html">Stari grad district</a></li>
+                                                    <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
+                                                    <li><a href="vozdovac-district.html">Voždovac district</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <!-- <li class="drop"><a href="blog-mesonry.html">Blog</a>
+                                                <ul class="dropdown__menu">
+                                                    <li><a href="blog-mesonry.html">Blog Mesonry</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li> -->
+                                            <li><a href="about-us.html">About</a></li>
+                                            <!-- <li class="drop"><a href="#">Pages</a>
+                                                <ul class="dropdown__menu">
+                                                    <li><a href="service.html">Service</a></li>
+                                                    <li><a href="cart.html">Cart Page</a></li>
+                                                    <li><a href="checkout.html">Checkout Page</a></li>
+                                                    <li><a href="contact.html">Contact Page</a></li>
+                                                </ul>
+                                            </li> -->
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                                <div class="header__right d-flex just   ify-content-end">
+    
+                                    <div class="shopping__cart">
+                                        <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
+                                        <div class="shop__qun">
+                                            <span>03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu d-block d-lg-none"></div>
+                        <!-- Mobile Menu -->
+                    </div>
+                </div>
+                <!-- End Mainmenu Area -->
+            </header>
+        <!-- End Header Area -->
+        <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area ">
+                <div class="ht__bradcaump__wrap d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="bradcaump__inner text-center">
+                                    <h2 class="bradcaump-title" name="naziv_restorana">Naziv Restrana</h2>
+                                    <nav class="bradcaump-inner">
+                                      <a class="breadcrumb-item" href="index.html">Home</a>
+                                      <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
+                                      <a name="opstina" class="breadcrumb-item" href="vracar-district.html">naziv opstine</a>
+                                      <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
+                                      <span name="naziv_restorana" class="breadcrumb-item active">Naziv restorana</span>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            <!-- End Bradcaump area -->  
+        <!-- Start Blog List View Area -->
+        <section class="blog__list__view section-padding--lg menudetails-right-sidebar bg--white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="food__menu__container">
+                            <div class="food__menu__inner d-flex flex-wrap flex-md-nowrap flex-lg-nowrap">
+                                <div class="food__menu__thumb">
+                                    <img src="images/banner/details/1.jpg" alt="images">
+                                </div>
+                                <div class="food__menu__details">
+                                    <div class="food__menu__content">
+                                        <h2 name="naziv_restorana">Taco Club Berrito</h2>
+                                        <ul class="food__dtl__prize d-flex">
+                                            <li class="old__prize">$50</li>
+                                            <li>$40</li>
+                                        </ul>
+                                        <ul class="rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <p name="opis">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp incid dunt ut labo dolore magna aliqua. Ut enim ad minim veniaquis nostrud exercit ullamco laboris nisi ut aliq.</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="popupal__menu">
+                                    <h4> Menu</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt--30">
+                            <!-- Start Single Product -->
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="beef_product">
+                                    <div class="beef__thumb">
+                                        <a href="menu-details.html">
+                                            <img src="images/beef/1.jpg" alt="beef images">
+                                        </a>
+                                    </div>
+                                    <div class="beef__hover__info">
+                                        <div class="beef__hover__inner">
+                                            <span>Special</span>
+                                            <span>offer</span>
+                                        </div>
+                                    </div>
+                                    <div class="beef__details">
+                                        <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                        <ul class="beef__prize">
+                                            <li class="old__prize">$30</li>
+                                            <li>$30</li>
+                                        </ul>
+                                        <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                        <div class="beef__cart__btn">
+                                            <a href="cart.html">Add To Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Product -->
+                            <!-- Start Single Product -->
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="beef_product">
+                                    <div class="beef__thumb">
+                                        <a href="menu-details.html">
+                                            <img src="images/beef/2.jpg" alt="beef images">
+                                        </a>
+                                    </div>
+                                    <div class="beef__details">
+                                        <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                        <ul class="beef__prize">
+                                            <li class="old__prize">$30</li>
+                                            <li>$30</li>
+                                        </ul>
+                                        <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                        <div class="beef__cart__btn">
+                                            <a href="cart.html">Add To Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Product -->
+                            <!-- Start Single Product -->
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="beef_product">
+                                    <div class="beef__thumb">
+                                        <a href="menu-details.html">
+                                            <img src="images/beef/3.jpg" alt="beef images">
+                                        </a>
+                                    </div>
+                                    <div class="beef__hover__info">
+                                        <div class="beef__hover__inner">
+                                            <span>Special</span>
+                                            <span>offer</span>
+                                        </div>
+                                    </div>
+                                    <div class="beef__details">
+                                        <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                        <ul class="beef__prize">
+                                            <li class="old__prize">$30</li>
+                                            <li>$30</li>
+                                        </ul>
+                                        <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                        <div class="beef__cart__btn">
+                                            <a href="cart.html">Add To Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Product -->
+                        </div>
+                        <div class="row mt--30">
+                                <!-- Start Single Product -->
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="beef_product">
+                                        <div class="beef__thumb">
+                                            <a href="menu-details.html">
+                                                <img src="images/beef/1.jpg" alt="beef images">
+                                            </a>
+                                        </div>
+                                        <div class="beef__hover__info">
+                                            <div class="beef__hover__inner">
+                                                <span>Special</span>
+                                                <span>offer</span>
+                                            </div>
+                                        </div>
+                                        <div class="beef__details">
+                                            <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                            <ul class="beef__prize">
+                                                <li class="old__prize">$30</li>
+                                                <li>$30</li>
+                                            </ul>
+                                            <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                            <div class="beef__cart__btn">
+                                                <a href="cart.html">Add To Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Product -->
+                                <!-- Start Single Product -->
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="beef_product">
+                                        <div class="beef__thumb">
+                                            <a href="menu-details.html">
+                                                <img src="images/beef/2.jpg" alt="beef images">
+                                            </a>
+                                        </div>
+                                        <div class="beef__details">
+                                            <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                            <ul class="beef__prize">
+                                                <li class="old__prize">$30</li>
+                                                <li>$30</li>
+                                            </ul>
+                                            <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                            <div class="beef__cart__btn">
+                                                <a href="cart.html">Add To Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Product -->
+                                <!-- Start Single Product -->
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="beef_product">
+                                        <div class="beef__thumb">
+                                            <a href="menu-details.html">
+                                                <img src="images/beef/3.jpg" alt="beef images">
+                                            </a>
+                                        </div>
+                                        <div class="beef__hover__info">
+                                            <div class="beef__hover__inner">
+                                                <span>Special</span>
+                                                <span>offer</span>
+                                            </div>
+                                        </div>
+                                        <div class="beef__details">
+                                            <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                            <ul class="beef__prize">
+                                                <li class="old__prize">$30</li>
+                                                <li>$30</li>
+                                            </ul>
+                                            <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                            <div class="beef__cart__btn">
+                                                <a href="cart.html">Add To Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Product -->
+                            </div>
+                            <div class="row mt--30">
+                                    <!-- Start Single Product -->
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="beef_product">
+                                            <div class="beef__thumb">
+                                                <a href="menu-details.html">
+                                                    <img src="images/beef/1.jpg" alt="beef images">
+                                                </a>
+                                            </div>
+                                            <div class="beef__hover__info">
+                                                <div class="beef__hover__inner">
+                                                    <span>Special</span>
+                                                    <span>offer</span>
+                                                </div>
+                                            </div>
+                                            <div class="beef__details">
+                                                <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                                <ul class="beef__prize">
+                                                    <li class="old__prize">$30</li>
+                                                    <li>$30</li>
+                                                </ul>
+                                                <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                <div class="beef__cart__btn">
+                                                    <a href="cart.html">Add To Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Product -->
+                                    <!-- Start Single Product -->
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="beef_product">
+                                            <div class="beef__thumb">
+                                                <a href="menu-details.html">
+                                                    <img src="images/beef/2.jpg" alt="beef images">
+                                                </a>
+                                            </div>
+                                            <div class="beef__details">
+                                                <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                                <ul class="beef__prize">
+                                                    <li class="old__prize">$30</li>
+                                                    <li>$30</li>
+                                                </ul>
+                                                <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                <div class="beef__cart__btn">
+                                                    <a href="cart.html">Add To Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Product -->
+                                    <!-- Start Single Product -->
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="beef_product">
+                                            <div class="beef__thumb">
+                                                <a href="menu-details.html">
+                                                    <img src="images/beef/3.jpg" alt="beef images">
+                                                </a>
+                                            </div>
+                                            <div class="beef__hover__info">
+                                                <div class="beef__hover__inner">
+                                                    <span>Special</span>
+                                                    <span>offer</span>
+                                                </div>
+                                            </div>
+                                            <div class="beef__details">
+                                                <h4><a href="menu-details.html">Beef Burger</a></h4>
+                                                <ul class="beef__prize">
+                                                    <li class="old__prize">$30</li>
+                                                    <li>$30</li>
+                                                </ul>
+                                                <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                <div class="beef__cart__btn">
+                                                    <a href="cart.html">Add To Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Product -->
+                                </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- End Blog List View Area -->
+        <footer class="footer__area footer--1">
+           
+                <div class="copyright bg--theme">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="copyright__inner">
+                                    <div class="cpy__right--left">
+                                        <p>@Copyright 2019, Ognjen Bogićević, Aleksandar Pantić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer Area -->
+            
+            <!-- Cartbox -->
+            <div class="cartbox-wrap">
+                <div class="cartbox text-right">
+                    <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
+                    <div class="cartbox__inner text-left">
+                        <div class="cartbox__items">
+                            <!-- Cartbox Single Item -->
+                            <div class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
+                                    <p>Qty: <span>01</span></p>
+                                    <span class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                            <div class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img src="images/blog/sm-img/2.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name">Wheat Bread</a></h5>
+                                    <p>Qty: <span>01</span></p>
+                                    <span class="price">$25</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                            <div class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img src="images/blog/sm-img/3.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name">Mixed Fruits Pie</a></h5>
+                                    <p>Qty: <span>01</span></p>
+                                    <span class="price">$30</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                        </div>
+                        <div class="cartbox__total">
+                            <ul>
+                                <li><span class="cartbox__total__title">Subtotal</span><span class="price">$70</span></li>
+                                <li class="shipping-charge"><span class="cartbox__total__title">Shipping Charge</span><span class="price">$05</span></li>
+                                <li class="grandtotal">Total<span class="price">$75</span></li>
+                            </ul>
+                        </div>
+                        <div class="cartbox__buttons">
+                            <a class="food__btn" href="cart.html"><span>View cart</span></a>
+                            <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- //Cartbox -->     
+	</div><!-- //Main wrapper -->
+
+	<!-- JS Files -->
+	<script src="js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/active.js"></script>
+</body>
+</html>

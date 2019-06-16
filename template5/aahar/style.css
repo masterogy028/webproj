@@ -2821,10 +2821,10 @@ nav.main__menu__nav {
   height: 800px; }
 
 .slide.bg-image--1 {
-  -webkit-animation: prrtzoomin 10s ease-in infinite;
+  /* -webkit-animation: prrtzoomin 10s ease-in infinite;
   animation: prrtzoomin 10s ease-in infinite;
   transition: all .3s ease-in-out;
-  overflow: hidden; }
+  overflow: hidden; */ }
 
 @keyframes prrtzoomin {
   0% {
@@ -5103,7 +5103,7 @@ div.slide__pizza img {
     font-size: 21px; } }
 /*=======  Our Bradcaump Area =======*/
 .ht__bradcaump__wrap {
-  height: 412px; }
+  height: 100px; }
   .ht__bradcaump__wrap .bradcaump__inner .bradcaump-title {
     color: #444444;
     font-family: "Open Sans", sans-serif;
@@ -5388,7 +5388,7 @@ div.slide__pizza img {
         color: #d50c0d;
         display: inline-block;
         font-family: "Alegreya", serif;
-        font-size: 50px;
+        font-size: 30px;
         font-weight: 700;
         line-height: 45px;
         margin-bottom: 26px; }
