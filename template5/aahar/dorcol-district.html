@@ -27,53 +27,56 @@
                     function(){
                     
                     $(".goRestaurant1").click(function(){
-                        //alert($(this).attr('class'))
-                        //alert($(this).attr('class'));
-                        var jsonObj={
-                            "senderhtml":"dorcol-district.html",
-                            "Naziv":"Pile Prase",
-                            "Opstina":"Dorćol",
-                            "Opis":"Brza hrana uvek tu za vas za manje od 45 min!"
-                        };
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[0];
+                    //alert(jsonObj.Naziv); 
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant2").click(function(){
                         var jsonObj={
+                            
+                            "Opis":$("[name='opis2']").text,
+                            "slika":"",
                             "senderhtml":"dorcol-district.html",
                             "Naziv":"Pizzeria Bergamo",
                             "Opstina":"Dorćol",
-                            "Opis":"Nasa pica je uvek tu za vas za manje od 45 min! Sa vama vec 10 godina!"
+                           
                         };
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant3").click(function(){
                         var jsonObj={
+                            "Opis":$("[name='opis3']").text,
+                            "slika":"",
                             "senderhtml":"dorcol-district.html",
                             "Naziv":"Big Pizza",
                             "Opstina":"Dorćol",
-                            "Opis":"Brza hrana uvek tu za vas za manje od 45 min! Vasa Big Pizza!"
+                            
                         };
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant4").click(function(){
                         var jsonObj={
+                            "Opis":$("[name='opis4']").text,
+                            "slika":"",
                             "senderhtml":"dorcol-district.html",
                             "Naziv":"Walter",
                             "Opstina":"Dorćol",
-                            "Opis":"Osetite cari Sarajeva u Beogradu samo na jednom mestu!"
+                            
                         };
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant5").click(function(){
                         var jsonObj={
+                            "Opis":$("[name='opis5']").text,
+                            "slika":"",
                             "senderhtml":"dorcol-district.html",
                             "Naziv":"KFC",
                             "Opstina":"Dorćol",
-                            "Opis":"KFC, Amerika je u komsiluku! Probajte najbolja pileca krilca na trzistu"
+                            
                         };
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
@@ -199,7 +202,7 @@
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
                                             <h2><a href="#"  class="goRestaurant1">Pile Prase</a></h2>
-                                            <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <p name="opis1">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant1" href="#"   >Check Out</a>
                                             </div>
@@ -229,7 +232,7 @@
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
                                             <h2><a href="#"  class="goRestaurant2">Pizzeria Bergamo</a></h2>
-                                            <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <p name="opis2">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant2" href="#"  >Check Out</a>
                                             </div>
@@ -259,7 +262,7 @@
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
                                             <h2><a href="#"  class="goRestaurant3">Big Pizza</a></h2>
-                                            <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <p name="opis3">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant3" href="#"  >Check Out</a>
                                             </div>
@@ -289,7 +292,7 @@
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
                                             <h2><a href="#"  class="goRestaurant4">Walter</a></h2>
-                                            <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <p name="opis4">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant4" href="#"  >Check Out</a>
                                             </div>
@@ -319,7 +322,7 @@
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
                                             <h2><a href="#"  class="goRestaurant5">KFC</a></h2>
-                                            <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <p name="opis5">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant5" href="#"  >Check Out</a>
                                             </div>

@@ -1,0 +1,238 @@
+{
+    
+    "dorcol":
+    [
+    {
+        "Opis":"Pile prase, restoran uvek sa vama",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"dorcol-district.html",
+        "Naziv":"Pile Prase",
+        "Opstina":"Dorćol",
+        "brOcena":12,
+        "prosekOcena":4.5
+    }
+    ,
+    {
+                            
+        "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"dorcol-district.html",
+        "Naziv":"Pizzeria Bergamo",
+        "Opstina":"Dorćol",
+        "brOcena":12,
+        "prosekOcena":4.5
+       
+    }
+    ,
+    {
+        
+        "Opis":"Big Pizza, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"dorcol-district.html",
+        "Naziv":"Big Pizza",
+        "Opstina":"Dorćol",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ,
+    {
+        
+        "Opis":"Walter, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"dorcol-district.html",
+        "Naziv":"Walter",
+        "Opstina":"Dorćol",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }   
+    ]
+    
+    ,
+    
+        "zvezdara":[
+    {
+        
+        "Opis":"Dva stapica, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"zvezdara-district.html",
+        "Naziv":"Dva stapica",
+        "Opstina":"Zvezdara",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ,
+    {
+        
+        "Opis":"Big Pizza, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"zvezdara-district.html",
+        "Naziv":"Big Pizza",
+        "Opstina":"Zvezdara",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ,
+    {
+        
+        "Opis":"Big Pizza, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"zvezdara-district.html",
+        "Naziv":"Big Pizza",
+        "Opstina":"Zvezdara",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ,
+    {
+        
+        "Opis":"Big Pizza, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"zvezdara-district.html",
+        "Naziv":"Big Pizza",
+        "Opstina":"Zvezdara",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ]
+    
+    ,
+    
+        "vozdovac":[
+    {
+        "Opis":"Pile prase, restoran uvek sa vama",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"vozdovac-district.html",
+        "Naziv":"Pile Prase",
+        "Opstina":"Vozdovac",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ,
+    {
+                            
+        "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"vozdovac-district.html",
+        "Naziv":"Pizzeria Bergamo",
+        "Opstina":"Vozdovac",
+        "brOcena":12,
+        "prosekOcena":4.5
+       
+    }
+    ,
+    {
+        
+        "Opis":"Big Pizza, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"vozdovac-district.html",
+        "Naziv":"Big Pizza",
+        "Opstina":"Vozdovac",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }       
+    ]
+    
+    ,
+    
+        "stari-grad":[
+    {
+        "Opis":"Pile prase, restoran uvek sa vama",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"stari-grad-district.html",
+        "Naziv":"Pile Prase",
+        "Opstina":"Stari grad",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ,
+    {
+                            
+        "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"stari-grad-district.html",
+        "Naziv":"Pizzeria Bergamo",
+        "Opstina":"Stari grad",
+        "brOcena":12,
+        "prosekOcena":4.5
+       
+    }
+    ,
+    {
+        
+        "Opis":"Big Pizza, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"stari-grad-district.html",
+        "Naziv":"Big Pizza",
+        "Opstina":"Stari grad",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }       
+    ]
+    ,
+    
+        "vracar":[
+    {
+        "Opis":"Pile prase, restoran uvek sa vama",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"vracar-district.html",
+        "Naziv":"Pile Prase",
+        "Opstina":"vracar",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }
+    ,
+    {
+                            
+        "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"vracar-district.html",
+        "Naziv":"Pizzeria Bergamo",
+        "Opstina":"vracar",
+        "brOcena":12,
+        "prosekOcena":4.5
+       
+    }
+    ,
+    {
+        
+        "Opis":"Big Pizza, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"vracar-district.html",
+        "Naziv":"Big Pizza",
+        "Opstina":"vracar",
+        "brOcena":12,
+        "prosekOcena":4.5
+        
+    }       
+    ]
+    
+    
+}
