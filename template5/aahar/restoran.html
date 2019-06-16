@@ -28,8 +28,10 @@
             var str=JSON.parse(localStorage.getItem('restoran'));
             //alert(str.Opis);
             $("[name*='opstina']").text(str.Opstina);
+            $("[name*='opstina']").attr("href",str.senderhtml);
             $("[name*='opis']").text(str.Opis);
             $("[name*='naziv_restorana']").text(str.Naziv);
+            
             
         }
         $(document).ready(
