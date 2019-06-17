@@ -25,7 +25,7 @@
      function onLoad(){
         $(document).ready(function(){
             
-            //localStorage.clear();
+            localStorage.clear();
             //alert('loaded');
             if(localStorage.getItem("loadedJson")!='loaded'){
                 $.getJSON("js/mainJson.json", function(json) {

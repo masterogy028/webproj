@@ -10,7 +10,8 @@
         "Naziv":"Pile Prase",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
     }
     ,
     {
@@ -22,8 +23,8 @@
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5
-       
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
     }
     ,
     {
@@ -35,7 +36,8 @@
         "Naziv":"Big Pizza",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ,
@@ -48,9 +50,24 @@
         "Naziv":"Walter",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
-    }   
+    }
+    ,
+    {
+        
+        "Opis":"KFC, sve sto pozelite",
+        "slika":"",
+        "slikaBG":"",
+        "senderhtml":"dorcol-district.html",
+        "Naziv":"KFC",
+        "Opstina":"Dorćol",
+        "brOcena":7,
+        "prosekOcena":3.7,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        
+    } 
     ]
     
     ,
@@ -65,7 +82,8 @@
         "Naziv":"Dva stapica",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ,
@@ -78,7 +96,8 @@
         "Naziv":"Big Pizza",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ,
@@ -91,7 +110,8 @@
         "Naziv":"Big Pizza",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ,
@@ -104,7 +124,8 @@
         "Naziv":"Big Pizza",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ]
@@ -120,7 +141,8 @@
         "Naziv":"Pile Prase",
         "Opstina":"Vozdovac",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ,
@@ -133,7 +155,8 @@
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"Vozdovac",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
        
     }
     ,
@@ -146,7 +169,8 @@
         "Naziv":"Big Pizza",
         "Opstina":"Vozdovac",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }       
     ]
@@ -162,7 +186,8 @@
         "Naziv":"Pile Prase",
         "Opstina":"Stari grad",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ,
@@ -175,7 +200,8 @@
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"Stari grad",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
        
     }
     ,
@@ -188,7 +214,8 @@
         "Naziv":"Big Pizza",
         "Opstina":"Stari grad",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }       
     ]
@@ -203,7 +230,8 @@
         "Naziv":"Pile Prase",
         "Opstina":"vracar",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
     ,
@@ -216,7 +244,8 @@
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"vracar",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
        
     }
     ,
@@ -229,7 +258,8 @@
         "Naziv":"Big Pizza",
         "Opstina":"vracar",
         "brOcena":12,
-        "prosekOcena":4.5
+        "prosekOcena":4.5,
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}    ]
         
     }       
     ]

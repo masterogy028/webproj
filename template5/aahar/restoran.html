@@ -31,9 +31,54 @@
             $("[name*='opstina']").attr("href",str.senderhtml);
             $("[name*='opis']").text(str.Opis);
             $("[name*='naziv_restorana']").text(str.Naziv);
-           // alert("prosek ocena:"+str.prosekOcena);
-            //$(".myStar").attr("value",Math.trunc(str.prosekOcena));
-            //$("[name*='foodrow4']").remove();
+            $("[name*='prosekOcena']").text("Average rating: "+str.prosekOcena.toFixed(2));
+            //alert(str.proizvodi.length);
+            var x=parseInt(str.proizvodi.length/3)+parseInt(1);
+            var y=4-x;
+            
+            if(y==1){
+                $(".foodrow4").remove();
+                if(parseInt(str.proizvodi.length%3)==1){
+                    $(".foodrow3 > .foodcol3").remove();
+                    $(".foodrow3 > .foodcol2").remove();
+                }
+                if(parseInt(str.proizvodi.length%3)==2){
+                    $(".foodrow3 > .foodcol3").remove();
+                }
+            }
+            if(y==2){
+                //alert(y);
+                $(".foodrow4").remove();
+                $(".foodrow3").remove();
+                if(parseInt(str.proizvodi.length%3)==1){
+                    $(".foodrow2 > .foodcol3").remove();
+                    $(".foodrow2 > .foodcol2").remove();
+                }
+                if(parseInt(str.proizvodi.length%3)==2){
+                    $(".foodrow2 > .foodcol3").remove();
+                }
+            }
+            if(y==3){
+                $(".foodrow2").remove();
+                $(".foodrow3").remove();
+                $(".foodrow4").remove();
+                if(parseInt(str.proizvodi.length%3)==1){
+                    $(".foodrow1 > .foodcol3").remove();
+                    $(".foodrow1 > .foodcol2").remove();
+                }
+                if(parseInt(str.proizvodi.length%3)==2){
+                    $(".foodrow1 > .foodcol3").remove();
+                }
+            }
+            for(var i=0;i<str.proizvodi.length;i++){
+                 var row=parseInt(i/3)+parseInt(1);
+                 var col=parseInt(i%3)+parseInt(1);
+                 
+                 $("#"+(i+1)).text(str.proizvodi[i].naziv);
+                 $("#"+(i+1)+"prc").text(str.proizvodi[i].cena+"rsd");
+            }
+            
+            //if(str.proizvodi.length){}
         }
         
     </script>
@@ -88,7 +133,7 @@
                                             <!-- <li class="drop"><a href="#">Pages</a>
                                                 <ul class="dropdown__menu">
                                                     <li><a href="service.html">Service</a></li>
-                                                    <li><a href="cart.html">Cart Page</a></li>
+                                                    <li><a href="#">Cart Page</a></li>
                                                     <li><a href="checkout.html">Checkout Page</a></li>
                                                     <li><a href="contact.html">Contact Page</a></li>
                                                 </ul>
@@ -154,6 +199,7 @@
                                 <div class="food__menu__details">
                                     <div class="food__menu__content">
                                         <h2 name="naziv_restorana"></h2>
+                                        <h5 name='prosekOcena'> Average rating:</h5>
                                         <ul class="food__dtl__prize d-flex">
                                         </ul>
                                         <x-star-rating class="myStar" name="StarOcena" value="0" number="5"></x-star-rating>
@@ -172,13 +218,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div name='foodrow1' class="row mt--30">
+                        <div  class="row mt--30 foodrow1">
                             <!-- Start Single Product -->
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-md-6 col-sm-12 foodcol1">
                                 <div class="beef_product">
                                     <div class="beef__thumb">
                                         <a >
-                                            <img src="images/beef/1.jpg" alt="beef images">
+                                            <img id="1img" src="images/beef/1.jpg" alt="beef images">
                                         </a>
                                     </div>
                                     <div class="beef__hover__info">
@@ -188,47 +234,47 @@
                                         </div>
                                     </div>
                                     <div class="beef__details">
-                                        <h4><a >Beef Burger</a></h4>
+                                        <h4 id="1" class="foodcol1txt"><a >Beef Burger</a></h4>
                                         <ul class="beef__prize">
                                             
-                                            <li>300rsd  </li>
+                                            <li id="1prc">300rsd  </li>
                                         </ul>
-                                        <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                        
                                         <div class="beef__cart__btn">
-                                            <a href="cart.html">Add To Cart</a>
+                                            <a >Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-md-6 col-sm-12 foodcol2">
                                 <div class="beef_product">
                                     <div class="beef__thumb">
                                         <a >
-                                            <img src="images/beef/2.jpg" alt="beef images">
+                                            <img id="2img" src="images/beef/2.jpg" alt="beef images">
                                         </a>
                                     </div>
                                     <div class="beef__details">
-                                        <h4><a >Beef Burger</a></h4>
+                                        <h4 id="2"><a >Beef Burger</a></h4>
                                         <ul class="beef__prize">
-                                            <li class="old__prize">$30</li>
-                                            <li>$30</li>
+                                            
+                                            <li id="2prc">$30</li>
                                         </ul>
-                                        <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                        
                                         <div class="beef__cart__btn">
-                                            <a href="cart.html">Add To Cart</a>
+                                            <a >Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-md-6 col-sm-12 foodcol3">
                                 <div class="beef_product">
                                     <div class="beef__thumb">
                                         <a >
-                                            <img src="images/beef/3.jpg" alt="beef images">
+                                            <img id="3img" src="images/beef/3.jpg" alt="beef images">
                                         </a>
                                     </div>
                                     <div class="beef__hover__info">
@@ -238,27 +284,27 @@
                                         </div>
                                     </div>
                                     <div class="beef__details">
-                                        <h4><a >Beef Burger</a></h4>
+                                        <h4 id="3"><a >Beef Burger</a></h4>
                                         <ul class="beef__prize">
-                                            <li class="old__prize">$30</li>
-                                            <li>$30</li>
+                                           
+                                            <li id="3prc">$30</li>
                                         </ul>
-                                        <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                        
                                         <div class="beef__cart__btn">
-                                            <a href="cart.html">Add To Cart</a>
+                                            <a >Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Single Product -->
                         </div>
-                        <div name='foodrow2' class="row mt--30">
+                        <div  class="row mt--30 foodrow2">
                                 <!-- Start Single Product -->
-                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-lg-4 col-md-6 col-sm-12 foodcol1">
                                     <div class="beef_product">
                                         <div class="beef__thumb">
                                             <a >
-                                                <img src="images/beef/1.jpg" alt="beef images">
+                                                <img id="4img" src="images/beef/1.jpg" alt="beef images">
                                             </a>
                                         </div>
                                         <div class="beef__hover__info">
@@ -268,47 +314,47 @@
                                             </div>
                                         </div>
                                         <div class="beef__details">
-                                            <h4><a >Beef Burger</a></h4>
+                                            <h4 id="4"><a >Beef Burger</a></h4>
                                             <ul class="beef__prize">
-                                                <li class="old__prize">$30</li>
-                                                <li>$30</li>
+                                                
+                                                <li id="4prc">$30</li>
                                             </ul>
-                                            <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                            
                                             <div class="beef__cart__btn">
-                                                <a href="cart.html">Add To Cart</a>
+                                                <a >Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Single Product -->
                                 <!-- Start Single Product -->
-                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-lg-4 col-md-6 col-sm-12 foodcol2">
                                     <div class="beef_product">
                                         <div class="beef__thumb">
                                             <a >
-                                                <img src="images/beef/2.jpg" alt="beef images">
+                                                <img id="5img" src="images/beef/2.jpg" alt="beef images">
                                             </a>
                                         </div>
                                         <div class="beef__details">
-                                            <h4><a >Beef Burger</a></h4>
+                                            <h4 id="5"><a >Beef Burger</a></h4>
                                             <ul class="beef__prize">
-                                                <li class="old__prize">$30</li>
-                                                <li>$30</li>
+                                                
+                                                <li id="5prc">$30</li>
                                             </ul>
-                                            <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                            
                                             <div class="beef__cart__btn">
-                                                <a href="cart.html">Add To Cart</a>
+                                                <a >Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Single Product -->
                                 <!-- Start Single Product -->
-                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-lg-4 col-md-6 col-sm-12 foodcol3">
                                     <div class="beef_product">
                                         <div class="beef__thumb">
                                             <a >
-                                                <img src="images/beef/3.jpg" alt="beef images">
+                                                <img id="6img" src="images/beef/3.jpg" alt="beef images">
                                             </a>
                                         </div>
                                         <div class="beef__hover__info">
@@ -318,27 +364,27 @@
                                             </div>
                                         </div>
                                         <div class="beef__details">
-                                            <h4><a >Beef Burger</a></h4>
+                                            <h4 id="6"><a >Beef Burger</a></h4>
                                             <ul class="beef__prize">
-                                                <li class="old__prize">$30</li>
-                                                <li>$30</li>
+                                               
+                                                <li id="6prc">$30</li>
                                             </ul>
-                                            <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                            
                                             <div class="beef__cart__btn">
-                                                <a href="cart.html">Add To Cart</a>
+                                                <a >Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- End Single Product -->
                             </div>
-                            <div name='foodrow3' class="row mt--30">
+                            <div name='foodrow3' class="row mt--30 foodrow3" >
                                     <!-- Start Single Product -->
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12 foodcol1">
                                         <div class="beef_product">
                                             <div class="beef__thumb">
                                                 <a >
-                                                    <img src="images/beef/1.jpg" alt="beef images">
+                                                    <img id="7img" src="images/beef/1.jpg" alt="beef images">
                                                 </a>
                                             </div>
                                             <div class="beef__hover__info">
@@ -348,47 +394,47 @@
                                                 </div>
                                             </div>
                                             <div class="beef__details">
-                                                <h4><a >Beef Burger</a></h4>
+                                                <h4 id="7"><a >Beef Burger</a></h4>
                                                 <ul class="beef__prize">
-                                                    <li class="old__prize">$30</li>
-                                                    <li>$30</li>
+                                                    
+                                                    <li id="7prc">$30</li>
                                                 </ul>
-                                                <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                
                                                 <div class="beef__cart__btn">
-                                                    <a href="cart.html">Add To Cart</a>
+                                                    <a >Add To Cart</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Single Product -->
                                     <!-- Start Single Product -->
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12 foodcol2">
                                         <div class="beef_product">
                                             <div class="beef__thumb">
                                                 <a >
-                                                    <img src="images/beef/2.jpg" alt="beef images">
+                                                    <img id="8img" src="images/beef/2.jpg" alt="beef images">
                                                 </a>
                                             </div>
                                             <div class="beef__details">
-                                                <h4><a >Beef Burger</a></h4>
+                                                <h4 id="8"><a >Beef Burger</a></h4>
                                                 <ul class="beef__prize">
-                                                    <li class="old__prize">$30</li>
-                                                    <li>$30</li>
+                                                    
+                                                    <li id="8prc">$30</li>
                                                 </ul>
-                                                <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                
                                                 <div class="beef__cart__btn">
-                                                    <a href="cart.html">Add To Cart</a>
+                                                    <a >Add To Cart</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Single Product -->
                                     <!-- Start Single Product -->
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12 foodcol3">
                                         <div class="beef_product">
                                             <div class="beef__thumb">
                                                 <a >
-                                                    <img src="images/beef/3.jpg" alt="beef images">
+                                                    <img id="9img" src="images/beef/3.jpg" alt="beef images">
                                                 </a>
                                             </div>
                                             <div class="beef__hover__info">
@@ -398,27 +444,27 @@
                                                 </div>
                                             </div>
                                             <div class="beef__details">
-                                                <h4><a >Beef Burger</a></h4>
+                                                <h4 id="9"><a >Beef Burger</a></h4>
                                                 <ul class="beef__prize">
-                                                    <li class="old__prize">$30</li>
-                                                    <li>$30</li>
+                                                   
+                                                    <li id="9prc">$30</li>
                                                 </ul>
-                                                <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                
                                                 <div class="beef__cart__btn">
-                                                    <a href="cart.html">Add To Cart</a>
+                                                    <a >Add To Cart</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Single Product -->
                                 </div>
-                                <div name='foodrow4' class="row mt--30">
+                                <div name='foodrow4' class="row mt--30 foodrow4">
                                         <!-- Start Single Product -->
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12 foodcol1">
                                             <div class="beef_product">
                                                 <div class="beef__thumb">
                                                     <a >
-                                                        <img src="images/beef/1.jpg" alt="beef images">
+                                                        <img id="10img" src="images/beef/1.jpg" alt="beef images">
                                                     </a>
                                                 </div>
                                                 <div class="beef__hover__info">
@@ -428,47 +474,47 @@
                                                     </div>
                                                 </div>
                                                 <div class="beef__details">
-                                                    <h4><a >Beef Burger</a></h4>
+                                                    <h4 id="10"><a >Beef Burger</a></h4>
                                                     <ul class="beef__prize">
-                                                        <li class="old__prize">$30</li>
-                                                        <li>$30</li>
+                                                      
+                                                        <li id="10prc">$30</li>
                                                     </ul>
-                                                    <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                    
                                                     <div class="beef__cart__btn">
-                                                        <a href="cart.html">Add To Cart</a>
+                                                        <a >Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- End Single Product -->
                                         <!-- Start Single Product -->
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12 foodcol2">
                                             <div class="beef_product">
                                                 <div class="beef__thumb">
                                                     <a >
-                                                        <img src="images/beef/2.jpg" alt="beef images">
+                                                        <img id="11img" src="images/beef/2.jpg" alt="beef images">
                                                     </a>
                                                 </div>
                                                 <div class="beef__details">
-                                                    <h4><a >Beef Burger</a></h4>
+                                                    <h4 id="11"><a >Beef Burger</a></h4>
                                                     <ul class="beef__prize">
-                                                        <li class="old__prize">$30</li>
-                                                        <li>$30</li>
+                                                       
+                                                        <li id="11prc">$30</li>
                                                     </ul>
-                                                    <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                    
                                                     <div class="beef__cart__btn">
-                                                        <a href="cart.html">Add To Cart</a>
+                                                        <a >Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- End Single Product -->
                                         <!-- Start Single Product -->
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="col-lg-4 col-md-6 col-sm-12 foodcol3">
                                             <div class="beef_product">
                                                 <div class="beef__thumb">
                                                     <a >
-                                                        <img src="images/beef/3.jpg" alt="beef images">
+                                                        <img id="12img" src="images/beef/3.jpg" alt="beef images">
                                                     </a>
                                                 </div>
                                                 <div class="beef__hover__info">
@@ -478,14 +524,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="beef__details">
-                                                    <h4><a >Beef Burger</a></h4>
+                                                    <h4 id="12"><a >Beef Burger</a></h4>
                                                     <ul class="beef__prize">
-                                                        <li class="old__prize">$30</li>
-                                                        <li>$30</li>
+                                                 
+                                                        <li id="12prc">$30</li>
                                                     </ul>
-                                                    <p>erve armesan may be added to the top of apLem ip, consectetur</p>
+                                                    
                                                     <div class="beef__cart__btn">
-                                                        <a href="cart.html">Add To Cart</a>
+                                                        <a >Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -541,7 +587,7 @@
                             <!-- Cartbox Single Item -->
                             <div class="cartbox__item">
                                 <div class="cartbox__item__thumb">
-                                    <a href="product-details.html">
+                                    <a>="product-details.html">
                                         <img src="images/blog/sm-img/2.jpg" alt="small thumbnail">
                                     </a>
                                 </div>
@@ -579,7 +625,7 @@
                             </ul>
                         </div>
                         <div class="cartbox__buttons">
-                            <a class="food__btn" href="cart.html"><span>View cart</span></a>
+                            <a class="food__btn" href="#"><span>View cart</span></a>
                             <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
                         </div>
                     </div>

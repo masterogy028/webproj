@@ -33,55 +33,30 @@
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant2").click(function(){
-                        var jsonObj={
-                            
-                            "Opis":$("[name='opis2']").text,
-                            "slika":"",
-                            "senderhtml":"dorcol-district.html",
-                            "Naziv":"Pizzeria Bergamo",
-                            "Opstina":"Dorćol",
-                           
-                        };
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[1];
+                    //alert(jsonObj.Naziv); 
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant3").click(function(){
-                        var jsonObj={
-                            "Opis":$("[name='opis3']").text,
-                            "slika":"",
-                            "senderhtml":"dorcol-district.html",
-                            "Naziv":"Big Pizza",
-                            "Opstina":"Dorćol",
-                            
-                        };
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[2];
+                    //alert(jsonObj.Naziv); 
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant4").click(function(){
-                        var jsonObj={
-                            "Opis":$("[name='opis4']").text,
-                            "slika":"",
-                            "senderhtml":"dorcol-district.html",
-                            "Naziv":"Walter",
-                            "Opstina":"Dorćol",
-                            
-                        };
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[3];
+                    //alert(jsonObj.Naziv); 
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
                     $(".goRestaurant5").click(function(){
-                        var jsonObj={
-                            "Opis":$("[name='opis5']").text,
-                            "slika":"",
-                            "senderhtml":"dorcol-district.html",
-                            "Naziv":"KFC",
-                            "Opstina":"Dorćol",
-                            
-                        };
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[4];
+                    //alert(jsonObj.Naziv); 
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
-                    
+
                     }
                 );
             }
