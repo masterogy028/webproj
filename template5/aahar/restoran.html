@@ -89,6 +89,7 @@
                 var mys='cartbox__item'+i.toString()+'price';
                 
                 $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                 
                  mys='cartbox__item'+i.toString()+'name';
                 
                 $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
@@ -283,7 +284,7 @@
                                 <div class="food__menu__thumb">
                                     <img src="images/banner/details/1.jpg" alt="images">
                                 </div>
-                                <div class="food__menu__details">
+                                <div class="food__menu__details">   
                                     <div class="food__menu__content">
                                         <h2 name="naziv_restorana"></h2>
                                         <h5 name='prosekOcena'> Average rating:</h5>
