@@ -38,6 +38,7 @@
             });
             
         }})
+            
             var totalPrice=0;
             for(var i=12;i>0;i--)
             {
@@ -58,6 +59,39 @@
             }
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
             localStorage.setItem('total-price',totalPrice);
+            $("[name*='cartbox__item1trash']").on('click',function(){
+                //alert('delete');
+                for(var i=0;i<localStorage.getItem('cart-items-number');i++){
+                    localStorage.setItem('cart-item'+(i),localStorage.getItem('cart-item'+(i+1)));
+                    
+                }
+                var p=localStorage.getItem('cart-items-number');
+                //alert(p);
+                p--;
+                localStorage.setItem('cart-items-number',p);
+                //////////
+                var totalPrice=0;
+            for(var i=12;i>0;i--)
+            {
+                if(localStorage.getItem('cart-items-number')<i){
+                var mys='cartbox__item'+i.toString();
+                $("[name*="+mys+"]").remove();
+                }else{
+                var mys='cartbox__item'+i.toString()+'price';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                 mys='cartbox__item'+i.toString()+'name';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
+                totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
+               
+                }
+                $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
+                 localStorage.setItem('total-price',totalPrice);
+                
+            }
+
+            })
      }
  </script>
 </head>
@@ -171,23 +205,6 @@
                 <!-- End Single Slide -->
             </div>
         </div>
-        <!-- End Slider Area -->
-        <!-- Start Service Area Ogi -->
-        
-        <!-- End Service Area -->
-        <!-- Start Food Category -->
-        
-        <!-- End Food Category -->
-        <!-- Start Special Menu -->
-            
-        <!-- End Special Menu -->
-        <!-- Start Download App Area -->
-        
-        <!-- End Download App Area -->
-        <!-- Start Testimonail Area -->
-       
-        <!-- End Testimonail Area -->
-        <!-- Start Blog Area -->
         <section class="fb__blog__ara section-padding--lg bg--white">
             <div class="container">
                 <div class="row">
@@ -300,7 +317,7 @@
                                 
                                 <span name="cartbox__item1price" class="price">$15</span>
                             </div>
-                            <button class="cartbox__item__remove">
+                            <button  class="cartbox__item__remove">
                                 <i name="cartbox__item1trash" class="fa fa-trash"></i>
                             </button>
                         </div><!-- //Cartbox Single Item -->
