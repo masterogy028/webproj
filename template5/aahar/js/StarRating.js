@@ -64,7 +64,11 @@ class StarRating extends HTMLElement {
             prs=(prs/(str.brOcena+1));str.brOcena++;
             str.prosekOcena=prs;
             /////(str.prosekOcena);
+            var restorani=JSON.parse(localStorage.getItem('mainJson'));
+            //restorani.dorcol[0]=str;
+            ///////////////////////////////////
             localStorage.setItem('restoran',JSON.stringify(str));
+            localStorage.setItem('mainJson',JSON.stringify(restorani));
             let rateEvent = new Event('rate');
             this.dispatchEvent(rateEvent);
         });
