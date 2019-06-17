@@ -25,7 +25,13 @@
             function onLoad(){
                 $(document).ready(
                     function(){
-                    
+                    for(var i=0;i<JSON.parse(localStorage.getItem('mainJson')).dorcol.length;i++){
+                        var rest=JSON.parse(localStorage.getItem('mainJson')).dorcol[i];
+                        if(rest.prosekOcena>4.5){
+                            
+                        }
+                    }
+
                     $(".goRestaurant1").click(function(){
                     var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[0];
                     //alert(jsonObj.Naziv); 
@@ -52,6 +58,12 @@
                     });
                     $(".goRestaurant5").click(function(){
                     var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[4];
+                    //alert(jsonObj.Naziv); 
+                    localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                    window.open("restoran.html", '_self');
+                    });
+                    $(".goRestaurant6").click(function(){
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[5];
                     //alert(jsonObj.Naziv); 
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
@@ -97,21 +109,9 @@
                                             </ul>
                                         </li>
                                         <li><a href="gallery.html">Gallery</a></li>
-                                        <!-- <li class="drop"><a href="blog-mesonry.html">Blog</a>
-                                            <ul class="dropdown__menu">
-                                                <li><a href="blog-mesonry.html">Blog Mesonry</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li> -->
+                                        
                                         <li><a href="about-us.html">About</a></li>
-                                        <!-- <li class="drop"><a href="#">Pages</a>
-                                            <ul class="dropdown__menu">
-                                                <li><a href="service.html">Service</a></li>
-                                                <li><a href="cart.html">Cart Page</a></li>
-                                                <li><a href="checkout.html">Checkout Page</a></li>
-                                                <li><a href="contact.html">Contact Page</a></li>
-                                            </ul>
-                                        </li> -->
+                                        
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -191,12 +191,13 @@
                                                 <li><i class="zmdi zmdi-star"></i></li>
                                                 <li><i class="zmdi zmdi-star"></i></li>
                                                 <li><i class="zmdi zmdi-star"></i></li>
-                                                <li class="rating__opasity"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="rating__opasity"><i class=" zmdi zmdi-star"></i></li>
                                             </ul>
                                         </div>
+                                        
                                     </div>
                                 </div>
-                                <!-- End Single Food -->
+                                <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
@@ -226,7 +227,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Single Food -->
+                                <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
@@ -256,7 +257,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Single Food -->
+                                <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
@@ -284,9 +285,10 @@
                                                 <li class="rating__opasity"><i class="zmdi zmdi-star"></i></li>
                                             </ul>
                                         </div>
+                                        
                                     </div>
                                 </div>
-                                <!-- End Single Food -->
+                                <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
@@ -316,7 +318,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Single Food -->
+                                <!-- End Single Restaurant -->
                                 
                             </div>
                             <!-- End Single Content -->
@@ -327,21 +329,7 @@
                            </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-lg-12">
-                        <ul class="food__pagination d-flex justify-content-center align-items-center mt--130">
-                            <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">...</a></li>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div> -->
+                
             </div>
         </section>
         <!-- End Menu Grid Area -->
