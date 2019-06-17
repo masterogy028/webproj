@@ -68,7 +68,13 @@
                     localStorage.setItem('restoran',JSON.stringify(jsonObj));
                     window.open("restoran.html", '_self');
                     });
-
+                        //ubaci slike
+                        //alert($(".slika1").attr('src'));
+                        $(".slika1").attr('src',jsonObj.dorcol[0].slika);
+                        $(".slika2").attr('src',jsonObj.dorcol[1].slika);
+                        $(".slika3").attr('src',jsonObj.dorcol[2].slika);
+                        $(".slika4").attr('src',jsonObj.dorcol[3].slika);
+                        $(".slika5").attr('src',jsonObj.dorcol[4].slika);
                     }
                 );
             }
@@ -171,7 +177,7 @@
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#" class="goRestaurant1"  >
-                                            <img src="images/menu-list/1.jpg" alt="list food images">
+                                            <img class="slika1" src="images/menu-list/1.jpg" alt="list food images">
                                         </a>
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
@@ -202,7 +208,7 @@
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant2">
-                                            <img src="images/menu-list/2.jpg" alt="list food images">
+                                            <img class="slika2" src="images/menu-list/2.jpg" alt="list food images">
                                         </a>
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
@@ -232,7 +238,7 @@
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant3">
-                                            <img src="images/menu-list/3.jpg" alt="list food images">
+                                            <img class="slika3" src="images/menu-list/3.jpg" alt="list food images">
                                         </a>
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
@@ -262,7 +268,7 @@
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant4">
-                                            <img src="images/menu-list/4.jpg" alt="list food images">
+                                            <img class="slika4" src="images/menu-list/4.jpg" alt="list food images">
                                         </a>
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
@@ -293,7 +299,7 @@
                                 <div class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant5">
-                                            <img src="images/menu-list/5.jpg" alt="list food images">
+                                            <img class="slika5" src="images/menu-list/5.jpg" alt="list food images">
                                         </a>
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
