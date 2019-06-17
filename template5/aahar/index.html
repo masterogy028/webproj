@@ -25,17 +25,35 @@
      function onLoad(){
         $(document).ready(function(){
             
-            localStorage.clear();
+            //localStorage.clear();
             //alert('loaded');
+            
             if(localStorage.getItem("loadedJson")!='loaded'){
+                localStorage.setItem('cart-items-number',0);
                 $.getJSON("js/mainJson.json", function(json) {
                     console.log(json); // this will show the info it in firebug console
                 localStorage.setItem("mainJson",JSON.stringify(json));
                 localStorage.setItem("loadedJson","loaded");
                 alert( localStorage.getItem("mainJson"));
             });
+            
+        }})
+        
+            for(var i=12;i>0;i--)
+            {
+                if(localStorage.getItem('cart-items-number')<i){
+                var mys='cartbox__item'+i.toString();
+                $("[name*="+mys+"]").remove();
+                }else{
+                var mys='cartbox__item'+i.toString()+'price';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                 mys='cartbox__item'+i.toString()+'name';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
+                }
+                
             }
-        })
      }
  </script>
 </head>
@@ -274,8 +292,8 @@
                                 </a>
                             </div>
                             <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                <p name="cartbox__item1qty">Qty: <span>01</span></p>
+                                <h5><a href="product-details.html" class="product-name" name="cartbox__item1name">Vanila Muffin</a></h5>
+                                
                                 <span name="cartbox__item1price" class="price">$15</span>
                             </div>
                             <button class="cartbox__item__remove">
@@ -290,8 +308,8 @@
                                 </a>
                             </div>
                             <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                <p name="cartbox__item2qty">Qty: <span>01</span></p>
+                                <h5><a href="product-details.html" class="product-name" name="cartbox__item2name">Vanila Muffin</a></h5>
+                                
                                 <span name="cartbox__item2price" class="price">$15</span>
                             </div>
                             <button class="cartbox__item__remove">
@@ -306,8 +324,8 @@
                                     </a>
                                 </div>
                                 <div class="cartbox__item__content">
-                                    <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                    <p name="cartbox__item3qty">Qty: <span>01</span></p>
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item3name">Vanila Muffin</a></h5>
+                                    
                                     <span name="cartbox__item3price" class="price">$15</span>
                                 </div>
                                 <button class="cartbox__item__remove">
@@ -322,8 +340,8 @@
                                     </a>
                                 </div>
                                 <div class="cartbox__item__content">
-                                    <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                    <p name="cartbox__item4qty">Qty: <span>01</span></p>
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item4name">Vanila Muffin</a></h5>
+                                   
                                     <span name="cartbox__item4price" class="price">$15</span>
                                 </div>
                                 <button class="cartbox__item__remove">
@@ -338,8 +356,8 @@
                                     </a>
                                 </div>
                                 <div class="cartbox__item__content">
-                                    <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                    <p name="cartbox__item5qty">Qty: <span>01</span></p>
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item5name">Vanila Muffin</a></h5>
+                                    
                                     <span name="cartbox__item5price" class="price">$15</span>
                                 </div>
                                 <button class="cartbox__item__remove">
@@ -354,8 +372,8 @@
                                     </a>
                                 </div>
                                 <div class="cartbox__item__content">
-                                    <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                    <p name="cartbox__item6qty">Qty: <span>01</span></p>
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item6name">Vanila Muffin</a></h5>
+                                
                                     <span name="cartbox__item6price" class="price">$15</span>
                                 </div>
                                 <button class="cartbox__item__remove">
@@ -370,8 +388,8 @@
                                     </a>
                                 </div>
                                 <div class="cartbox__item__content">
-                                    <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                    <p name="cartbox__item7qty">Qty: <span>01</span></p>
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item7name">Vanila Muffin</a></h5>
+                                  
                                     <span name="cartbox__item7price" class="price">$15</span>
                                 </div>
                                 <button class="cartbox__item__remove">
@@ -386,8 +404,8 @@
                                     </a>
                                 </div>
                                 <div class="cartbox__item__content">
-                                    <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                    <p name="cartbox__item8qty">Qty: <span>01</span></p>
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item8name">Vanila Muffin</a></h5>
+                                
                                     <span name="cartbox__item8price" class="price">$15</span>
                                 </div>
                                 <button class="cartbox__item__remove">

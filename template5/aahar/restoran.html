@@ -23,8 +23,9 @@
 	<!-- Modernizer js -->
 	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script>
+        var carti=0;
         function onLoad(){
-
+            
             var str=JSON.parse(localStorage.getItem('restoran'));
             //alert(str.Opis);
             $("[name*='opstina']").text(str.Opstina);
@@ -79,7 +80,51 @@
             }
             
             //if(str.proizvodi.length){}
+            $('.myCart').on("click",function(){
+            switch($(this).attr('name')){
+                case 'cart1':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[0].naziv, 'price':str.proizvodi[0].cena})); 
+                break;
+                case 'cart2':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[1].naziv, 'price':str.proizvodi[1].cena})); 
+                break;
+                case 'cart3':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[2].naziv, 'price':str.proizvodi[2].cena})); 
+                break;
+                case 'cart4':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[3].naziv, 'price':str.proizvodi[3].cena})); 
+                break;
+                case 'cart5':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[4].naziv, 'price':str.proizvodi[4].cena})); 
+                break;
+                case 'cart6':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[5].naziv, 'price':str.proizvodi[5].cena})); 
+                break;
+                case 'cart7': 
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[6].naziv, 'price':str.proizvodi[6].cena})); 
+                break;
+                case 'cart8':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[7].naziv, 'price':str.proizvodi[7].cena})); 
+                break;
+                case 'cart9':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[8].naziv, 'price':str.proizvodi[8].cena})); 
+                break;
+                case 'cart10':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[9].naziv, 'price':str.proizvodi[9].cena})); 
+                break;
+                case 'cart11':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[10].naziv, 'price':str.proizvodi[10].cena})); 
+                break;
+                case 'cart12':
+                localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[11].naziv, 'price':str.proizvodi[11].cena})); 
+                break;
+            }
+            alert(localStorage.getItem('cart-item'+carti)+" "+carti);
+            carti++;
+            localStorage.setItem('cart-items-number',carti);
+        })
         }
+        
         
     </script>
 </head>
@@ -241,7 +286,7 @@
                                         </ul>
                                         
                                         <div class="beef__cart__btn">
-                                            <a >Add To Cart</a>
+                                            <a name='cart1' class="myCart">Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +308,7 @@
                                         </ul>
                                         
                                         <div class="beef__cart__btn">
-                                            <a >Add To Cart</a>
+                                            <a name='cart2' class='myCart' >Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
@@ -291,7 +336,7 @@
                                         </ul>
                                         
                                         <div class="beef__cart__btn">
-                                            <a >Add To Cart</a>
+                                            <a name='cart3' class='myCart' >Add To Cart</a>
                                         </div>
                                     </div>
                                 </div>
@@ -321,7 +366,7 @@
                                             </ul>
                                             
                                             <div class="beef__cart__btn">
-                                                <a >Add To Cart</a>
+                                                <a name='cart4' class='myCart' >Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
@@ -343,7 +388,7 @@
                                             </ul>
                                             
                                             <div class="beef__cart__btn">
-                                                <a >Add To Cart</a>
+                                                <a name='cart5' class='myCart' >Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
@@ -371,7 +416,7 @@
                                             </ul>
                                             
                                             <div class="beef__cart__btn">
-                                                <a >Add To Cart</a>
+                                                <a name='cart6' class='myCart' >Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>
@@ -401,7 +446,7 @@
                                                 </ul>
                                                 
                                                 <div class="beef__cart__btn">
-                                                    <a >Add To Cart</a>
+                                                    <a name='cart7' class='myCart' >Add To Cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -423,7 +468,7 @@
                                                 </ul>
                                                 
                                                 <div class="beef__cart__btn">
-                                                    <a >Add To Cart</a>
+                                                    <a name='cart8' class='myCart' >Add To Cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -451,7 +496,7 @@
                                                 </ul>
                                                 
                                                 <div class="beef__cart__btn">
-                                                    <a >Add To Cart</a>
+                                                    <a name='cart9' class='myCart' >Add To Cart</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -481,7 +526,7 @@
                                                     </ul>
                                                     
                                                     <div class="beef__cart__btn">
-                                                        <a >Add To Cart</a>
+                                                        <a name='cart10' class='myCart' >Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -503,7 +548,7 @@
                                                     </ul>
                                                     
                                                     <div class="beef__cart__btn">
-                                                        <a >Add To Cart</a>
+                                                        <a name='cart11' class='myCart' >Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -531,7 +576,7 @@
                                                     </ul>
                                                     
                                                     <div class="beef__cart__btn">
-                                                        <a >Add To Cart</a>
+                                                        <a name='cart12' class='myCart' >Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
