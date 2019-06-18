@@ -1,0 +1,443 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Aahar || Food Delivery Html5 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/icon.png">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Cusom css -->
+ <link rel="stylesheet" href="css/custom.css">
+
+ <!-- Modernizer js -->
+ <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+ <script>
+     function onLoad(){
+        $(document).ready(function(){
+            
+            //localStorage.clear();
+            if(localStorage.getItem("loadedJson")!='loaded'){
+                localStorage.setItem('language','english');
+                localStorage.setItem('cart-items-number',0);
+                $.getJSON("js/mainJson.json", function(json) {
+                    console.log(json); // this will show the info it in firebug console
+                localStorage.setItem("mainJson",JSON.stringify(json));
+                localStorage.setItem("loadedJson","loaded");
+                alert( localStorage.getItem("mainJson"));
+                });
+            }
+        })
+        //alert('p');
+        cartSet();
+        deleteCart();
+     }
+     function deleteCart(){
+        for(var i=0;i<8;i++){
+        var mystr='cartbox__item'+(i+1)+'trash';
+        $("[name*="+mystr+"]").on('click',function(){
+            //alert('delete');
+            i=$(this).attr('name');
+            var some=i.split('item');
+            i=parseInt(some[1].charAt(0))-1;
+            //alert(i);
+            for(var j=i;j<localStorage.getItem('cart-items-number');j++){
+                localStorage.setItem('cart-item'+(j),localStorage.getItem('cart-item'+(j+1)));
+            }
+            var p=localStorage.getItem('cart-items-number');p--;
+            localStorage.setItem('cart-items-number',p);
+            cartSet();
+        })
+        }
+     }
+     function cartSet(){
+        //alert("cartSet");   
+        var totalPrice=0;
+            for(var i=12;i>0;i--)
+            {
+                if(localStorage.getItem('cart-items-number')<i){
+                var mys='cartbox__item'+i.toString();
+                $("[name*="+mys+"]").remove();
+                }else{
+                var mys='cartbox__item'+i.toString()+'price';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                 mys='cartbox__item'+i.toString()+'name';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
+                totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
+                }
+            }
+            $(".items-number").text(localStorage.getItem('cart-items-number'));
+            $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
+                 localStorage.setItem('total-price',totalPrice);
+     }
+ </script>
+</head>
+<body onload="onLoad()">
+	<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+
+	<!-- Add your site or application content here -->
+	
+	<!-- <div class="fakeloader"></div> -->
+
+	<!-- Main wrapper -->
+	<div class="wrapper" id="wrapper">
+		<!-- Start Header Area -->
+        <header class="htc__header bg--white">
+            <!-- Start Mainmenu Area -->
+            <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="images/logo/foody.png" alt="logo images">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-sm-4 col-md-2 order-3 order-lg-2">
+                            <div class="main__menu__wrap">
+                                <nav class="main__menu__nav d-none d-lg-block">
+                                    <ul class="mainmenu">
+                                        <li class="drop"><a href="index.html">Početna</a></li>
+                                        
+                                        <li class="drop"><a href="#">Restaurants</a>
+                                            <ul class="dropdown__menu">
+                                                <li><a href="vracar-district.html">Vračar district</a></li>
+                                                <li><a href="zvezdara-district.html">Zvezdara district</a></li>
+                                                <li><a href="stari-grad-district.html">Stari grad district</a></li>
+                                                <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
+                                                <li><a href="vozdovac-district.html">Voždovac district</a></li>
+                                                <li><a href="search-restaurants.html">Search restaurants</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about-us.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                            
+                            <div class="header__right d-flex just   ify-content-end">
+                                    <div class="log__in">
+                                            <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                    </div>
+                                    <span style="width: 5px"></span>
+                                    <div class="shopping__cart">
+                                    <div class="log__in">
+                                            <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                    </div>
+                                </div>
+                                <div class="shopping__cart">
+                                    <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
+                                    <div class="shop__qun">
+                                        <span class='items-number'>03</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu d-block d-lg-none"></div>
+                    <!-- Mobile Menu -->
+                </div>
+            </div>
+            <!-- End Mainmenu Area -->
+        </header>
+        <!-- End Header Area -->
+        <!-- Start Slider Area -->
+        <div class="slider__area slider--one">
+            <div class="slider__activation--1">
+                <!-- Start Single Slide -->
+                <div class="slide fullscreen bg-image--1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="slider__content">
+                                    <div class="slider__inner">
+                                        <h2>Ala</h2>
+                                        <h2>Dostava</h2>
+                                        <h1>food delivery</h1>
+                                        <!-- <div class="slider__input">
+                                            <input type="text" placeholder="Type Place, City.Division">
+                                            <input class="res__search" type="text" placeholder="Restaurant">
+                                            <div class="src__btn">
+                                                <a href="#">Search</a>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Slide -->
+            </div>
+        </div>
+        <section class="fb__blog__ara section-padding--lg bg--white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="section__title service__align--left">
+                            <p></p>
+                            <h2 class="title__line">Top restaurants</h2>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt--40">
+                    <!-- Start Single Blog -->
+                    <div class="col-md-6 col-lg-4 col-sm-12 foo">
+                        <div class="blog">
+                            <div class="blog__thumb">
+                                <a href="blog-details.html">
+                                    <img src="images/slike/pile_prase.jpg" alt="blog images">
+                                </a>
+                            </div>
+                            <div class="blog__details">
+                                <h2><a href="blog-details.html">Pile Prase</a></h2>
+                                <!-- <span>1st Feb, 2o17</span> -->
+                                <p>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
+                                <div class="blog__btn">
+                                    <a class="food__btn btn--green theme--hover" href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Single Blog -->
+                    <!-- Start Single Blog -->
+                    <div class="col-md-6 col-lg-4 col-sm-12 foo">
+                        <div class="blog">
+                            <div class="blog__thumb">
+                                <a href="blog-details.html">
+                                    <img src="images/slike/napoli.jpg" alt="blog images">
+                                </a>
+                            </div>
+                            <div class="blog__details">
+                                <h2><a href="blog-details.html">Napoli</a></h2>
+                                <!-- <span>1st jan, 2o17</span> -->
+                                <p>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
+                                <div class="blog__btn">
+                                    <a class="food__btn btn--green theme--hover" href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Single Blog -->
+                    <!-- Start Single Blog -->
+                    <div class="col-md-6 col-lg-4 col-sm-12 foo">
+                        <div class="blog">
+                            <div class="blog__thumb">
+                                <a href="blog-details.html">
+                                    <img src="images/slike/poncho.jpg" alt="blog images">
+                                </a>
+                            </div>
+                            <div class="blog__details">
+                                <h2><a href="blog-details.html">Poncho</a></h2>
+                                <!-- <span>1st Dec, 2o17</span> -->
+                                <p>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
+                                <div class="blog__btn">
+                                    <a class="food__btn btn--green theme--hover" href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Single Blog -->
+                </div>
+            </div>
+        </section>
+        <!-- End Blog Area -->
+        <!-- Start Subscribe Area -->
+       
+        <!-- End Subscribe Area -->
+        <!-- Start Footer Area -->
+        <footer class="footer__area footer--1">
+           
+            <div class="copyright bg--theme">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="copyright__inner">
+                                <div class="cpy__right--left">
+                                    <p>@Copyright 2019, Ognjen Bogićević, Aleksandar Pantić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Area -->
+        
+        <!-- Cartbox -->
+        <div class="cartbox-wrap">
+            <div class="cartbox text-right">
+                <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
+                <div class="cartbox__inner text-left">
+                    <div class="cartbox__items">
+                        <!-- Cartbox Single Item -->
+                        <div name="cartbox__item1" class="cartbox__item">
+                            <div class="cartbox__item__thumb">
+                                <a href="product-details.html">
+                                    <img name="cartbox__item1img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                </a>
+                            </div>
+                            <div class="cartbox__item__content">
+                                <h5><a href="product-details.html" class="product-name" name="cartbox__item1name">Vanila Muffin</a></h5>
+                                
+                                <span name="cartbox__item1price" class="price">$15</span>
+                            </div>
+                            <button  class="cartbox__item__remove">
+                                <i name="cartbox__item1trash" class="fa fa-trash"></i>
+                            </button>
+                        </div><!-- //Cartbox Single Item -->
+                       <!-- Cartbox Single Item -->
+                       <div name="cartbox__item2" class="cartbox__item">
+                            <div class="cartbox__item__thumb">
+                                <a href="product-details.html">
+                                    <img name="cartbox__item2img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                </a>
+                            </div>
+                            <div class="cartbox__item__content">
+                                <h5><a href="product-details.html" class="product-name" name="cartbox__item2name">Vanila Muffin</a></h5>
+                                
+                                <span name="cartbox__item2price" class="price">$15</span>
+                            </div>
+                            <button class="cartbox__item__remove">
+                                <i name="cartbox__item2trash" class="fa fa-trash"></i>
+                            </button>
+                        </div><!-- //Cartbox Single Item -->
+                        <!-- Cartbox Single Item -->
+                        <div name="cartbox__item3" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item3img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item3name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item3price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item3trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                        <div name="cartbox__item4" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item4img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item4name">Vanila Muffin</a></h5>
+                                   
+                                    <span name="cartbox__item4price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item4trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                        <div name="cartbox__item5" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item5img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item5name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item5price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item5trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                        <div name="cartbox__item6" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item6img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item6name">Vanila Muffin</a></h5>
+                                
+                                    <span name="cartbox__item6price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item6trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                        <div name="cartbox__item7" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item7img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item7name">Vanila Muffin</a></h5>
+                                  
+                                    <span name="cartbox__item7price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item7trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                        <div name="cartbox__item8" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item8img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item8name">Vanila Muffin</a></h5>
+                                
+                                    <span name="cartbox__item8price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item8trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                    </div>
+                    <div class="cartbox__total">
+                        <ul>
+                            
+                            <li class="grandtotal">Total<span name='total-price' class="price">$75</span></li>
+                        </ul>
+                    </div>
+                    <div class="cartbox__buttons">
+                       
+                        <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- //Cartbox -->  
+    </div><!-- //Main wrapper -->
+
+    <!-- JS Files -->
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/active.js"></script>
+</body>
+</html>
