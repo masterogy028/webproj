@@ -60,6 +60,8 @@
                    $("[name*='food-button']").click(function(){
 
                    });
+                   cartSet();
+                   deleteCart();
             }
             function chekckinfo(){
                 if(localStorage.getItem('cart-items-number')==0){
@@ -90,6 +92,46 @@
                 localStorage.setItem('cart-items-number',0);
                 window.open('service.html');
             }
+            function deleteCart(){
+        for(var i=0;i<8;i++){
+        var mystr='cartbox__item'+(i+1)+'trash';
+        $("[name*="+mystr+"]").on('click',function(){
+            //alert('delete');
+            i=$(this).attr('name');
+            var some=i.split('item');
+            i=parseInt(some[1].charAt(0))-1;
+            //alert(i);
+            for(var j=i;j<localStorage.getItem('cart-items-number');j++){
+                localStorage.setItem('cart-item'+(j),localStorage.getItem('cart-item'+(j+1)));
+            }
+            var p=localStorage.getItem('cart-items-number');p--;
+            localStorage.setItem('cart-items-number',p);
+            cartSet();
+        })
+        }
+     }
+     function cartSet(){
+        //alert("cartSet");   
+        var totalPrice=0;
+            for(var i=12;i>0;i--)
+            {
+                if(localStorage.getItem('cart-items-number')<i){
+                var mys='cartbox__item'+i.toString();
+                $("[name*="+mys+"]").remove();
+                }else{
+                var mys='cartbox__item'+i.toString()+'price';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                 mys='cartbox__item'+i.toString()+'name';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
+                totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
+                }
+            }
+            $(".items-number").text(localStorage.getItem('cart-items-number'));
+            $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
+                 localStorage.setItem('total-price',totalPrice);
+     }
         </script>
 </head>
 <body onload="onLoad()">
@@ -568,75 +610,154 @@
                 </div>
             </div>
         </div><!-- //Login Form -->
-            <!-- Cartbox -->
+           <!-- Cartbox -->
         <div class="cartbox-wrap">
-            <div class="cartbox text-right">
-                <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
-                <div class="cartbox__inner text-left">
-                    <div class="cartbox__items">
-                        <!-- Cartbox Single Item -->
-                        <div class="cartbox__item">
-                            <div class="cartbox__item__thumb">
-                                <a href="product-details.html">
-                                    <img src="images/blog/sm-img/1.jpg" alt="small thumbnail">
-                                </a>
-                            </div>
-                            <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                <p>Qty: <span>01</span></p>
-                                <span class="price">$15</span>
-                            </div>
-                            <button class="cartbox__item__remove">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </div><!-- //Cartbox Single Item -->
-                        <!-- Cartbox Single Item -->
-                        <div class="cartbox__item">
-                            <div class="cartbox__item__thumb">
-                                <a href="product-details.html">
-                                    <img src="images/blog/sm-img/2.jpg" alt="small thumbnail">
-                                </a>
-                            </div>
-                            <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Wheat Bread</a></h5>
-                                <p>Qty: <span>01</span></p>
-                                <span class="price">$25</span>
-                            </div>
-                            <button class="cartbox__item__remove">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </div><!-- //Cartbox Single Item -->
-                        <!-- Cartbox Single Item -->
-                        <div class="cartbox__item">
-                            <div class="cartbox__item__thumb">
-                                <a href="product-details.html">
-                                    <img src="images/blog/sm-img/3.jpg" alt="small thumbnail">
-                                </a>
-                            </div>
-                            <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Mixed Fruits Pie</a></h5>
-                                <p>Qty: <span>01</span></p>
-                                <span class="price">$30</span>
-                            </div>
-                            <button class="cartbox__item__remove">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </div><!-- //Cartbox Single Item -->
-                    </div>
-                    <div class="cartbox__total">
-                        <ul>
-                            <li><span class="cartbox__total__title">Subtotal</span><span class="price">$70</span></li>
-                            <li class="shipping-charge"><span class="cartbox__total__title">Shipping Charge</span><span class="price">$05</span></li>
-                            <li class="grandtotal">Total<span class="price">$75</span></li>
-                        </ul>
-                    </div>
-                    <div class="cartbox__buttons">
-                        <a class="food__btn" href="cart.html"><span>View cart</span></a>
-                        <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
+                <div class="cartbox text-right">
+                    <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
+                    <div class="cartbox__inner text-left">
+                        <div class="cartbox__items">
+                            <!-- Cartbox Single Item -->
+                            <div name="cartbox__item1" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item1img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item1name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item1price" class="price">$15</span>
+                                </div>
+                                <button  class="cartbox__item__remove">
+                                    <i name="cartbox__item1trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                           <!-- Cartbox Single Item -->
+                           <div name="cartbox__item2" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item2img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item2name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item2price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item2trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                            <div name="cartbox__item3" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item3img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item3name">Vanila Muffin</a></h5>
+                                        
+                                        <span name="cartbox__item3price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item3trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item4" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item4img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item4name">Vanila Muffin</a></h5>
+                                       
+                                        <span name="cartbox__item4price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item4trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item5" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item5img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item5name">Vanila Muffin</a></h5>
+                                        
+                                        <span name="cartbox__item5price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item5trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item6" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item6img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item6name">Vanila Muffin</a></h5>
+                                    
+                                        <span name="cartbox__item6price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item6trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item7" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item7img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item7name">Vanila Muffin</a></h5>
+                                      
+                                        <span name="cartbox__item7price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item7trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item8" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item8img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item8name">Vanila Muffin</a></h5>
+                                    
+                                        <span name="cartbox__item8price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item8trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                        </div>
+                        <div class="cartbox__total">
+                            <ul>
+                                
+                                <li class="grandtotal">Total<span name='total-price' class="price">$75</span></li>
+                            </ul>
+                        </div>
+                        <div class="cartbox__buttons">
+                           
+                            <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- //Cartbox -->  
+            </div><!-- //Cartbox -->  
     </div><!-- //Main wrapper -->
 
     <!-- JS Files -->
