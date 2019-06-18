@@ -140,9 +140,9 @@
                     $(s).attr('src',sortFilterRestaurants[i-1].slika);
                     var s='ocena'+i.toString();
                     if(localStorage.getItem('language')=='english')
-                    $("[name*="+s+"]").text('rating: '+sortFilterRestaurants[i-1].prosekOcena);
+                        $("[name*="+s+"]").text('rating: '+sortFilterRestaurants[i-1].prosekOcena);
                     else
-                    $("[name*="+s+"]").text('ocena: '+sortFilterRestaurants[i-1].prosekOcena);
+                        $("[name*="+s+"]").text('ocena: '+sortFilterRestaurants[i-1].prosekOcena);
                 }
             }
             function SortRestaurants(sort){

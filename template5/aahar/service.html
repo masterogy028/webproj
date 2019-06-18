@@ -22,7 +22,56 @@
 	<!-- Modernizer js -->
 	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
-<body>
+<script>
+    function onLoad(){
+        $(document).ready(function(){
+            cartSet();
+        deleteCart();
+        });
+       
+    }
+    function deleteCart(){
+        for(var i=0;i<8;i++){
+        var mystr='cartbox__item'+(i+1)+'trash';
+        $("[name*="+mystr+"]").on('click',function(){
+            //alert('delete');
+            i=$(this).attr('name');
+            var some=i.split('item');
+            i=parseInt(some[1].charAt(0))-1;
+            //alert(i);
+            for(var j=i;j<localStorage.getItem('cart-items-number');j++){
+                localStorage.setItem('cart-item'+(j),localStorage.getItem('cart-item'+(j+1)));
+            }
+            var p=localStorage.getItem('cart-items-number');p--;
+            localStorage.setItem('cart-items-number',p);
+            cartSet();
+        })
+        }
+     }
+     function cartSet(){
+        //alert("cartSet");   
+        var totalPrice=0;
+            for(var i=12;i>0;i--)
+            {
+                if(localStorage.getItem('cart-items-number')<i){
+                var mys='cartbox__item'+i.toString();
+                $("[name*="+mys+"]").remove();
+                }else{
+                var mys='cartbox__item'+i.toString()+'price';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                 mys='cartbox__item'+i.toString()+'name';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
+                totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
+                }
+            }
+            $(".items-number").text(localStorage.getItem('cart-items-number'));
+            $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
+                 localStorage.setItem('total-price',totalPrice);
+     }
+</script>
+<body onload="onLoad">
 	<!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
@@ -121,6 +170,12 @@
         <!-- Start Service Area -->
         <section class="food__service bg--white section-padding--lg">
             <div class="container service__container">
+                <div style="text-align: center; color: rgb(0, 116, 0)" class="row">
+                    <h1>
+                        We have accepted your delivery! You will have your food delivered in no time!
+                    </h1>
+                    
+                </div>
                 <div class="row">
                     <!-- Start Single Service -->
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -135,11 +190,11 @@
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
                                         <h4><a href="service-details.html">fast delivery</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                        <p>Couple things you'd have to know about our delivery propositions: </p>
                                         <ul>
                                             <li><a href="#">1.Low cost Shipping</a></li>
                                             <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
+                                            <li><a href="#">3.Food being hot when delivered!</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -160,11 +215,11 @@
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
                                         <h4><a href="service-details.html">quality food</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                        <p>We only choose to cooperate with serious restaurants that fulfil our demands and high criticism standards: </p>
                                         <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
+                                            <li><a href="#">1.Groceries quality</a></li>
+                                            <li><a href="#">2.Well prepared food</a></li>
+                                            <li><a href="#">3.Expirianced staff</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -172,61 +227,47 @@
                         </div>
                     </div>
                     <!-- Start Single Service -->
-                    <!-- Start Single Service -->
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="service--2">
-                            <div class="service__inner">
-                                <div class="service__content">
-                                    <h2><a href="service-details.html">various menu</a></h2>
-                                    <div class="ser__icon">
-                                        <img src="images/shape/service/4.png" alt="icon images">
-                                    </div>
-                                </div>
-                                <div class="service__hover__action d-flex align-items-center">
-                                    <div class="service__hover__inner">
-                                        <h4><a href="service-details.html">various menu</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                        <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single Service -->
-                    <!-- Start Single Service -->
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="service--2">
-                            <div class="service__inner">
-                                <div class="service__content">
-                                    <h2><a href="service-details.html">well service</a></h2>
-                                    <div class="ser__icon">
-                                        <img src="images/shape/service/4.png" alt="icon images">
-                                    </div>
-                                </div>
-                                <div class="service__hover__action d-flex align-items-center">
-                                    <div class="service__hover__inner">
-                                        <h4><a href="service-details.html">well service</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                        <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single Service -->
+                  
                 </div>
             </div>
         </section>
         <!-- End Service Area -->
-        
+        <div class="food__contact">
+                <div class="food__contact__wrapper d-flex flex-wrap flex-lg-nowrap">
+                    <!-- Start Single Contact -->
+                    <div class="contact">
+                        <div class="ct__icon">
+                            <i class="zmdi zmdi-phone"></i>
+                        </div>
+                        <div class="ct__address">
+                            <p><a href="#">+064 1234-5678</a></p>
+                            <p><a href="#">+061 123-4582</a></p>
+                        </div>
+                    </div>
+                    <!-- End Single Contact -->
+                    <!-- Start Single Contact -->
+                    <div class="contact">
+                        <div class="ct__icon">
+                            <i class="zmdi zmdi-home"></i>
+                        </div>
+                        <div class="ct__address">
+                            <p>Starogradska 14/1 <br> Beograd, Srbija</p>
+                        </div>
+                    </div>
+                    <!-- End Single Contact -->
+                    <!-- Start Single Contact -->
+                    <div class="contact">
+                        <div class="ct__icon">
+                            <i class="zmdi zmdi-email"></i>
+                        </div>
+                        <div class="ct__address">
+                            <p><a href="#">aladostava@gmail.com</a></p>
+                            <p><a href="#">dostava-ala@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <!-- End Single Contact -->
+                </div>
+            </div>
         <!-- Start Footer Area -->
         <footer class="footer__area footer--1">
            
@@ -245,133 +286,155 @@
             </div>
         </footer>
         <!-- End Footer Area -->
-        <!-- Login Form -->
-        <div class="accountbox-wrapper">
-            <div class="accountbox text-left">
-                <ul class="nav accountbox__filters" id="myTab" role="tablist">
-                    <li>
-                        <a class="active" id="log-tab" data-toggle="tab" href="#log" role="tab" aria-controls="log" aria-selected="true">Login</a>
-                    </li>
-                    <li>
-                        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Register</a>
-                    </li>
-                </ul>
-                <div class="accountbox__inner tab-content" id="myTabContent">
-                    <div class="accountbox__login tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
-                        <form action="#">
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="text" placeholder="User name or email">
-                            </div>
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="password" placeholder="Password">
-                            </div>
-                            <div class="single-input">
-                                <button type="submit" class="food__btn"><span>Go</span></button>
-                            </div>
-                            <div class="accountbox-login__others">
-                                <h6>Or login with</h6>
-                                <div class="social-icons">
-                                    <ul>
-                                        <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="pinterest"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="#">
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="text" placeholder="User name">
-                            </div>
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="email" placeholder="Email address">
-                            </div>
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="password" placeholder="Password">
-                            </div>
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="password" placeholder="Confirm password">
-                            </div>
-                            <div class="single-input">
-                                <button type="submit" class="food__btn"><span>Sign Up</span></button>
-                            </div>
-                        </form>
-                    </div>
-                    <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>
-                </div>
-            </div>
-        </div><!-- //Login Form -->
+        
             <!-- Cartbox -->
         <div class="cartbox-wrap">
-            <div class="cartbox text-right">
-                <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
-                <div class="cartbox__inner text-left">
-                    <div class="cartbox__items">
-                        <!-- Cartbox Single Item -->
-                        <div class="cartbox__item">
-                            <div class="cartbox__item__thumb">
-                                <a href="product-details.html">
-                                    <img src="images/blog/sm-img/1.jpg" alt="small thumbnail">
-                                </a>
-                            </div>
-                            <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Vanila Muffin</a></h5>
-                                <p>Qty: <span>01</span></p>
-                                <span class="price">$15</span>
-                            </div>
-                            <button class="cartbox__item__remove">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </div><!-- //Cartbox Single Item -->
-                        <!-- Cartbox Single Item -->
-                        <div class="cartbox__item">
-                            <div class="cartbox__item__thumb">
-                                <a href="product-details.html">
-                                    <img src="images/blog/sm-img/2.jpg" alt="small thumbnail">
-                                </a>
-                            </div>
-                            <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Wheat Bread</a></h5>
-                                <p>Qty: <span>01</span></p>
-                                <span class="price">$25</span>
-                            </div>
-                            <button class="cartbox__item__remove">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </div><!-- //Cartbox Single Item -->
-                        <!-- Cartbox Single Item -->
-                        <div class="cartbox__item">
-                            <div class="cartbox__item__thumb">
-                                <a href="product-details.html">
-                                    <img src="images/blog/sm-img/3.jpg" alt="small thumbnail">
-                                </a>
-                            </div>
-                            <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">Mixed Fruits Pie</a></h5>
-                                <p>Qty: <span>01</span></p>
-                                <span class="price">$30</span>
-                            </div>
-                            <button class="cartbox__item__remove">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </div><!-- //Cartbox Single Item -->
-                    </div>
-                    <div class="cartbox__total">
-                        <ul>
-                            <li><span class="cartbox__total__title">Subtotal</span><span class="price">$70</span></li>
-                            <li class="shipping-charge"><span class="cartbox__total__title">Shipping Charge</span><span class="price">$05</span></li>
-                            <li class="grandtotal">Total<span class="price">$75</span></li>
-                        </ul>
-                    </div>
-                    <div class="cartbox__buttons">
-                        <a class="food__btn" href="cart.html"><span>View cart</span></a>
-                        <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
+                <div class="cartbox text-right">
+                    <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
+                    <div class="cartbox__inner text-left">
+                        <div class="cartbox__items">
+                            <!-- Cartbox Single Item -->
+                            <div name="cartbox__item1" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item1img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item1name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item1price" class="price">$15</span>
+                                </div>
+                                <button  class="cartbox__item__remove">
+                                    <i name="cartbox__item1trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                           <!-- Cartbox Single Item -->
+                           <div name="cartbox__item2" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item2img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item2name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item2price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item2trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                            <div name="cartbox__item3" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item3img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item3name">Vanila Muffin</a></h5>
+                                        
+                                        <span name="cartbox__item3price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item3trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item4" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item4img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item4name">Vanila Muffin</a></h5>
+                                       
+                                        <span name="cartbox__item4price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item4trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item5" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item5img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item5name">Vanila Muffin</a></h5>
+                                        
+                                        <span name="cartbox__item5price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item5trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item6" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item6img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item6name">Vanila Muffin</a></h5>
+                                    
+                                        <span name="cartbox__item6price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item6trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item7" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item7img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item7name">Vanila Muffin</a></h5>
+                                      
+                                        <span name="cartbox__item7price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item7trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item8" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item8img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item8name">Vanila Muffin</a></h5>
+                                    
+                                        <span name="cartbox__item8price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item8trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                        </div>
+                        <div class="cartbox__total">
+                            <ul>
+                                
+                                <li class="grandtotal">Total<span name='total-price' class="price">$75</span></li>
+                            </ul>
+                        </div>
+                        <div class="cartbox__buttons">
+                           
+                            <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- //Cartbox -->   
+            </div><!-- //Cartbox -->  
 	</div><!-- //Main wrapper -->
 
 	<!-- JS Files -->
