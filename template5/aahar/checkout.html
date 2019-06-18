@@ -23,15 +23,28 @@
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script>
             function onLoad(){
-               // alert(localStorage.getItem('cart-items-number'));   
+               // alert(localStorage.getItem('cart-items-number'));  
+                    $(document).ready(function(){$("[name*='message']").text('');}); 
                    var totalPrice=0;
                    for(var i=8;i>0;i--)
                    {
+                       if(localStorage.getItem('language')!='serbian'){
+                            $("[name*='start']").text('Izaberite svoju opštinu');
+                            $("[name*='first-name']").attr('placeholder','Ime');
+                            $("[name*='last-name']").attr('placeholder','Prezime');
+                            $("[name*='email']").attr('placeholder','E-mail');
+                            $("[name*='address']").attr('placeholder','Adresa');
+                            $("[name*='apartment']").attr('placeholder','Stan');
+                            $("[name*='town']").attr('placeholder','Grad');
+                            $("[name*='phone']").attr('placeholder','Broj telefona');
+                       }
+
                        if(localStorage.getItem('cart-items-number')<i){
-                      //  alert(localStorage.getItem('cart-items-number'));
+                        //  alert(localStorage.getItem('cart-items-number'));
                        var mys='cartbox__item'+i.toString();
                        $("[name*="+mys+"]").remove();
                        }else{
+                       
                        var mys='cartbox__item'+i.toString()+'price';
                        
                        $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
@@ -39,7 +52,6 @@
                        
                        $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
                        totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
-                       //alert(totalPrice);  
                        }
                        
                    }
@@ -48,6 +60,28 @@
                    $("[name*='food-button']").click(function(){
 
                    });
+            }
+            function chekckinfo(){
+                if(localStorage.getItem('cart-items-number')==0){
+                    if(localStorage.getItem('language')=='serbian')
+                    $("[name*='message']").text('nemate narudžbine');
+                    else
+                    $("[name*='message']").text('nothing to order');
+                    return;
+                }
+                if(localStorage.getItem('language')!='serbian'){
+                    if(
+                        ($("[name*='first-name']").text()=="")||
+                        ($("[name*='last-name']").text()=="")||
+                        ($("[name*='email']").text()=="")||
+                        ($("[name*='phone']").text()=="")||
+                        ($("[name*='address']").text()=="")
+                    )
+                    {
+                        console.log($("[name*='last-name']").text()+'.');
+                        $("[name*='message']").text('loš unos podataka');
+                    }
+                }
             }
         </script>
 </head>
@@ -167,7 +201,7 @@
                                                     <div class="row">
                                                         <div class="col-12 mb--20">
                                                             <select name='district'>
-                                                              <option value="1">Select your district</option>
+                                                              <option name='start' value="1">Select your district</option>
                                                               <option value="2">Vračar</option>
                                                               <option value="3">Stari grad</option>
                                                               <option value="4">Zvezdara</option>
@@ -178,29 +212,29 @@
                                                               <option value="9">Novi Beograd</option>
                                                             </select>
                                                         </div>
-                                                        <div name='first-name' class="col-md-6 col-12 mb--20">                                 
-                                                            <input type="text" placeholder="First Name">
+                                                        <div  class="col-md-6 col-12 mb--20">                                 
+                                                            <input name='first-name' type="text" placeholder="First Name">
                                                         </div>
-                                                        <div name='last-name' class="col-md-6 col-12 mb--20">                             
-                                                            <input type="text" placeholder="Last Name">
-                                                        </div>
-                                                        
-                                                        <div name='address' class="col-12 mb--20">
-                                                            <input placeholder="Street address" type="text">
-                                                        </div>
-                                                        <div name='apartment' class="col-12 mb--20">
-                                                            <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
-                                                        </div>
-                                                        <div name='town' class="col-12 mb--20">
-                                                            <input placeholder="Town / City" type="text">
+                                                        <div  class="col-md-6 col-12 mb--20">                             
+                                                            <input name='last-name' type="text" placeholder="Last Name">
                                                         </div>
                                                         
-                                                        
-                                                        <div name='email' class="col-md-6 col-12">                                 
-                                                            <input type="email" placeholder="Email Address">
+                                                        <div  class="col-12 mb--20">
+                                                            <input name='address' placeholder="Street address" type="text">
                                                         </div>
-                                                        <div name='phone' class="col-md-6 col-6">                                   
-                                                            <input placeholder="Phone Number" type="text">
+                                                        <div  class="col-12 mb--20">
+                                                            <input name='apartment' placeholder="Apartment, suite, unit etc. (optional)" type="text">
+                                                        </div>
+                                                        <div  class="col-12 mb--20">
+                                                            <input name='town' placeholder="Town / City" type="text">
+                                                        </div>
+                                                        
+                                                        
+                                                        <div  class="col-md-6 col-12">                                 
+                                                            <input name='email' type="email" placeholder="Email Address">
+                                                        </div>
+                                                        <div  class="col-md-6 col-6">                                   
+                                                            <input name='phone' placeholder="Phone Number" type="text">
                                                         </div> 
                                                                                  
                                                     </div>
@@ -310,7 +344,7 @@
                                                 <li name='cartbox__item7'><p name='cartbox__item7name'></p><p name='cartbox__item1price'>$104.99</p></li>
                                                 <li name='cartbox__item8'><p name='cartbox__item8name'></p><p name='cartbox__item1price'>$85.99</p></li>
                                                 <li><p   class="strong">order total</p><p name='total-price' class="strong">$190.98</p></li>
-                                                <li><button name='food-button' class="food__btn">place order</button><button name='food-button' class="food__btn">place order</button></li>
+                                                <li><p class="strong"><button onclick="chekckinfo()" name='food-button' class="food__btn">place order</button></p>&nbsp;<p class="strong" name='message' style="color: red;font-size: 1.1rem">Bad input</p></li>
                                             </ul>
                                         </form>
                                     </div>

@@ -114,7 +114,10 @@
             function setDescription(){
                 for(var i=1;i<6;i++){
                     var s='opis'+i.toString();
+                    if(localStorage.getItem('language')=='serbian')
                     $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[i-1].Opis);
+                    else
+                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[i-1].OpisENG);
                     for(var j=1;j<6;j++){
                         var zrating='.zrating'+i.toString();
                         var zshade=' .zshade'+j.toString();
