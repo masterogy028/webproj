@@ -48,6 +48,11 @@
             
             if(y==1){
                 $(".foodrow4").remove();
+                if(parseInt(str.proizvodi.length%3)==0){
+                    $(".foodrow3 > .foodcol3").remove();
+                    $(".foodrow3 > .foodcol2").remove();
+                    $(".foodrow3 > .foodcol1").remove();
+                }
                 if(parseInt(str.proizvodi.length%3)==1){
                     $(".foodrow3 > .foodcol3").remove();
                     $(".foodrow3 > .foodcol2").remove();
@@ -60,6 +65,11 @@
                 //alert(y);
                 $(".foodrow4").remove();
                 $(".foodrow3").remove();
+                if(parseInt(str.proizvodi.length%3)==0){
+                    $(".foodrow2 > .foodcol3").remove();
+                    $(".foodrow2 > .foodcol2").remove();
+                    $(".foodrow2 > .foodcol1").remove();
+                }
                 if(parseInt(str.proizvodi.length%3)==1){
                     $(".foodrow2 > .foodcol3").remove();
                     $(".foodrow2 > .foodcol2").remove();
@@ -72,6 +82,11 @@
                 $(".foodrow2").remove();
                 $(".foodrow3").remove();
                 $(".foodrow4").remove();
+                if(parseInt(str.proizvodi.length%3)==0){
+                    $(".foodrow1 > .foodcol3").remove();
+                    $(".foodrow1 > .foodcol2").remove();
+                    $(".foodrow1 > .foodcol1").remove();
+                }
                 if(parseInt(str.proizvodi.length%3)==1){
                     $(".foodrow1 > .foodcol3").remove();
                     $(".foodrow1 > .foodcol2").remove();
