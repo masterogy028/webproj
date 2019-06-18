@@ -71,23 +71,52 @@
                 
             }
             function setRestaurantStuff(){
+                
+                if(sortFilterRestaurants.length==0){sortFilterRestaurants=allRestaurants}
                 for(var i=1;i<11;i++){
+                    var s='single-restaurant'+i.toString();
+                        
+                    if(i>sortFilterRestaurants.length){
+                        var s='single-restaurant'+i.toString();
+                        $("[name*="+s+"]").hide();
+                        //alert('hide '+s);
+                        console.log('hide '+s);
+                        continue;
+                    }else{
+                        var s='single-restaurant'+i.toString();
+                        $("[name*="+s+"]").show();
+                        //alert('show '+sortFilterRestaurants[i-1].Naziv);
+                    }
+                    
                     var s='opis'+i.toString();
+                    if(localStorage.getItem('language')=='english')
+                    $("[name*="+s+"]").text(sortFilterRestaurants[i-1].OpisENG);
+                    else
                     $("[name*="+s+"]").text(sortFilterRestaurants[i-1].Opis);
-                        for(var j=1;j<6;j++){
-                            var zrating='.zrating'+i.toString();
-                            var zshade=' .zshade'+j.toString();
-                            if(sortFilterRestaurants[i-1].prosekOcena<(j-0.49)){
-                            $(zrating+'>'+zshade).attr('class','rating__opasity');
-                        }
+                    for(var j=1;j<6;j++){
+                        var zrating='.zrating'+i.toString();
+                        var zshade=' .zshade'+j.toString();
+                        if(sortFilterRestaurants[i-1].prosekOcena<(j-0.49)){
+                        $(zrating+'>'+zshade).attr('class','rating__opasity');}   
                     }
                     var s='adresa'+i.toString();
                     $("[name*="+s+"]").text(sortFilterRestaurants[i-1].adresa);
-                    
+                    var s='ime'+i.toString();
+                    $("[name*="+s+"]").text(sortFilterRestaurants[i-1].Naziv);
+                    var s='tip'+i.toString();
+                    if(localStorage.getItem('language')=='english')
+                    $("[name*="+s+"]").text(sortFilterRestaurants[i-1].tip);
+                    else
+                    $("[name*="+s+"]").text(sortFilterRestaurants[i-1].tipENG);
+                    var s='ocena'+i.toString();
+                    if(localStorage.getItem('language')=='english')
+                    $("[name*="+s+"]").text('rating: '+sortFilterRestaurants[i-1].prosekOcena);
+                    else
+                    $("[name*="+s+"]").text('ocena: '+sortFilterRestaurants[i-1].prosekOcena);
                 }
             }
             function SortRestaurants(sort){
-                if(sortFilterRestaurants.length==0){sortFilterRestaurants=allRestaurants}
+                sortFilterRestaurants=allRestaurants;
                 //alert('sort '+sort);
                 switch(sort){
                     case 2:{
@@ -99,7 +128,8 @@
                                     sortFilterRestaurants[j]=tmp;
                                 }
                             }
-                            //alert(sortFilterRestaurants[i].prosekOcena);
+                            //alert(sortFilterRestaurants[i].prosekOcena+' '+sortFilterRestaurants[i].Naziv);
+                            console.log(sortFilterRestaurants[i].prosekOcena+' '+sortFilterRestaurants[i].Naziv);
                         }   
                         break;
                     }
@@ -130,8 +160,9 @@
                         break;
                     }
                 }
-                for(var i=0;i<allRestaurants.length;i++){
-                }
+                /* for(var i=0;i<allRestaurants.length;i++){
+                } */
+                setRestaurantStuff();
             }
             function FilterRestaurants(filter){
                 sortFilterRestaurants=[];
@@ -140,6 +171,7 @@
                     if(allRestaurants[i].tip==filter){sortFilterRestaurants.push(allRestaurants[i]);
                     }
                 }
+                setRestaurantStuff();
                 //alert('posle filtera: '+sortFilterRestaurants.length);
             }
             function getRestaurants(){
@@ -160,6 +192,7 @@
                     allRestaurants.push(restorani.vracar[i]);
             }
             //alert(allRestaurants.length);
+            setRestaurantStuff();
             }
             function deleteCart(){
                 for(var i=0;i<8;i++){
@@ -180,40 +213,45 @@
                 }
             }
             function setListeners(){
+                if(sortFilterRestaurants.length==0){sortFilterRestaurants=allRestaurants}
                 $(".goRestaurant1").click(function(){
-                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[0];
-                //alert(jsonObj.Naziv); 
-                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[0]));
                 window.open("restoran.html", '_self');
                 });
                 $(".goRestaurant2").click(function(){
-                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[1];
-                //alert(jsonObj.Naziv); 
-                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[1]));
                 window.open("restoran.html", '_self');
                 });
                 $(".goRestaurant3").click(function(){
-                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[2];
-                //alert(jsonObj.Naziv); 
-                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[2]));
                 window.open("restoran.html", '_self');
                 });
                 $(".goRestaurant4").click(function(){
-                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[3];
-                //alert(jsonObj.Naziv); 
-                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[3]));
                 window.open("restoran.html", '_self');
                 });
                 $(".goRestaurant5").click(function(){
-                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[4];
-                //alert(jsonObj.Naziv); 
-                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[4]));
                 window.open("restoran.html", '_self');
                 });
                 $(".goRestaurant6").click(function(){
-                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).dorcol[5];
-                //alert(jsonObj.Naziv); 
-                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[5]));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant7").click(function(){
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[6]));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant8").click(function(){
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[7]));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant9").click(function(){
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[8]));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant10").click(function(){
+                localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[9]));
                 window.open("restoran.html", '_self');
                 });
             }
@@ -411,7 +449,7 @@
                             <!-- Start Single Content -->
                             <div class="food__list__tab__content tab-pane fade show active" id="nav-all" role="tabpanel">
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant1' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#" class="goRestaurant1"  >
                                             <img class="slika1" src="images/slike/bergamo.jpg" alt="list food images">
@@ -429,7 +467,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>roštilj</span>
+                                                <span name="tip1">roštilj</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena1" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating1 rating">
                                                 <li class="zshade1"><i class=" zmdi zmdi-star"></i></li>
@@ -444,7 +485,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant2' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant2">
                                             <img class="slika2" src="images/slike/big_pizza.jpg" alt="list food images">
@@ -452,7 +493,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant2">Pizzeria Bergamo</a></h2>
+                                            <h2><a href="#" name="ime2"  class="goRestaurant2">Pizzeria Bergamo</a></h2>
                                             <p name="opis2">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa2"></p>
                                             <div class="list__btn">
@@ -461,7 +502,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>pizza</span>
+                                                <span name="tip2">pizza</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena2" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating2 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -475,7 +519,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant3' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant3">
                                             <img class="slika3" src="images/slike/pink.jpg" alt="list food images">
@@ -483,7 +527,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant3">Big Pizza</a></h2>
+                                            <h2><a href="#"  class="goRestaurant3" name="ime3">Big Pizza</a></h2>
                                             <p name="opis3">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa3"></p>
                                             <div class="list__btn">
@@ -492,7 +536,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>pizza</span>
+                                                <span name="tip3">pizza</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena3" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating3 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -506,7 +553,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant4' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant4">
                                             <img class="slika4" src="images/slike/KFC.jpg" alt="list food images">
@@ -514,7 +561,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant4">Walter</a></h2>
+                                            <h2><a href="#"  class="goRestaurant4" name="ime4">Walter</a></h2>
                                             <p name="opis4">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa4"></p>
                                             <div class="list__btn">
@@ -523,7 +570,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>roštilj</span>
+                                                <span name="tip4">roštilj</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena4" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating4 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -538,7 +588,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant5' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant5">
                                             <img class="slika5" src="images/slike/pink.jpg" alt="list food images">
@@ -546,7 +596,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant5">KFC</a></h2>
+                                            <h2><a href="#"  class="goRestaurant5" name="ime5">KFC</a></h2>
                                             <p name="opis5">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa5"></p>
                                             <div class="list__btn">
@@ -555,7 +605,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>piletina</span>
+                                                <span name="tip5">piletina</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena5" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating5 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -569,7 +622,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant6' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#" class="goRestaurant6"  >
                                             <img class="slika6" src="images/slike/bergamo.jpg" alt="list food images">
@@ -577,7 +630,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant6">Pile Prase</a></h2>
+                                            <h2><a href="#"  class="goRestaurant6" name="ime6">Pile Prase</a></h2>
                                             <p name="opis6">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa6"></p>
                                             <div class="list__btn">
@@ -586,7 +639,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>roštilj</span>
+                                                <span name="tip6">roštilj</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena6" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating6 rating">
                                                 <li class="zshade1"><i class=" zmdi zmdi-star"></i></li>
@@ -601,7 +657,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant7' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant7">
                                             <img class="slika7" src="images/slike/big_pizza.jpg" alt="list food images">
@@ -609,7 +665,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant7">Pizzeria Bergamo</a></h2>
+                                            <h2><a href="#"  class="goRestaurant7" name="ime7">Pizzeria Bergamo</a></h2>
                                             <p name="opis7">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa7"></p>
                                             <div class="list__btn">
@@ -618,7 +674,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>pizza</span>
+                                                <span name="tip7">pizza</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena7" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating7 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -632,7 +691,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant8' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant8">
                                             <img class="slika8" src="images/slike/pink.jpg" alt="list food images">
@@ -640,7 +699,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant8">Big Pizza</a></h2>
+                                            <h2><a href="#"  class="goRestaurant8" name="ime8">Big Pizza</a></h2>
                                             <p name="opis8">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa8"></p>
                                             <div class="list__btn">
@@ -649,7 +708,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>pizza</span>
+                                                <span  name="tip8">pizza</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena8" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating8 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -663,7 +725,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant9' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant9">
                                             <img class="slika9" src="images/slike/KFC.jpg" alt="list food images">
@@ -671,7 +733,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant9">Walter</a></h2>
+                                            <h2><a href="#"  class="goRestaurant9" name="ime9">Walter</a></h2>
                                             <p name="opis9">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa9"></p>
                                             <div class="list__btn">
@@ -680,7 +742,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>roštilj</span>
+                                                <span name="tip9">roštilj</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena9" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating9 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -695,7 +760,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
+                                <div name='single-restaurant10' class="single__food__list d-flex wow fadeInUp">
                                     <div class="food__list__thumb">
                                         <a href="#"  class="goRestaurant10">
                                             <img class="slika10" src="images/slike/pink.jpg" alt="list food images">
@@ -703,7 +768,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant10">KFC</a></h2>
+                                            <h2><a href="#"  class="goRestaurant10" name="ime10">KFC</a></h2>
                                             <p name="opis10">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <p name="adresa10"></p>
                                             <div class="list__btn">
@@ -712,7 +777,10 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>piletina</span>
+                                                <span name="tip10">piletina</span>
+                                            </div>
+                                            <div class="">
+                                                    <span name="ocena10" style="color: rgb(228, 53, 0); font-family: monospace">rating:</span>
                                             </div>
                                             <ul class="zrating10 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
