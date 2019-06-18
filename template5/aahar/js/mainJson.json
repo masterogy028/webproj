@@ -4,11 +4,12 @@
     [
     {
         "adresa":"Kralja Petra 13/1",
-        "tip":"barbeque",
-        "Opis":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "tip":"rostilj",
+        "tipENG":"barbeque",
+        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase pverenje.",
         "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
-        "slika":"",
-        "slikaBG":"",
+        "slika":"images/slike/pile_prase.jpg",
+        "slikaBG":"images/slike/pile_prase.jpg",
         "senderhtml":"dorcol-district.html",
         "Naziv":"Pile Prase",
         "Opstina":"Dorćol",
@@ -20,11 +21,12 @@
     {
          
         "adresa":"Lole Ribara 16/4",
-        "tip":"pizza",                   
-        "Opis":"Picerija Bergamo sa vama vec 10 godina asfasdfasdfasdfasdfasdfasdfasdfdasfas df asdf asd fasd fasd fas dfasd fas dfas fasd a",
-        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"pica",
+        "tipENG":"pizza",           
+        "Opis":"Picerija Bergamo sa vama vec 10 godina. Najbolja picerija u gradu sa najzanimljivijim ukusima.",
+        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "slika":"images/slike/bergamo.jpg",
+        "slikaBG":"images/slike/bergamo.jpg",
         "senderhtml":"dorcol-district.html",
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"Dorćol",
@@ -36,11 +38,12 @@
     {
         
         "adresa":"Kralja Aleksandra 1/3",
-        "tip":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite asdf asfas dfas fas dfas dfas dfas as asd asf asdas asd fasdfasd fas f",
-        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"pica",
+        "tipENG":"pizza",
+        "Opis":"Big Pizza, sve sto pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
+        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "slika":"images/slike/big_pizza.jpg",
+        "slikaBG":"images/slike/big_pizza.jpg",
         "senderhtml":"dorcol-district.html",
         "Naziv":"Big Pizza",
         "Opstina":"Dorćol",
@@ -53,11 +56,12 @@
     {
         
         "adresa":"Cvijićeva 56/12",
-        "tip":"barbeque",
-        "Opis":"Walter, sve sto pozelite",
+        "tip":"rostilj",
+        "tipENG":"barbeque",
+        "Opis":"Walter, sve sto ste oduvek zeleli! Najbolji cevapi od juneceg mesa i dugogodisnja tradicija je ono sto nas opisuje.",
         "OpisENG":"Walter, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "slika":"images/slike/walter.jpg",
+        "slikaBG":"images/slike/walter.jpg",
         "senderhtml":"dorcol-district.html",
         "Naziv":"Walter",
         "Opstina":"Dorćol",
@@ -70,11 +74,12 @@
     {
         
         "adresa":"Ruzveltova 13/3",
-        "tip":"chicken",
-        "Opis":"KFC, sve sto pozelite",
+        "tip":"piletina",
+        "tipENG":"chicken",
+        "Opis":"KFC, sirom sveta poznat brend. Svetska kompanija nudi razne ukuse kojim ne mozete da odolite. Uvek tu za Vas.",
         "OpisENG":"KFC, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "slika":"images/slike/KFC.jpg",
+        "slikaBG":"images/slike/KFC.jpg",
         "senderhtml":"dorcol-district.html",
         "Naziv":"KFC",
         "Opstina":"Dorćol",
@@ -84,23 +89,23 @@
         
     } 
     ]
-    
-    ,
-    
+    , 
         "zvezdara":[
     {
         
         "adresa":"Vojislava Ilića 11/5",
-        "tip":"chinese",
-        "Opis":"Dva stapica, sve sto pozelite",
+        "tip":"kineska",
+        "tipENG":"chinese",
+        "Opis":"Dva stapica, azijska hrana o kojoj ste oduvek mastali! Lagan obrok visokog kvaliteta spremljen sa puno paznje i ljubavi",
         "OpisENG":"Dva stapica, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "slika":"images/slike/dva_stapica.jpg",
+        "slikaBG":"images/slike/dva_stapica.jpg",
         "senderhtml":"zvezdara-district.html",
         "Naziv":"Dva stapica",
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":2.5,
+        
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
@@ -108,13 +113,14 @@
     {
         
         "adresa":"Bulevar Oslobođenja 33/4",
-        "tip":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite",
-        "OpisENG":"Big Pizza, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"pica",
+        "tipENG":"pizza",
+        "Opis":"Napoli picerija, tradicionalna italijanska pica i kod nas! Nasi vrhunski majstori na tradicionalan nacin prave zadovoljstvo kojem ne mozete da odolite",
+        "OpisENG":", sve sto pozelite",
+        "slika":"images/slike/napoli.jpg",
+        "slikaBG":"images/slike/napoli.jpg",
         "senderhtml":"zvezdara-district.html",
-        "Naziv":"Big Pizza",
+        "Naziv":"Napoli picerija",
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":1.5,
@@ -125,13 +131,14 @@
     {
         
         "adresa":"Kraljice Marije 12/7",
-        "tip":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite",
-        "OpisENG":"Big Pizza, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"burgeri",
+        "tipENG":"burgers",
+        "Opis":"McDonalds, hrana kojoj ne mozete da odolite. Svetska kompanija donosi eksploziju ukusa kojoj nijedna generacija ne moze da odoli.",
+        "OpisENG":", sve sto pozelite",
+        "slika":"images/slike/mcDonalds.jpg",
+        "slikaBG":"images/slike/mcDonalds.jpg",
         "senderhtml":"zvezdara-district.html",
-        "Naziv":"Big Pizza",
+        "Naziv":"McDonalds",
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":4.5,
@@ -142,13 +149,14 @@
     {
         
         "adresa":"27. Marta 13/2",
-        "tip":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite",
-        "OpisENG":"Big Pizza, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"rostilj",
+        "tipENG":"barbeque",
+        "Opis":"Poncho, najkvaliteniji domaci rostilj! Domaca brza hrana koja je tu za Vas non stop, i u koju imate najvise poverenja.",
+        "OpisENG":", sve sto pozelite",
+        "slika":"images/slike/poncho.jpg",
+        "slikaBG":"images/slike/poncho.jpg",
         "senderhtml":"zvezdara-district.html",
-        "Naziv":"Big Pizza",
+        "Naziv":"Poncho",
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":4.5,
@@ -162,13 +170,14 @@
         "vozdovac":[
     {
         "adresa":"14. April 10/4",
-        "tip":"barbeque",
-        "Opis":"Pile prase, restoran uvek sa vama",
-        "OpisENG":"Pile prase, restoran uvek sa vama",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"rostilj",
+        "tipENG":"barbeque",
+        "Opis":"Pink cevabdzinice, hrana bez premca! Velika ponuda svih vrsta mesa vrhunskog kvaliteta. Zaljubicete se u ukus na prvi zalogaj.",
+        "OpisENG":", restoran uvek sa vama",
+        "slika":"images/slike/pink.jpg",
+        "slikaBG":"images/slike/pink.jpg",
         "senderhtml":"vozdovac-district.html",
-        "Naziv":"Pile Prase",
+        "Naziv":"Pink cevabdzinice",
         "Opstina":"Vozdovac",
         "brOcena":12,
         "prosekOcena":4.5,
@@ -178,12 +187,13 @@
     ,
     {
           
-        "adresa":"Kneza Miloša 18/2",       
-        "tip":"pizza",           
-        "Opis":"Picerija Bergamo sa vama vec 10 godina",
-        "OpisENG":"Picerija Bergamo sa vama vec 10 godina",
-        "slika":"",
-        "slikaBG":"",
+        "adresa":"Kneza Miloša 18/2", 
+        "tip":"pica",
+        "tipENG":"pizza",           
+        "Opis":"Picerija Bergamo sa vama vec 10 godina. Najbolja picerija u gradu sa najzanimljivijim ukusima.",
+        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "slika":"images/slike/bergamo.jpg",
+        "slikaBG":"images/slike/bergamo.jpg",
         "senderhtml":"vozdovac-district.html",
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"Vozdovac",
@@ -196,11 +206,12 @@
     {
         
         "adresa":"Đorđa Pavlovića 19/1",
-        "tip":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite",
-        "OpisENG":"Big Pizza, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"pica",
+        "tipENG":"pizza",
+        "Opis":"Big Pizza, sve sto pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
+        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "slika":"images/slike/big_pizza.jpg",
+        "slikaBG":"images/slike/big_pizza.jpg",
         "senderhtml":"vozdovac-district.html",
         "Naziv":"Big Pizza",
         "Opstina":"Vozdovac",
@@ -216,11 +227,12 @@
         "stari_grad":[
     {
         "adresa":"Požeška 12/4",
-        "tip":"barbeque",
-        "Opis":"Pile prase, restoran uvek sa vama",
-        "OpisENG":"Pile prase, restoran uvek sa vama",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"rostilj",
+        "tipENG":"barbeque",
+        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase pverenje.",
+        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "slika":"images/slike/pile_prase.jpg",
+        "slikaBG":"images/slike/pile_prase.jpg",
         "senderhtml":"stari-grad-district.html",
         "Naziv":"Pile Prase",
         "Opstina":"Stari grad",
@@ -233,7 +245,7 @@
     {
             
         "adresa":"Francuska 13/1",     
-        "tip":"pizza",           
+        "tipENG":"pizza",           
         "Opis":"Picerija Bergamo sa vama vec 10 godina",
         "OpisENG":"Picerija Bergamo sa vama vec 10 godina",
         "slika":"",
@@ -265,7 +277,6 @@
     }       
     ]
     ,
-    
         "vracar":[
     {
         "adresa":"1300 Kaplara 4/2",
@@ -285,12 +296,12 @@
     ,
     {
              
-        "adresa":"Marijane Gregoran 31/2",        
-        "tip":"pizza",       
-        "Opis":"Picerija Bergamo sa vama vec 10 godina",
-        "OpisENG":"Picerija Bergamo sa vama vec 10 godina",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"pica",
+        "tipENG":"pizza",           
+        "Opis":"Picerija Bergamo sa vama vec 10 godina. Najbolja picerija u gradu sa najzanimljivijim ukusima.",
+        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "slika":"images/slike/bergamo.jpg",
+        "slikaBG":"images/slike/bergamo.jpg",
         "senderhtml":"vracar-district.html",
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"vracar",
@@ -303,11 +314,12 @@
     {
         
         "adresa":"Astronomska 8/2",
-        "tip":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite",
-        "OpisENG":"Big Pizza, sve sto pozelite",
-        "slika":"",
-        "slikaBG":"",
+        "tip":"pica",
+        "tipENG":"pizza",
+        "Opis":"Big Pizza, sve sto pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
+        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "slika":"images/slike/big_pizza.jpg",
+        "slikaBG":"images/slike/big_pizza.jpg",
         "senderhtml":"vracar-district.html",
         "Naziv":"Big Pizza",
         "Opstina":"vracar",
