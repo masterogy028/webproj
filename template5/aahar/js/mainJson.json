@@ -15,7 +15,7 @@
         "Naziv":"Pile Prase",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.7,
+        "prosekOcena":5.0,
         "proizvodi":[{"cena":320, "naziv":"pileće belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pileće belo","slika":"images/slike/pohovanobelo.jpg"},
             {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
@@ -130,7 +130,7 @@
         "Naziv":"Napoli picerija",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.8,
+        "prosekOcena":5.0,
         "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
@@ -167,7 +167,7 @@
         "Naziv":"Poncho",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.5,
+        "prosekOcena":5.0,
         "proizvodi":[{"cena":290, "naziv":"slatka palacinka","slika":"images/slike/palacinka.jpg"},{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":320, "naziv":"pileće belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pileće belo","slika":"images/slike/pohovanobelo.jpg"},
             {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
