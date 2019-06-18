@@ -101,20 +101,25 @@
                 });
             }
             function setImages(){
+               
             //ubaci slike
-                    //alert($(".slika1").attr('src'));
-                    /*  $(".slika1").attr('src',jsonObj.stari_grad[0].slika);
-                    $(".slika2").attr('src',jsonObj.stari_grad[1].slika);
-                    $(".slika3").attr('src',jsonObj.stari_grad[2].slika);
-                    $(".slika4").attr('src',jsonObj.stari_grad[3].slika);
-                    $(".slika5").attr('src',jsonObj.stari_grad[4].slika); */
-                    //ubaci zvezde
-                    //
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson'));
+                  //dor alert(jsonObj.stari_grad.length);
+                   for(i=0;i<jsonObj.stari_grad.length;i++){
+                      
+                      $(".slika"+(i+1).toString()).attr('src',jsonObj.stari_grad[i].slika);
+                    
+                    }
+                 
+            
             }
             function setDescription(){
-                for(var i=1;i<3;i++){
+                for(var i=1;i<6;i++){
                     var s='opis'+i.toString();
+                    if(localStorage.getItem('language')=='serbian')
                     $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).stari_grad[i-1].Opis);
+                    else
+                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).stari_grad[i-1].OpisENG);
                     for(var j=1;j<6;j++){
                         var zrating='.zrating'+i.toString();
                         var zshade=' .zshade'+j.toString();
@@ -254,7 +259,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant1">Pile Prase</a></h2>
+                                            <h2><a href="#"  class="goRestaurant1">Dva stapica</a></h2>
                                             <p name="opis1">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant1" href="#"   >Check Out</a>
@@ -262,7 +267,7 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>roštilj</span>
+                                                <span >chinese</span>
                                             </div>
                                             <ul class="zrating1 rating">
                                                 <li class="zshade1"><i class=" zmdi zmdi-star"></i></li>
@@ -285,7 +290,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant2">Pizzeria Bergamo</a></h2>
+                                            <h2><a href="#"  class="goRestaurant2"> Pile prase</a></h2>
                                             <p name="opis2">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant2" href="#"  >Check Out</a>
@@ -293,7 +298,7 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>pizza</span>
+                                                <span>barbecue</span>
                                             </div>
                                             <ul class="zrating2 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -315,7 +320,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant3">Big Pizza</a></h2>
+                                            <h2><a href="#"  class="goRestaurant3">Picerija Bergamo</a></h2>
                                             <p name="opis3">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant3" href="#"  >Check Out</a>
@@ -345,7 +350,7 @@
                                     </div>
                                     <div class="food__list__inner d-flex align-items-center justify-content-between">
                                         <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant4">Walter</a></h2>
+                                            <h2><a href="#"  class="goRestaurant4">Big Pizza</a></h2>
                                             <p name="opis4">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                             <div class="list__btn">
                                                 <a class="food__btn grey--btn theme--hover goRestaurant4" href="#"  >Check Out</a>
@@ -353,7 +358,7 @@
                                         </div>
                                         <div class="food__rating">
                                             <div class="list__food__prize">
-                                                <span>roštilj</span>
+                                                <span>pizza</span>
                                             </div>
                                             <ul class="zrating4 rating">
                                                 <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
@@ -368,34 +373,7 @@
                                 </div>
                                 <!-- End Single Restaurant -->
                                 <!-- Start Single Restaurant -->
-                                <div class="single__food__list d-flex wow fadeInUp">
-                                    <div class="food__list__thumb">
-                                        <a href="#"  class="goRestaurant5">
-                                            <img class="slika5" src="images/slike/pink.jpg" alt="list food images">
-                                        </a>
-                                    </div>
-                                    <div class="food__list__inner d-flex align-items-center justify-content-between">
-                                        <div class="food__list__details">
-                                            <h2><a href="#"  class="goRestaurant5">KFC</a></h2>
-                                            <p name="opis5">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
-                                            <div class="list__btn">
-                                                <a class="food__btn grey--btn theme--hover goRestaurant5" href="#"  >Check Out</a>
-                                            </div>
-                                        </div>
-                                        <div class="food__rating">
-                                            <div class="list__food__prize">
-                                                <span>piletina</span>
-                                            </div>
-                                            <ul class="zrating5 rating">
-                                                <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
-                                                <li class="zshade2"><i class="zmdi zmdi-star"></i></li>
-                                                <li class="zshade3"><i class="zmdi zmdi-star"></i></li>
-                                                <li class="zshade4"><i class="zmdi zmdi-star"></i></li>
-                                                <li class="zshade5"><i class="zmdi zmdi-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                                 <!-- End Single Restaurant -->
                                 
                             </div>

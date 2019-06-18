@@ -271,8 +271,8 @@
     
     ,
     
-        "stari_grad":[
-            {
+ "stari_grad":[
+    {
         
                 "adresa":"Cara Dusana 78",
                 "linkAdrese":"https://maps.google.com/maps?q=cara%20dusana%2078&t=&z=13&ie=UTF8&iwloc=&output=embed",
@@ -290,8 +290,8 @@
                 
                 "proizvodi":[{"cena":420, "naziv":"pasta carbonare","slika":"images/slike/pasta.jpg"},{"cena":450,"naziv":"ramen","slika":"images/slike/ramen.jpg"},{"cena":490,"naziv":"sushi","slika":"images/slike/sushi.jpg"},{"cena":150,"naziv":"pirinac","slika":"images/slike/pirinac.jpg"},{"cena":670, "naziv":"filet lososa","slika":"images/slike/riba.jpg"}]
                 
-            }
-            ,
+     }
+     ,
     {   
         "adresa":"Dunavska 19",
         "linkAdrese":"https://maps.google.com/maps?q=dunavska%2019&t=&z=13&ie=UTF8&iwloc=&output=embed",

@@ -102,8 +102,17 @@
             }
             function setImages(){
             //ubaci slike
-                    //alert($(".slika1").attr('src'));
-                    /*  $(".slika1").attr('src',jsonObj.dorcol[0].slika);
+                    var jsonObj=JSON.parse(localStorage.getItem('mainJson'));
+                   // alert($(".slika1").attr('src'));
+                    //alert("blaa"+jsonObj.dorcol[0].slika.toString());
+                   // alert(jsonObj.dorcol.length);
+                   for(i=0;i<jsonObj.dorcol.length;i++){
+                       // alert(".slika"+(i+1).toString());
+                       // alert($(".slika"+(i+1).toString()).attr('src'));
+                      $(".slika"+(i+1).toString()).attr('src',jsonObj.dorcol[i].slika);
+                      //alert($(".slika"+i.toString()).attr('src'));
+                    }
+                   /* $(".slika1").attr('src',jsonObj.dorcol[0].slika);
                     $(".slika2").attr('src',jsonObj.dorcol[1].slika);
                     $(".slika3").attr('src',jsonObj.dorcol[2].slika);
                     $(".slika4").attr('src',jsonObj.dorcol[3].slika);
