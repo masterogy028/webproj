@@ -29,7 +29,7 @@
                    var totalPrice=0;
                    for(var i=8;i>0;i--)
                    {
-                       if(localStorage.getItem('language')!='serbian'){
+                       if(localStorage.getItem('language')=='serbian'){
                             $("[name*='start']").text('Izaberite svoju opštinu');
                             $("[name*='first-name']").attr('placeholder','Ime');
                             $("[name*='last-name']").attr('placeholder','Prezime');
@@ -242,7 +242,7 @@
                                     
                                     <!-- Billing Method -->
                                     <div class="single-accordion">
-                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#billing-method">1. shipping informatioon</a>
+                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#billing-method">1. imformacije za dostavu</a>
                                         <div id="billing-method" class="collapse">
 
                                             <div class="accordion-body billing-method fix">
@@ -299,7 +299,7 @@
                                     
                                     <!-- Payment Method -->
                                     <div class="single-accordion">
-                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#payment-method">2. Payment method</a>
+                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#payment-method">2. Metod isplate</a>
                                         <div id="payment-method" class="collapse">
                                             <div class="accordion-body payment-method fix">
                                                
