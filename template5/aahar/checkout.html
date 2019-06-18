@@ -45,19 +45,14 @@
                    }
                    $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                    localStorage.setItem('total-price',totalPrice);
+                   $("[name*='food-button']").click(function(){
+
+                   });
             }
         </script>
 </head>
-<body onload="onLoad()"
-    <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
+<body onload="onLoad()">
 
-    <!-- Add your site or application content here -->
-    
-    <!-- <div class="fakeloader"></div> -->
-
-    <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
         <!-- Start Header Area -->
         <header class="htc__header bg--white">
@@ -171,7 +166,7 @@
                                                 <form action="#" class="billing-form checkout-form">
                                                     <div class="row">
                                                         <div class="col-12 mb--20">
-                                                            <select>
+                                                            <select name='district'>
                                                               <option value="1">Select your district</option>
                                                               <option value="2">Vračar</option>
                                                               <option value="3">Stari grad</option>
@@ -183,30 +178,31 @@
                                                               <option value="9">Novi Beograd</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-md-6 col-12 mb--20">                                 
+                                                        <div name='first-name' class="col-md-6 col-12 mb--20">                                 
                                                             <input type="text" placeholder="First Name">
                                                         </div>
-                                                        <div class="col-md-6 col-12 mb--20">                             
+                                                        <div name='last-name' class="col-md-6 col-12 mb--20">                             
                                                             <input type="text" placeholder="Last Name">
                                                         </div>
                                                         
-                                                        <div class="col-12 mb--20">
+                                                        <div name='address' class="col-12 mb--20">
                                                             <input placeholder="Street address" type="text">
                                                         </div>
-                                                        <div class="col-12 mb--20">
+                                                        <div name='apartment' class="col-12 mb--20">
                                                             <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
                                                         </div>
-                                                        <div class="col-12 mb--20">
+                                                        <div name='town' class="col-12 mb--20">
                                                             <input placeholder="Town / City" type="text">
                                                         </div>
                                                         
                                                         
-                                                        <div class="col-md-6 col-12">                                 
+                                                        <div name='email' class="col-md-6 col-12">                                 
                                                             <input type="email" placeholder="Email Address">
                                                         </div>
-                                                        <div class="col-md-6 col-12">                                   
+                                                        <div name='phone' class="col-md-6 col-6">                                   
                                                             <input placeholder="Phone Number" type="text">
-                                                        </div>                          
+                                                        </div> 
+                                                                                 
                                                     </div>
                                                 </form>
                                                 
@@ -305,16 +301,16 @@
                                         <form action="#">
                                             <ul>
                                                 <li><p class="strong">product</p><p class="strong">total</p></li>
-                                                <li name='cartbox__item1'><p name='cartbox__item1name'>Fishing Reel x1</p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item2'><p name='cartbox__item2name'>Fishing Rods x1 </p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item3'><p name='cartbox__item3name'>Fishing Reel x1</p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item4'><p name='cartbox__item4name'>Fishing Rods x1 </p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item5'><p name='cartbox__item5name'>Fishing Reel x1</p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item6'><p name='cartbox__item6name'>Fishing Rods x1 </p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item7'><p name='cartbox__item7name'>Fishing Reel x1</p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item8'><p name='cartbox__item8name'>Fishing Rods x1 </p><p name='cartbox__item1price'>$85.99</p></li>
+                                                <li name='cartbox__item1'><p name='cartbox__item1name'></p><p name='cartbox__item1price'>$104.99</p></li>
+                                                <li name='cartbox__item2'><p name='cartbox__item2name'></p><p name='cartbox__item1price'>$85.99</p></li>
+                                                <li name='cartbox__item3'><p name='cartbox__item3name'></p><p name='cartbox__item1price'>$104.99</p></li>
+                                                <li name='cartbox__item4'><p name='cartbox__item4name'></p><p name='cartbox__item1price'>$85.99</p></li>
+                                                <li name='cartbox__item5'><p name='cartbox__item5name'></p><p name='cartbox__item1price'>$104.99</p></li>
+                                                <li name='cartbox__item6'><p name='cartbox__item6name'></p><p name='cartbox__item1price'>$85.99</p></li>
+                                                <li name='cartbox__item7'><p name='cartbox__item7name'></p><p name='cartbox__item1price'>$104.99</p></li>
+                                                <li name='cartbox__item8'><p name='cartbox__item8name'></p><p name='cartbox__item1price'>$85.99</p></li>
                                                 <li><p   class="strong">order total</p><p name='total-price' class="strong">$190.98</p></li>
-                                                <li><button class="food__btn">place order</button></li>
+                                                <li><button name='food-button' class="food__btn">place order</button><button name='food-button' class="food__btn">place order</button></li>
                                             </ul>
                                         </form>
                                     </div>

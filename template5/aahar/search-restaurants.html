@@ -24,9 +24,15 @@
     <script>
         var allRestaurants=[];
         var sortFilterRestaurants=[];
+        var myDivs=[];
             function onLoad(){
+
                     $(document).ready(
                         function(){
+                        for(var i=1;i<11;i++){
+                            var s='single-restaurant'+i.toString();
+                            myDivs.push($("[name*="+s+"]").clone());
+                        }
                         if(localStorage.getItem("loadedJson")!='loaded'){
                             localStorage.setItem('language','english');
                             localStorage.setItem('cart-items-number',0);
@@ -51,13 +57,23 @@
                 //alert($('.sort-food').val());
                 $('.filter-food').change(function(){
                     //alert('filter-food= '+$('.filter-food').val());
-                    switch($('.filter-food').val()){
-                    case '2': FilterRestaurants('barbeque');break;
-                    case '3': FilterRestaurants('pizza');break;
-                    case '4': FilterRestaurants('chicken');break;
-                    case '5': FilterRestaurants('chinese');break;
-                    case '6': FilterRestaurants('burgers');break;
-                }
+                    if(localStorage.getItem('language')=='english'){
+                        switch($('.filter-food').val()){
+                            case '2': FilterRestaurants('barbeque');break;
+                            case '3': FilterRestaurants('pizza');break;
+                            case '4': FilterRestaurants('chicken');break;
+                            case '5': FilterRestaurants('chinese');break;
+                            case '6': FilterRestaurants('burgers');break;
+                        }
+                    }else{
+                        switch($('.filter-food').val()){
+                            case '2': FilterRestaurants('roštilj');break;
+                            case '3': FilterRestaurants('pica');break;
+                            case '4': FilterRestaurants('piletina');break;
+                            case '5': FilterRestaurants('kineska');break;
+                            case '6': FilterRestaurants('burgeri');break;
+                        }
+                    }
                 });
                 $('.sort-restaurant').change(function(){
                     //alert('filter-food= '+$('.filter-food').val());
@@ -76,17 +92,22 @@
                 //console.log('broj restorana : '+ sortFilterRestaurants.length);
                 for(var i=1;i<11;i++){
                     var s='single-restaurant'+i.toString();
+                    $("[name*="+s+"]").remove();
+                    var s='single-restaurant'+i.toString();
+                    $('.food__list__tab__content').append(myDivs[i-1]);
+                }
+                for(var i=1;i<11;i++){
+                    var s='single-restaurant'+i.toString();
                         
                     if(i>sortFilterRestaurants.length){
                         var s='single-restaurant'+i.toString();
-                        $("[name*="+s+"]").hide();
+                        $("[name*="+s+"]").remove();
                         //alert('hide '+s);
-                        //console.log('hide '+s);
+                        console.log('hide '+s);
                         continue;
                     }else{
-                        var s='single-restaurant'+i.toString();
-                        $("[name*="+s+"]").show();
-                        //alert('show '+sortFilterRestaurants[i-1].Naziv);
+                        // var s='single-restaurant'+i.toString();
+                        // $('.food__list__tab__content').append(myDivs[i-1]);
                     }
                     
                     var s='opis'+i.toString();
@@ -111,9 +132,11 @@
                     $("[name*="+s+"]").text(sortFilterRestaurants[i-1].Naziv);
                     var s='tip'+i.toString();
                     if(localStorage.getItem('language')=='english')
-                    $("[name*="+s+"]").text(sortFilterRestaurants[i-1].tip);
-                    else
                     $("[name*="+s+"]").text(sortFilterRestaurants[i-1].tipENG);
+                    else
+                    $("[name*="+s+"]").text(sortFilterRestaurants[i-1].tip);
+                    s='.slika'+i.toString();
+                    $(s).attr('src',sortFilterRestaurants[i-1].slika);
                     var s='ocena'+i.toString();
                     if(localStorage.getItem('language')=='english')
                     $("[name*="+s+"]").text('rating: '+sortFilterRestaurants[i-1].prosekOcena);
@@ -135,7 +158,7 @@
                                 }
                             }
                             //alert(sortFilterRestaurants[i].prosekOcena+' '+sortFilterRestaurants[i].Naziv);
-                            console.log(sortFilterRestaurants[i].prosekOcena+' '+sortFilterRestaurants[i].Naziv);
+                            //console.log(sortFilterRestaurants[i].prosekOcena+' '+sortFilterRestaurants[i].Naziv);
                         }   
                         break;
                     }
@@ -174,8 +197,10 @@
                 sortFilterRestaurants=[];
                 //alert('pre filtera: '+sortFilterRestaurants.length);
                 for(var i=0;i<allRestaurants.length;i++){
-                    if(allRestaurants[i].tip==filter){sortFilterRestaurants.push(allRestaurants[i]);
-                    }
+                    if(localStorage.getItem('language')=='english')
+                        if(allRestaurants[i].tipENG==filter){sortFilterRestaurants.push(allRestaurants[i]);
+                    }else
+                    if(allRestaurants[i].tip==filter){sortFilterRestaurants.push(allRestaurants[i]);}
                 }
                 setRestaurantStuff();
                 //alert('posle filtera: '+sortFilterRestaurants.length);
@@ -444,8 +469,8 @@
                                             <option onclick="setRestaurants()" value="2">barbeque</option>
                                             <option onclick="setRestaurants()" value="3">pizza</option>
                                             <option onclick="setRestaurants()" value="4">chicken</option>
-                                            <option onclick="setRestaurants()" value="3">chinese</option>
-                                            <option onclick="setRestaurants()" value="4">burgers</option>
+                                            <option onclick="setRestaurants()" value="5">chinese</option>
+                                            <option onclick="setRestaurants()" value="6">burgers</option>
                                     </select>
                             </div>
                                 <!-- End Search Area -->
@@ -832,8 +857,8 @@
         </footer>
         <!-- End Footer Area -->
         
-        <!-- Cartbox -->
-        <div class="cartbox-wrap">
+         <!-- Cartbox -->
+         <div class="cartbox-wrap">
                 <div class="cartbox text-right">
                     <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
                     <div class="cartbox__inner text-left">
@@ -979,7 +1004,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- //Cartbox -->   
+            </div><!-- //Cartbox -->     
 	</div><!-- //Main wrapper -->
 
 	<!-- JS Files -->
