@@ -3,7 +3,10 @@
     "dorcol":
     [
     {
+        "adresa":"Kralja Petra 13/1",
+        "tip":"barbeque",
         "Opis":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
@@ -15,8 +18,11 @@
     }
     ,
     {
-                            
+         
+        "adresa":"Lole Ribara 16/4",
+        "tip":"pizza",                   
         "Opis":"Picerija Bergamo sa vama vec 10 godina asfasdfasdfasdfasdfasdfasdfasdfdasfas df asdf asd fasd fasd fas dfasd fas dfas fasd a",
+        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
@@ -29,7 +35,10 @@
     ,
     {
         
+        "adresa":"Kralja Aleksandra 1/3",
+        "tip":"pizza",
         "Opis":"Big Pizza, sve sto pozelite asdf asfas dfas fas dfas dfas dfas as asd asf asdas asd fasdfasd fas f",
+        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
@@ -43,7 +52,10 @@
     ,
     {
         
+        "adresa":"Cvijićeva 56/12",
+        "tip":"barbeque",
         "Opis":"Walter, sve sto pozelite",
+        "OpisENG":"Walter, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
@@ -57,7 +69,10 @@
     ,
     {
         
+        "adresa":"Ruzveltova 13/3",
+        "tip":"chicken",
         "Opis":"KFC, sve sto pozelite",
+        "OpisENG":"KFC, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
@@ -75,7 +90,10 @@
         "zvezdara":[
     {
         
+        "adresa":"Vojislava Ilića 11/5",
+        "tip":"chinese",
         "Opis":"Dva stapica, sve sto pozelite",
+        "OpisENG":"Dva stapica, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"zvezdara-district.html",
@@ -89,7 +107,10 @@
     ,
     {
         
+        "adresa":"Bulevar Oslobođenja 33/4",
+        "tip":"pizza",
         "Opis":"Big Pizza, sve sto pozelite",
+        "OpisENG":"Big Pizza, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"zvezdara-district.html",
@@ -103,7 +124,10 @@
     ,
     {
         
+        "adresa":"Kraljice Marije 12/7",
+        "tip":"pizza",
         "Opis":"Big Pizza, sve sto pozelite",
+        "OpisENG":"Big Pizza, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"zvezdara-district.html",
@@ -117,7 +141,10 @@
     ,
     {
         
+        "adresa":"27. Marta 13/2",
+        "tip":"pizza",
         "Opis":"Big Pizza, sve sto pozelite",
+        "OpisENG":"Big Pizza, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"zvezdara-district.html",
@@ -134,7 +161,10 @@
     
         "vozdovac":[
     {
+        "adresa":"14. April 10/4",
+        "tip":"barbeque",
         "Opis":"Pile prase, restoran uvek sa vama",
+        "OpisENG":"Pile prase, restoran uvek sa vama",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"vozdovac-district.html",
@@ -147,8 +177,11 @@
     }
     ,
     {
-                            
+          
+        "adresa":"Kneza Miloša 18/2",       
+        "tip":"pizza",           
         "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "OpisENG":"Picerija Bergamo sa vama vec 10 godina",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"vozdovac-district.html",
@@ -162,7 +195,10 @@
     ,
     {
         
+        "adresa":"Đorđa Pavlovića 19/1",
+        "tip":"pizza",
         "Opis":"Big Pizza, sve sto pozelite",
+        "OpisENG":"Big Pizza, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"vozdovac-district.html",
@@ -179,7 +215,10 @@
     
         "stari_grad":[
     {
+        "adresa":"Požeška 12/4",
+        "tip":"barbeque",
         "Opis":"Pile prase, restoran uvek sa vama",
+        "OpisENG":"Pile prase, restoran uvek sa vama",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"stari-grad-district.html",
@@ -192,8 +231,11 @@
     }
     ,
     {
-                            
+            
+        "adresa":"Francuska 13/1",     
+        "tip":"pizza",           
         "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "OpisENG":"Picerija Bergamo sa vama vec 10 godina",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"stari-grad-district.html",
@@ -207,7 +249,10 @@
     ,
     {
         
+        "adresa":"Savski Venac 5/2",
+        "tip":"pizza",
         "Opis":"Big Pizza, sve sto pozelite",
+        "OpisENG":"Big Pizza, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"stari-grad-district.html",
@@ -223,7 +268,10 @@
     
         "vracar":[
     {
+        "adresa":"1300 Kaplara 4/2",
+        "tip":"barbeque",
         "Opis":"Pile prase, restoran uvek sa vama",
+        "OpisENG":"Pile prase, restoran uvek sa vama",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"vracar-district.html",
@@ -236,8 +284,11 @@
     }
     ,
     {
-                            
+             
+        "adresa":"Marijane Gregoran 31/2",        
+        "tip":"pizza",       
         "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "OpisENG":"Picerija Bergamo sa vama vec 10 godina",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"vracar-district.html",
@@ -251,7 +302,10 @@
     ,
     {
         
+        "adresa":"Astronomska 8/2",
+        "tip":"pizza",
         "Opis":"Big Pizza, sve sto pozelite",
+        "OpisENG":"Big Pizza, sve sto pozelite",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"vracar-district.html",
