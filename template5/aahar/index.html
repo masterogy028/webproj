@@ -25,36 +25,8 @@
      function onLoad(){
         $(document).ready(function(){
             
-                    localStorage.clear();
-                
-                    var s='poncho_opis';
-                    if(localStorage.getItem('language')=='serbian')
-                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3].Opis);
-                    else
-                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3].OpisENG);
-                    var s='pile_prase_opis';
-                    if(localStorage.getItem('language')=='serbian')
-                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[0].Opis);
-                    else
-                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[0].OpisENG);
-                    var s='napoli_opis';
-                    if(localStorage.getItem('language')=='serbian')
-                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].Opis);
-                    else
-                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].OpisENG);
-                    $('.pile-prase').click(function(){
-                        localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).dorcol[0]));
-                        window.open("restoran.html", '_self');
-                    });
-                    $('.poncho').click(function(){
-                        localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3]));
-                        window.open("restoran.html", '_self');
-                    });
-                    $('.napoli').click(function(){
-                        localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1]));
-                        window.open("restoran.html", '_self');
-                    });
-                
+                    //localStorage.clear();
+
             if(localStorage.getItem("loadedJson")!='loaded'){
                 localStorage.setItem('language','english');
                 localStorage.setItem('cart-items-number',0);
@@ -65,6 +37,36 @@
                 alert( localStorage.getItem("mainJson"));
                 });
             }
+            //console.log(localStorage.getItem('mainJson'));
+            
+
+            $('.pile-prase').click(function(){
+                localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).dorcol[0]));
+                window.open("restoran.html", '_self');
+            });
+            $('.poncho').click(function(){
+                localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3]));
+                window.open("restoran.html", '_self');
+            });
+            $('.napoli').click(function(){
+                localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1]));
+                window.open("restoran.html", '_self');
+            });
+            var s='poncho_opis';
+            if(localStorage.getItem('language')=='serbian')
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3].Opis);
+            else
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3].OpisENG);
+            var s='pile_prase_opis';
+            if(localStorage.getItem('language')=='serbian')
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[0].Opis);
+            else
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[0].OpisENG);
+            var s='napoli_opis';
+            if(localStorage.getItem('language')=='serbian')
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].Opis);
+            else
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].OpisENG);
         })
         //alert('p');
         cartSet();
