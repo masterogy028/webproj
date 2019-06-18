@@ -1,100 +1,39 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Checkout ||  Aahar Food Delivery Html5 Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Contact Us ||  Aahar Food Delivery Html5 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/icon.png">
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/icon.png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/plugins.css">
-    <link rel="stylesheet" href="style.css">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
+	<!-- Cusom css -->
    <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Modernizer js -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script>
-            function onLoad(){
-               // alert(localStorage.getItem('cart-items-number'));  
-                    $(document).ready(function(){$("[name*='message']").text('');}); 
-                   var totalPrice=0;
-                   for(var i=8;i>0;i--)
-                   {
-                       if(localStorage.getItem('language')!='serbian'){
-                            $("[name*='start']").text('Izaberite svoju opštinu');
-                            $("[name*='first-name']").attr('placeholder','Ime');
-                            $("[name*='last-name']").attr('placeholder','Prezime');
-                            $("[name*='email']").attr('placeholder','E-mail');
-                            $("[name*='address']").attr('placeholder','Adresa');
-                            $("[name*='apartment']").attr('placeholder','Stan');
-                            $("[name*='town']").attr('placeholder','Grad');
-                            $("[name*='phone']").attr('placeholder','Broj telefona');
-                       }
-
-                       if(localStorage.getItem('cart-items-number')<i){
-                        //  alert(localStorage.getItem('cart-items-number'));
-                       var mys='cartbox__item'+i.toString();
-                       $("[name*="+mys+"]").remove();
-                       }else{
-                       
-                       var mys='cartbox__item'+i.toString()+'price';
-                       
-                       $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
-                        mys='cartbox__item'+i.toString()+'name';
-                       
-                       $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
-                       totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
-                       }
-                       
-                   }
-                   $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
-                   localStorage.setItem('total-price',totalPrice);
-                   $("[name*='food-button']").click(function(){
-
-                   });
-            }
-            function chekckinfo(){
-                if(localStorage.getItem('cart-items-number')==0){
-                    if(localStorage.getItem('language')=='serbian')
-                    $("[name*='message']").text('nemate narudžbine');
-                    else
-                    $("[name*='message']").text('nothing to order');
-                    return;
-                }
-               
-                //console.log($("[name*='first-name']").val());
-                if(
-                    ($("[name*='first-name']").val()=="")||
-                    ($("[name*='last-name']").val()=="")||
-                    ($("[name*='email']").val()=="")||
-                    ($("[name*='phone']").val()=="")||
-                    ($("[name*='address']").val()=="")
-                )
-                {
-                    if(localStorage.getItem('language')=='english'){
-                        $("[name*='message']").text('bad input');
-                    }
-                    else
-                        $("[name*='message']").text('loš unos podataka');
-                    return;
-                }
-                $("[name*='message']").text('');
-                
-            }
-        </script>
+	<!-- Modernizer js -->
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
-<body onload="onLoad()">
+<body>
+	<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
 
-    <div class="wrapper" id="wrapper">
-        <!-- Start Header Area -->
+	<!-- Add your site or application content here -->
+	
+	<!-- <div class="fakeloader"></div> -->
+
+	<!-- Main wrapper -->
+	<div class="wrapper" id="wrapper">
+		<!-- Start Header Area -->
         <header class="htc__header bg--white">
             <!-- Start Mainmenu Area -->
             <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
@@ -163,17 +102,17 @@
         </header>
         <!-- End Header Area -->
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area bg-image--18">
+        <div class="ht__bradcaump__area bg-image--24">
             <div class="ht__bradcaump__wrap d-flex align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="bradcaump__inner text-center">
-                                <h2 class="bradcaump-title">Checkout</h2>
+                            <div class="bradcaump__inner text-center brad__white">
+                                <h2 class="bradcaump-title">contact us</h2>
                                 <nav class="bradcaump-inner">
                                   <a class="breadcrumb-item" href="index.html">Home</a>
                                   <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
-                                  <span class="breadcrumb-item active">Checkout</span>
+                                  <span class="breadcrumb-item active">contact us</span>
                                 </nav>
                             </div>
                         </div>
@@ -182,186 +121,95 @@
             </div>
         </div>
         <!-- End Bradcaump area --> 
-         <section class="htc__checkout bg--white section-padding--lg">
-            <!-- Checkout Section Start-->
-            <div class="checkout-section">
-                <div class="container">
-                    <div class="row">
-                       
-                        <div class="col-lg-6 col-12 mb-30">
-                               
-                                <!-- Checkout Accordion Start -->
-                                <div id="checkout-accordion">
-                                   
-                                    <!-- Checkout Method -->
-                                    
-                                    
-                                    <!-- Billing Method -->
-                                    <div class="single-accordion">
-                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#billing-method">1. shipping informatioon</a>
-                                        <div id="billing-method" class="collapse">
-
-                                            <div class="accordion-body billing-method fix">
-
-                                                <form action="#" class="billing-form checkout-form">
-                                                    <div class="row">
-                                                        <div class="col-12 mb--20">
-                                                            <select name='district'>
-                                                              <option name='start' value="1">Select your district</option>
-                                                              <option value="2">Vračar</option>
-                                                              <option value="3">Stari grad</option>
-                                                              <option value="4">Zvezdara</option>
-                                                              <option value="5">Dorćol</option>
-                                                              <option value="6">Palilula</option>
-                                                              <option value="7">Voždovac</option>
-                                                              <option value="8">Rakovica</option>
-                                                              <option value="9">Novi Beograd</option>
-                                                            </select>
-                                                        </div>
-                                                        <div  class="col-md-6 col-12 mb--20">                                 
-                                                            <input type="text" name='first-name'  placeholder="First Name">
-                                                        </div>
-                                                        <div  class="col-md-6 col-12 mb--20">                             
-                                                            <input type="text" name='last-name'  placeholder="Last Name">
-                                                        </div>
-                                                        
-                                                        <div  class="col-12 mb--20">
-                                                            <input type="text" name='address' placeholder="Street address" >
-                                                        </div>
-                                                        <div  class="col-12 mb--20">
-                                                            <input type="text" name='apartment' placeholder="Apartment, suite, unit etc. (optional)" >
-                                                        </div>
-                                                        <div  class="col-12 mb--20">
-                                                            <input name='town' placeholder="Town / City" type="text">
-                                                        </div>
-                                                        
-                                                        
-                                                        <div  class="col-md-6 col-12">                                 
-                                                            <input name='email' type="email" placeholder="Email Address">
-                                                        </div>
-                                                        <div  class="col-md-6 col-6">                                   
-                                                            <input  type="text" name='phone' placeholder="Phone Number">
-                                                        </div> 
-                                                                                 
-                                                    </div>
-                                                </form>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Shipping Method -->
-                                   
-                                    
-                                    <!-- Payment Method -->
-                                    <div class="single-accordion">
-                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#payment-method">2. Payment method</a>
-                                        <div id="payment-method" class="collapse">
-                                            <div class="accordion-body payment-method fix">
-                                               
-                                                <ul class="payment-method-list">
-                                                    <li class="active">cash</li>
-                                                    <li class="payment-form-toggle">credit card</li>
-                                                </ul>
-                                                
-                                                <form action="#" class="payment-form">
-                                                    <div class="row">
-                                                        
-                                                        <div class="input-box col-12 mb--20">
-                                                            <label>Credit Card Type</label>
-                                                            <select>
-                                                                <option>Please Select</option>
-                                                                <option>Visa</option>
-                                                                <option>Mastercard</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="input-box col-12 mb--20">
-                                                            <label for="card-number">Credit Card Number *</label>
-                                                            <input type="text" id="card-number" />
-                                                        </div>
-                                                        <div class="input-box col-12">
-                                                            <div class="row">
-                                                                <div class="input-box col-12">
-                                                                    <label>Expiration Date</label>
-                                                                </div>
-                                                                <div class="input-box col-md-6 col-12 mb--20">
-                                                                    <select>
-                                                                        <option>Month</option>
-                                                                        <option>Jan</option>
-                                                                        <option>Feb</option>
-                                                                        <option>Mar</option>
-                                                                        <option>Apr</option>
-                                                                        <option>May</option>
-                                                                        <option>Jun</option>
-                                                                        <option>Jul</option>
-                                                                        <option>Aug</option>
-                                                                        <option>Sep</option>
-                                                                        <option>Oct</option>
-                                                                        <option>Nov</option>
-                                                                        <option>Dec</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="input-box col-md-6 col-12 mb--20">
-                                                                    <select>
-                                                                        <option>Year</option>
-                                                                        <option>2015</option>
-                                                                        <option>2016</option>
-                                                                        <option>2017</option>
-                                                                        <option>2018</option>
-                                                                        <option>2019</option>
-                                                                        <option>2020</option>
-                                                                        <option>2021</option>
-                                                                        <option>2022</option>
-                                                                        <option>2023</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-box col-12">
-                                                            <label for="card-Verify">Card Verification Number *</label>
-                                                            <input type="text" id="card-Verify" />
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div><!-- Checkout Accordion Start -->
-                            </div>
-                            
-                            <!-- Order Details -->
-                            <div class="col-lg-6 col-12 mb-30">
-                               
-                                <div class="order-details-wrapper">
-                                    <h2>your order</h2>
-                                    <div class="order-details">
-                                        <form action="#">
-                                            <ul>
-                                                <li><p class="strong">product</p><p class="strong">total</p></li>
-                                                <li name='cartbox__item1'><p name='cartbox__item1name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item2'><p name='cartbox__item2name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item3'><p name='cartbox__item3name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item4'><p name='cartbox__item4name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item5'><p name='cartbox__item5name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item6'><p name='cartbox__item6name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item7'><p name='cartbox__item7name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item8'><p name='cartbox__item8name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li><p   class="strong">order total</p><p name='total-price' class="strong">$190.98</p></li>
-                                                <li><p class="strong"><button onclick="chekckinfo()" name='food-button' class="food__btn">place order</button></p>&nbsp;<p class="strong" name='message' style="color: red;font-size: 1.1rem">Bad input</p></li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        
+        <!-- Start Contact Map -->
+        <div class="contact__map__area">
+            <div class="contact__map__wrapper">
+                <div class="contact__map__left">
+                    <div class="map__thumb">
+                        <img src="images/banner/contact/1.jpg" alt="images">
                     </div>
                 </div>
-            </div><!-- Checkout Section End-->             
-         </section>   
+                <div class="contact__map__right">
+                    <div class="htc__google__map">
+                        <div class="map-contacts">
+                            <div id="googlemap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Contact Map -->
+        <!-- Start Address -->
+        <div class="food__contact">
+            <div class="food__contact__wrapper d-flex flex-wrap flex-lg-nowrap">
+                <!-- Start Single Contact -->
+                <div class="contact">
+                    <div class="ct__icon">
+                        <i class="zmdi zmdi-phone"></i>
+                    </div>
+                    <div class="ct__address">
+                        <p><a href="#">+088 01673-453290</a></p>
+                        <p><a href="#">+088 01773-458290</a></p>
+                    </div>
+                </div>
+                <!-- End Single Contact -->
+                <!-- Start Single Contact -->
+                <div class="contact">
+                    <div class="ct__icon">
+                        <i class="zmdi zmdi-home"></i>
+                    </div>
+                    <div class="ct__address">
+                        <p>Elizabeth Tower. 6th Floor <br> Medtown, New York</p>
+                    </div>
+                </div>
+                <!-- End Single Contact -->
+                <!-- Start Single Contact -->
+                <div class="contact">
+                    <div class="ct__icon">
+                        <i class="zmdi zmdi-email"></i>
+                    </div>
+                    <div class="ct__address">
+                        <p><a href="#">delivery@e-mail.com</a></p>
+                        <p><a href="#">Aahar@e-mail.com</a></p>
+                    </div>
+                </div>
+                <!-- End Single Contact -->
+            </div>
+        </div>
+        <!-- End Address -->
+        <section class="food__contact__form bg--white section-padding--lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="contact__form__wrap">
+                            <h2>Get In Touch With Aahar</h2>
+                            <div class="contact__form__inner">
+                                <form id="contact-form" action="#" method="post">
+                                    <div class="single-contact-form">
+                                        <div class="contact-box name d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
+                                            <input type="text" name="name" placeholder="Your Name">
+                                            <input type="email" name="email" placeholder="E-mail">
+                                            <input type="text" name="phone" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                    <div class="single-contact-form">
+                                        <div class="contact-box message">
+                                            <textarea name="message"  placeholder="Message*"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="contact-btn">
+                                        <button type="submit" class="food__btn">submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="form-output">
+                                <p class="form-messege"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Start Footer Area -->
         <footer class="footer__area footer--1">
             <div class="footer__wrapper bg__cat--1 section-padding--lg">
@@ -640,14 +488,227 @@
                     </div>
                 </div>
             </div>
-        </div><!-- //Cartbox -->  
-    </div><!-- //Main wrapper -->
-
+        </div><!-- //Cartbox -->   
+	</div><!-- //Main wrapper -->
     <!-- JS Files -->
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
+
+    <!-- Google Map js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo"></script>
+    <script>
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 12,
+
+                scrollwheel: false,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(23.7286, 90.3854), // New York
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                 styles: 
+[
+  
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 40
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }
+]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('googlemap');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Let's also add a marker while we're at it
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(23.7286, 90.3854),
+                map: map,
+                title: 'Aahar!',
+                icon: 'images/icon/map-2.png',
+                animation:google.maps.Animation.BOUNCE
+
+            });
+        }
+    </script>
+
+
+
+
     <script src="js/active.js"></script>
 </body>
 </html>

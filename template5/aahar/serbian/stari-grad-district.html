@@ -1,0 +1,606 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>ALA DOSTAVA</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/icon.png">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Cusom css -->
+   <link rel="stylesheet" href="css/custom.css">
+
+	<!-- Modernizer js -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script>
+            function onLoad(){//on load function
+                    $(document).ready(
+                        //localStorage.clear();
+                        function(){
+                        if(localStorage.getItem("loadedJson")!='loaded'){
+                            localStorage.setItem('language','english');
+                            localStorage.setItem('cart-items-number',0);
+                            $.getJSON("js/mainJson.json", function(json) {
+                                console.log(json); // this will show the info it in firebug console
+                            localStorage.setItem("mainJson",JSON.stringify(json));
+                            localStorage.setItem("loadedJson","loaded");
+                            alert( localStorage.getItem("mainJson"));
+                        });
+                    }
+                    setListeners();
+                    setImages();
+                    setDescription();
+                    cartSet();
+                    deleteCart();
+                    }
+                );
+            }
+            function deleteCart(){
+                for(var i=0;i<8;i++){
+                var mystr='cartbox__item'+(i+1)+'trash';
+                $("[name*="+mystr+"]").on('click',function(){
+                    //alert('delete');
+                    i=$(this).attr('name');
+                    var some=i.split('item');
+                    i=parseInt(some[1].charAt(0))-1;
+                    //alert(i);
+                    for(var j=i;j<localStorage.getItem('cart-items-number');j++){
+                        localStorage.setItem('cart-item'+(j),localStorage.getItem('cart-item'+(j+1)));
+                    }
+                    var p=localStorage.getItem('cart-items-number');p--;
+                    localStorage.setItem('cart-items-number',p);
+                    cartSet();
+                })
+                }
+            }
+            function setListeners(){
+                $(".goRestaurant1").click(function(){
+                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).stari_grad[0];
+                //alert(jsonObj.Naziv); 
+                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant2").click(function(){
+                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).stari_grad[1];
+                //alert(jsonObj.Naziv); 
+                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant3").click(function(){
+                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).stari_grad[2];
+                //alert(jsonObj.Naziv); 
+                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant4").click(function(){
+                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).stari_grad[3];
+                //alert(jsonObj.Naziv); 
+                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant5").click(function(){
+                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).stari_grad[4];
+                //alert(jsonObj.Naziv); 
+                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                window.open("restoran.html", '_self');
+                });
+                $(".goRestaurant6").click(function(){
+                var jsonObj=JSON.parse(localStorage.getItem('mainJson')).stari_grad[5];
+                //alert(jsonObj.Naziv); 
+                localStorage.setItem('restoran',JSON.stringify(jsonObj));
+                window.open("restoran.html", '_self');
+                });
+            }
+            function setImages(){
+            //ubaci slike
+                    //alert($(".slika1").attr('src'));
+                    /*  $(".slika1").attr('src',jsonObj.stari_grad[0].slika);
+                    $(".slika2").attr('src',jsonObj.stari_grad[1].slika);
+                    $(".slika3").attr('src',jsonObj.stari_grad[2].slika);
+                    $(".slika4").attr('src',jsonObj.stari_grad[3].slika);
+                    $(".slika5").attr('src',jsonObj.stari_grad[4].slika); */
+                    //ubaci zvezde
+                    //
+            }
+            function setDescription(){
+                for(var i=1;i<3;i++){
+                    var s='opis'+i.toString();
+                    $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).stari_grad[i-1].Opis);
+                    for(var j=1;j<6;j++){
+                        var zrating='.zrating'+i.toString();
+                        var zshade=' .zshade'+j.toString();
+                        if(JSON.parse(localStorage.getItem('mainJson')).stari_grad[i-1].prosekOcena<(j-0.49)){
+                        $(zrating+'>'+zshade).attr('class','rating__opasity');
+                    }
+                    }
+                }
+            }
+            function cartSet(){
+              var totalPrice=0;
+                for(var i=12;i>0;i--)
+                {
+                    if(localStorage.getItem('cart-items-number')<i){
+                    var mys='cartbox__item'+i.toString();
+                    $("[name*="+mys+"]").remove();
+                    }else{
+                    var mys='cartbox__item'+i.toString()+'price';
+                    
+                    $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                    mys='cartbox__item'+i.toString()+'name';
+                    
+                    $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
+                    totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
+                    }
+                }
+            $(".items-number").text(localStorage.getItem('cart-items-number'));
+            $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
+                 localStorage.setItem('total-price',totalPrice);
+     }
+    </script>
+</head>
+<body onload="onLoad()">
+	
+
+    <!-- Main wrapper -->
+    
+	<div class="wrapper" id="wrapper">
+		<!-- Start Header Area -->
+        <header class="htc__header bg--white">
+                <!-- Start Mainmenu Area -->
+                <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="images/logo/foody.png" alt="logo images">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-sm-4 col-md-2 order-3 order-lg-2">
+                                <div class="main__menu__wrap">
+                                    <nav class="main__menu__nav d-none d-lg-block">
+                                        <ul class="mainmenu">
+                                            <li class="drop"><a href="index.html">Home</a></li>
+                                            
+                                            <li class="drop"><a href="#">Restaurants</a>
+                                                <ul class="dropdown__menu">
+                                                    <li><a href="vracar-district.html">Vračar district</a></li>
+                                                    <li><a href="zvezdara-district.html">Zvezdara district</a></li>
+                                                    <li><a href="stari-grad-district.html">Stari grad district</a></li>
+                                                    <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
+                                                    <li><a href="vozdovac-district.html">Voždovac district</a></li>
+                                                    <li><a href="search-restaurants.html">Search restaurants</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <!-- <li class="drop"><a href="blog-mesonry.html">Blog</a>
+                                                <ul class="dropdown__menu">
+                                                    <li><a href="blog-mesonry.html">Blog Mesonry</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li> -->
+                                            <li><a href="about-us.html">About</a></li>
+                                            <!-- <li class="drop"><a href="#">Pages</a>
+                                                <ul class="dropdown__menu">
+                                                    <li><a href="service.html">Service</a></li>
+                                                    <li><a href="cart.html">Cart Page</a></li>
+                                                    <li><a href="checkout.html">Checkout Page</a></li>
+                                                    <li><a href="contact.html">Contact Page</a></li>
+                                                </ul>
+                                            </li> -->
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                                
+                                <div class="header__right d-flex just   ify-content-end">
+                                        <div class="log__in">
+                                                <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                        </div>
+                                        <span style="width: 5px"></span>
+                                        <div class="shopping__cart">
+                                        <div class="log__in">
+                                                <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                        </div>
+                                    </div>
+                                    <div class="shopping__cart">
+                                        <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
+                                        <div class="shop__qun">
+                                            <span class='items-number'>03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu d-block d-lg-none"></div>
+                        <!-- Mobile Menu -->
+                    </div>
+                </div>
+                <!-- End Mainmenu Area -->
+            </header>
+            <!-- End Header Area -->
+        <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area ">
+            <div class="ht__bradcaump__wrap d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="bradcaump__inner text-center">
+                                <h2 class="bradcaump-title">Stari Grad district</h2>
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="index.html">Home</a>
+                                  <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
+                                  <span class="breadcrumb-item active">Stari Grad</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Bradcaump area --> 
+        <!-- Start Menu Grid Area -->
+        <section class="food__menu__grid__area">
+            <div class="container">
+                
+                <div class="row mt--30">
+                    <div class="col-lg-12">
+                        <div class="fd__tab__content tab-content" id="nav-tabContent">
+                            <!-- Start Single Content -->
+                            <div class="food__list__tab__content tab-pane fade show active" id="nav-all" role="tabpanel">
+                                <!-- Start Single Restaurant -->
+                                <div class="single__food__list d-flex wow fadeInUp">
+                                    <div class="food__list__thumb">
+                                        <a href="#" class="goRestaurant1"  >
+                                            <img class="slika1" src="images/slike/bergamo.jpg" alt="list food images">
+                                        </a>
+                                    </div>
+                                    <div class="food__list__inner d-flex align-items-center justify-content-between">
+                                        <div class="food__list__details">
+                                            <h2><a href="#"  class="goRestaurant1">Pile Prase</a></h2>
+                                            <p name="opis1">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <div class="list__btn">
+                                                <a class="food__btn grey--btn theme--hover goRestaurant1" href="#"   >Check Out</a>
+                                            </div>
+                                        </div>
+                                        <div class="food__rating">
+                                            <div class="list__food__prize">
+                                                <span>roštilj</span>
+                                            </div>
+                                            <ul class="zrating1 rating">
+                                                <li class="zshade1"><i class=" zmdi zmdi-star"></i></li>
+                                                <li class="zshade2"><i class=" zmdi zmdi-star"></i></li>
+                                                <li class="zshade3"><i class=" zmdi zmdi-star"></i></li>
+                                                <li class="zshade4"><i class=" zmdi zmdi-star"></i></li>
+                                                <li class="zshade5"><i class="zmdi zmdi-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- End Single Restaurant -->
+                                <!-- Start Single Restaurant -->
+                                <div class="single__food__list d-flex wow fadeInUp">
+                                    <div class="food__list__thumb">
+                                        <a href="#"  class="goRestaurant2">
+                                            <img class="slika2" src="images/slike/big_pizza.jpg" alt="list food images">
+                                        </a>
+                                    </div>
+                                    <div class="food__list__inner d-flex align-items-center justify-content-between">
+                                        <div class="food__list__details">
+                                            <h2><a href="#"  class="goRestaurant2">Pizzeria Bergamo</a></h2>
+                                            <p name="opis2">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <div class="list__btn">
+                                                <a class="food__btn grey--btn theme--hover goRestaurant2" href="#"  >Check Out</a>
+                                            </div>
+                                        </div>
+                                        <div class="food__rating">
+                                            <div class="list__food__prize">
+                                                <span>pizza</span>
+                                            </div>
+                                            <ul class="zrating2 rating">
+                                                <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade2"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade3"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade4"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade5" ><i class="zmdi zmdi-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Restaurant -->
+                                <!-- Start Single Restaurant -->
+                                <div class="single__food__list d-flex wow fadeInUp">
+                                    <div class="food__list__thumb">
+                                        <a href="#"  class="goRestaurant3">
+                                            <img class="slika3" src="images/slike/pink.jpg" alt="list food images">
+                                        </a>
+                                    </div>
+                                    <div class="food__list__inner d-flex align-items-center justify-content-between">
+                                        <div class="food__list__details">
+                                            <h2><a href="#"  class="goRestaurant3">Big Pizza</a></h2>
+                                            <p name="opis3">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <div class="list__btn">
+                                                <a class="food__btn grey--btn theme--hover goRestaurant3" href="#"  >Check Out</a>
+                                            </div>
+                                        </div>
+                                        <div class="food__rating">
+                                            <div class="list__food__prize">
+                                                <span>pizza</span>
+                                            </div>
+                                            <ul class="zrating3 rating">
+                                                <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade2"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade3"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade4"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade5" ><i class="zmdi zmdi-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Restaurant -->
+                                <!-- Start Single Restaurant -->
+                                <div class="single__food__list d-flex wow fadeInUp">
+                                    <div class="food__list__thumb">
+                                        <a href="#"  class="goRestaurant4">
+                                            <img class="slika4" src="images/slike/KFC.jpg" alt="list food images">
+                                        </a>
+                                    </div>
+                                    <div class="food__list__inner d-flex align-items-center justify-content-between">
+                                        <div class="food__list__details">
+                                            <h2><a href="#"  class="goRestaurant4">Walter</a></h2>
+                                            <p name="opis4">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <div class="list__btn">
+                                                <a class="food__btn grey--btn theme--hover goRestaurant4" href="#"  >Check Out</a>
+                                            </div>
+                                        </div>
+                                        <div class="food__rating">
+                                            <div class="list__food__prize">
+                                                <span>roštilj</span>
+                                            </div>
+                                            <ul class="zrating4 rating">
+                                                <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade2"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade3"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade4"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade5"><i class="zmdi zmdi-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- End Single Restaurant -->
+                                <!-- Start Single Restaurant -->
+                                <div class="single__food__list d-flex wow fadeInUp">
+                                    <div class="food__list__thumb">
+                                        <a href="#"  class="goRestaurant5">
+                                            <img class="slika5" src="images/slike/pink.jpg" alt="list food images">
+                                        </a>
+                                    </div>
+                                    <div class="food__list__inner d-flex align-items-center justify-content-between">
+                                        <div class="food__list__details">
+                                            <h2><a href="#"  class="goRestaurant5">KFC</a></h2>
+                                            <p name="opis5">Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+                                            <div class="list__btn">
+                                                <a class="food__btn grey--btn theme--hover goRestaurant5" href="#"  >Check Out</a>
+                                            </div>
+                                        </div>
+                                        <div class="food__rating">
+                                            <div class="list__food__prize">
+                                                <span>piletina</span>
+                                            </div>
+                                            <ul class="zrating5 rating">
+                                                <li class="zshade1"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade2"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade3"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade4"><i class="zmdi zmdi-star"></i></li>
+                                                <li class="zshade5"><i class="zmdi zmdi-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Restaurant -->
+                                
+                            </div>
+                            <!-- End Single Content -->
+                           
+                            </div>
+                            <!-- End Single Content -->
+                            
+                           </div>
+                    </div>
+                </div>
+                
+            
+        </section>
+        <!-- End Menu Grid Area -->
+        <footer class="footer__area footer--1">
+           
+            <div class="copyright bg--theme">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="copyright__inner">
+                                <div class="cpy__right--left">
+                                    <p>@Copyright 2019, Ognjen Bogićević, Aleksandar Pantić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Area -->
+        
+        <!-- Cartbox -->
+        <div class="cartbox-wrap">
+                <div class="cartbox text-right">
+                    <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
+                    <div class="cartbox__inner text-left">
+                        <div class="cartbox__items">
+                            <!-- Cartbox Single Item -->
+                            <div name="cartbox__item1" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item1img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item1name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item1price" class="price">$15</span>
+                                </div>
+                                <button  class="cartbox__item__remove">
+                                    <i name="cartbox__item1trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                           <!-- Cartbox Single Item -->
+                           <div name="cartbox__item2" class="cartbox__item">
+                                <div class="cartbox__item__thumb">
+                                    <a href="product-details.html">
+                                        <img name="cartbox__item2img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                    </a>
+                                </div>
+                                <div class="cartbox__item__content">
+                                    <h5><a href="product-details.html" class="product-name" name="cartbox__item2name">Vanila Muffin</a></h5>
+                                    
+                                    <span name="cartbox__item2price" class="price">$15</span>
+                                </div>
+                                <button class="cartbox__item__remove">
+                                    <i name="cartbox__item2trash" class="fa fa-trash"></i>
+                                </button>
+                            </div><!-- //Cartbox Single Item -->
+                            <!-- Cartbox Single Item -->
+                            <div name="cartbox__item3" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item3img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item3name">Vanila Muffin</a></h5>
+                                        
+                                        <span name="cartbox__item3price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item3trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item4" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item4img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item4name">Vanila Muffin</a></h5>
+                                       
+                                        <span name="cartbox__item4price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item4trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item5" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item5img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item5name">Vanila Muffin</a></h5>
+                                        
+                                        <span name="cartbox__item5price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item5trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item6" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item6img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item6name">Vanila Muffin</a></h5>
+                                    
+                                        <span name="cartbox__item6price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item6trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item7" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item7img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item7name">Vanila Muffin</a></h5>
+                                      
+                                        <span name="cartbox__item7price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item7trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                                <!-- Cartbox Single Item -->
+                            <div name="cartbox__item8" class="cartbox__item">
+                                    <div class="cartbox__item__thumb">
+                                        <a href="product-details.html">
+                                            <img name="cartbox__item8img" src="images/blog/sm-img/1.jpg" alt="small thumbnail">
+                                        </a>
+                                    </div>
+                                    <div class="cartbox__item__content">
+                                        <h5><a href="product-details.html" class="product-name" name="cartbox__item8name">Vanila Muffin</a></h5>
+                                    
+                                        <span name="cartbox__item8price" class="price">$15</span>
+                                    </div>
+                                    <button class="cartbox__item__remove">
+                                        <i name="cartbox__item8trash" class="fa fa-trash"></i>
+                                    </button>
+                                </div><!-- //Cartbox Single Item -->
+                        </div>
+                        <div class="cartbox__total">
+                            <ul>
+                                
+                                <li class="grandtotal">Total<span name='total-price' class="price">$75</span></li>
+                            </ul>
+                        </div>
+                        <div class="cartbox__buttons">
+                           
+                            <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- //Cartbox -->   
+	</div><!-- //Main wrapper -->
+
+	<!-- JS Files -->
+	<script src="js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/active.js"></script>
+</body>
+</html>

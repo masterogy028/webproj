@@ -1,100 +1,39 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Checkout ||  Aahar Food Delivery Html5 Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Cart ||  Aahar Food Delivery Html5 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/icon.png">
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/icon.png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/plugins.css">
-    <link rel="stylesheet" href="style.css">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
+	<!-- Cusom css -->
    <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Modernizer js -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script>
-            function onLoad(){
-               // alert(localStorage.getItem('cart-items-number'));  
-                    $(document).ready(function(){$("[name*='message']").text('');}); 
-                   var totalPrice=0;
-                   for(var i=8;i>0;i--)
-                   {
-                       if(localStorage.getItem('language')!='serbian'){
-                            $("[name*='start']").text('Izaberite svoju opštinu');
-                            $("[name*='first-name']").attr('placeholder','Ime');
-                            $("[name*='last-name']").attr('placeholder','Prezime');
-                            $("[name*='email']").attr('placeholder','E-mail');
-                            $("[name*='address']").attr('placeholder','Adresa');
-                            $("[name*='apartment']").attr('placeholder','Stan');
-                            $("[name*='town']").attr('placeholder','Grad');
-                            $("[name*='phone']").attr('placeholder','Broj telefona');
-                       }
-
-                       if(localStorage.getItem('cart-items-number')<i){
-                        //  alert(localStorage.getItem('cart-items-number'));
-                       var mys='cartbox__item'+i.toString();
-                       $("[name*="+mys+"]").remove();
-                       }else{
-                       
-                       var mys='cartbox__item'+i.toString()+'price';
-                       
-                       $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
-                        mys='cartbox__item'+i.toString()+'name';
-                       
-                       $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
-                       totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
-                       }
-                       
-                   }
-                   $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
-                   localStorage.setItem('total-price',totalPrice);
-                   $("[name*='food-button']").click(function(){
-
-                   });
-            }
-            function chekckinfo(){
-                if(localStorage.getItem('cart-items-number')==0){
-                    if(localStorage.getItem('language')=='serbian')
-                    $("[name*='message']").text('nemate narudžbine');
-                    else
-                    $("[name*='message']").text('nothing to order');
-                    return;
-                }
-               
-                //console.log($("[name*='first-name']").val());
-                if(
-                    ($("[name*='first-name']").val()=="")||
-                    ($("[name*='last-name']").val()=="")||
-                    ($("[name*='email']").val()=="")||
-                    ($("[name*='phone']").val()=="")||
-                    ($("[name*='address']").val()=="")
-                )
-                {
-                    if(localStorage.getItem('language')=='english'){
-                        $("[name*='message']").text('bad input');
-                    }
-                    else
-                        $("[name*='message']").text('loš unos podataka');
-                    return;
-                }
-                $("[name*='message']").text('');
-                
-            }
-        </script>
+	<!-- Modernizer js -->
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
-<body onload="onLoad()">
+<body>
+	<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
 
-    <div class="wrapper" id="wrapper">
-        <!-- Start Header Area -->
+	<!-- Add your site or application content here -->
+	
+	<!-- <div class="fakeloader"></div> -->
+
+	<!-- Main wrapper -->
+	<div class="wrapper" id="wrapper">
+		<!-- Start Header Area -->
         <header class="htc__header bg--white">
             <!-- Start Mainmenu Area -->
             <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
@@ -169,11 +108,11 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="bradcaump__inner text-center">
-                                <h2 class="bradcaump-title">Checkout</h2>
+                                <h2 class="bradcaump-title">cart page</h2>
                                 <nav class="bradcaump-inner">
                                   <a class="breadcrumb-item" href="index.html">Home</a>
                                   <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
-                                  <span class="breadcrumb-item active">Checkout</span>
+                                  <span class="breadcrumb-item active">cart page</span>
                                 </nav>
                             </div>
                         </div>
@@ -182,186 +121,78 @@
             </div>
         </div>
         <!-- End Bradcaump area --> 
-         <section class="htc__checkout bg--white section-padding--lg">
-            <!-- Checkout Section Start-->
-            <div class="checkout-section">
-                <div class="container">
-                    <div class="row">
-                       
-                        <div class="col-lg-6 col-12 mb-30">
-                               
-                                <!-- Checkout Accordion Start -->
-                                <div id="checkout-accordion">
-                                   
-                                    <!-- Checkout Method -->
-                                    
-                                    
-                                    <!-- Billing Method -->
-                                    <div class="single-accordion">
-                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#billing-method">1. shipping informatioon</a>
-                                        <div id="billing-method" class="collapse">
-
-                                            <div class="accordion-body billing-method fix">
-
-                                                <form action="#" class="billing-form checkout-form">
-                                                    <div class="row">
-                                                        <div class="col-12 mb--20">
-                                                            <select name='district'>
-                                                              <option name='start' value="1">Select your district</option>
-                                                              <option value="2">Vračar</option>
-                                                              <option value="3">Stari grad</option>
-                                                              <option value="4">Zvezdara</option>
-                                                              <option value="5">Dorćol</option>
-                                                              <option value="6">Palilula</option>
-                                                              <option value="7">Voždovac</option>
-                                                              <option value="8">Rakovica</option>
-                                                              <option value="9">Novi Beograd</option>
-                                                            </select>
-                                                        </div>
-                                                        <div  class="col-md-6 col-12 mb--20">                                 
-                                                            <input type="text" name='first-name'  placeholder="First Name">
-                                                        </div>
-                                                        <div  class="col-md-6 col-12 mb--20">                             
-                                                            <input type="text" name='last-name'  placeholder="Last Name">
-                                                        </div>
-                                                        
-                                                        <div  class="col-12 mb--20">
-                                                            <input type="text" name='address' placeholder="Street address" >
-                                                        </div>
-                                                        <div  class="col-12 mb--20">
-                                                            <input type="text" name='apartment' placeholder="Apartment, suite, unit etc. (optional)" >
-                                                        </div>
-                                                        <div  class="col-12 mb--20">
-                                                            <input name='town' placeholder="Town / City" type="text">
-                                                        </div>
-                                                        
-                                                        
-                                                        <div  class="col-md-6 col-12">                                 
-                                                            <input name='email' type="email" placeholder="Email Address">
-                                                        </div>
-                                                        <div  class="col-md-6 col-6">                                   
-                                                            <input  type="text" name='phone' placeholder="Phone Number">
-                                                        </div> 
-                                                                                 
-                                                    </div>
-                                                </form>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Shipping Method -->
-                                   
-                                    
-                                    <!-- Payment Method -->
-                                    <div class="single-accordion">
-                                        <a class="accordion-head collapsed" data-toggle="collapse" data-parent="#checkout-accordion" href="#payment-method">2. Payment method</a>
-                                        <div id="payment-method" class="collapse">
-                                            <div class="accordion-body payment-method fix">
-                                               
-                                                <ul class="payment-method-list">
-                                                    <li class="active">cash</li>
-                                                    <li class="payment-form-toggle">credit card</li>
-                                                </ul>
-                                                
-                                                <form action="#" class="payment-form">
-                                                    <div class="row">
-                                                        
-                                                        <div class="input-box col-12 mb--20">
-                                                            <label>Credit Card Type</label>
-                                                            <select>
-                                                                <option>Please Select</option>
-                                                                <option>Visa</option>
-                                                                <option>Mastercard</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="input-box col-12 mb--20">
-                                                            <label for="card-number">Credit Card Number *</label>
-                                                            <input type="text" id="card-number" />
-                                                        </div>
-                                                        <div class="input-box col-12">
-                                                            <div class="row">
-                                                                <div class="input-box col-12">
-                                                                    <label>Expiration Date</label>
-                                                                </div>
-                                                                <div class="input-box col-md-6 col-12 mb--20">
-                                                                    <select>
-                                                                        <option>Month</option>
-                                                                        <option>Jan</option>
-                                                                        <option>Feb</option>
-                                                                        <option>Mar</option>
-                                                                        <option>Apr</option>
-                                                                        <option>May</option>
-                                                                        <option>Jun</option>
-                                                                        <option>Jul</option>
-                                                                        <option>Aug</option>
-                                                                        <option>Sep</option>
-                                                                        <option>Oct</option>
-                                                                        <option>Nov</option>
-                                                                        <option>Dec</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="input-box col-md-6 col-12 mb--20">
-                                                                    <select>
-                                                                        <option>Year</option>
-                                                                        <option>2015</option>
-                                                                        <option>2016</option>
-                                                                        <option>2017</option>
-                                                                        <option>2018</option>
-                                                                        <option>2019</option>
-                                                                        <option>2020</option>
-                                                                        <option>2021</option>
-                                                                        <option>2022</option>
-                                                                        <option>2023</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-box col-12">
-                                                            <label for="card-Verify">Card Verification Number *</label>
-                                                            <input type="text" id="card-Verify" />
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div><!-- Checkout Accordion Start -->
+        <!-- cart-main-area start -->
+        <div class="cart-main-area section-padding--lg bg--white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 ol-lg-12">
+                        <form action="#">               
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr class="title-top">
+                                            <th class="product-thumbnail">Image</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+                                            <th class="product-remove">Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="product-thumbnail"><a href="#"><img src="images/cart/1.jpg" alt="product img" /></a></td>
+                                            <td class="product-name"><a href="#">Standered post formet</a></td>
+                                            <td class="product-price"><span class="amount">£165.00</span></td>
+                                            <td class="product-quantity"><input type="number" value="1" /></td>
+                                            <td class="product-subtotal">£165.00</td>
+                                            <td class="product-remove"><a href="#">X</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-thumbnail"><a href="#"><img src="images/cart/2.jpg" alt="product img" /></a></td>
+                                            <td class="product-name"><a href="#">Standered post formet</a></td>
+                                            <td class="product-price"><span class="amount">£50.00</span></td>
+                                            <td class="product-quantity"><input type="number" value="1" /></td>
+                                            <td class="product-subtotal">£50.00</td>
+                                            <td class="product-remove"><a href="#">X</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            
-                            <!-- Order Details -->
-                            <div class="col-lg-6 col-12 mb-30">
-                               
-                                <div class="order-details-wrapper">
-                                    <h2>your order</h2>
-                                    <div class="order-details">
-                                        <form action="#">
-                                            <ul>
-                                                <li><p class="strong">product</p><p class="strong">total</p></li>
-                                                <li name='cartbox__item1'><p name='cartbox__item1name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item2'><p name='cartbox__item2name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item3'><p name='cartbox__item3name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item4'><p name='cartbox__item4name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item5'><p name='cartbox__item5name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item6'><p name='cartbox__item6name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li name='cartbox__item7'><p name='cartbox__item7name'></p><p name='cartbox__item1price'>$104.99</p></li>
-                                                <li name='cartbox__item8'><p name='cartbox__item8name'></p><p name='cartbox__item1price'>$85.99</p></li>
-                                                <li><p   class="strong">order total</p><p name='total-price' class="strong">$190.98</p></li>
-                                                <li><p class="strong"><button onclick="chekckinfo()" name='food-button' class="food__btn">place order</button></p>&nbsp;<p class="strong" name='message' style="color: red;font-size: 1.1rem">Bad input</p></li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        
+                        </form> 
+                        <div class="cartbox__btn">
+                            <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
+                                <li><a href="#">Coupon Code</a></li>
+                                <li><a href="#">Apply Code</a></li>
+                                <li><a href="#">Update Cart</a></li>
+                                <li><a href="#">Check Out</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div><!-- Checkout Section End-->             
-         </section>   
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-6">
+                        <div class="cartbox__total__area">
+                            <div class="cartbox-total d-flex justify-content-between">
+                                <ul class="cart__total__list">
+                                    <li>Cart total</li>
+                                    <li>Sub Total</li>
+                                </ul>
+                                <ul class="cart__total__tk">
+                                    <li>$70</li>
+                                    <li>$70</li>
+                                </ul>
+                            </div>
+                            <div class="cart__total__amount">
+                                <span>Grand Total</span>
+                                <span>$140</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <!-- cart-main-area end -->
         <!-- Start Footer Area -->
         <footer class="footer__area footer--1">
             <div class="footer__wrapper bg__cat--1 section-padding--lg">
@@ -640,14 +471,14 @@
                     </div>
                 </div>
             </div>
-        </div><!-- //Cartbox -->  
-    </div><!-- //Main wrapper -->
+        </div><!-- //Cartbox -->   
+	</div><!-- //Main wrapper -->
 
-    <!-- JS Files -->
-    <script src="js/vendor/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/active.js"></script>
+	<!-- JS Files -->
+	<script src="js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/active.js"></script>
 </body>
 </html>
