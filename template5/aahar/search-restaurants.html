@@ -31,7 +31,7 @@
                             localStorage.setItem('language','english');
                             localStorage.setItem('cart-items-number',0);
                             $.getJSON("js/mainJson.json", function(json) {
-                                console.log(json); // this will show the info it in firebug console
+                                //console.log(json); // this will show the info it in firebug console
                             localStorage.setItem("mainJson",JSON.stringify(json));
                             localStorage.setItem("loadedJson","loaded");
                             alert( localStorage.getItem("mainJson"));
@@ -73,6 +73,7 @@
             function setRestaurantStuff(){
                 
                 if(sortFilterRestaurants.length==0){sortFilterRestaurants=allRestaurants}
+                //console.log('broj restorana : '+ sortFilterRestaurants.length);
                 for(var i=1;i<11;i++){
                     var s='single-restaurant'+i.toString();
                         
@@ -80,7 +81,7 @@
                         var s='single-restaurant'+i.toString();
                         $("[name*="+s+"]").hide();
                         //alert('hide '+s);
-                        console.log('hide '+s);
+                        //console.log('hide '+s);
                         continue;
                     }else{
                         var s='single-restaurant'+i.toString();
@@ -97,7 +98,12 @@
                         var zrating='.zrating'+i.toString();
                         var zshade=' .zshade'+j.toString();
                         if(sortFilterRestaurants[i-1].prosekOcena<(j-0.49)){
-                        $(zrating+'>'+zshade).attr('class','rating__opasity');}   
+                            $(zrating+'>'+zshade).addClass('rating__opasity');
+                               
+                        }else{
+                            $(zrating+'>'+zshade).removeClass('rating__opasity'); 
+                            //console.log('remove class '+zrating+'>'+zshade);
+                        }   
                     }
                     var s='adresa'+i.toString();
                     $("[name*="+s+"]").text(sortFilterRestaurants[i-1].adresa);
@@ -274,7 +280,7 @@
                         var zrating='.zrating'+i.toString();
                         var zshade=' .zshade'+j.toString();
                         if(JSON.parse(localStorage.getItem('mainJson')).dorcol[i-1].prosekOcena<(j-0.49)){
-                        $(zrating+'>'+zshade).attr('class','rating__opasity');
+                        $(zrating+'>'+zshade).addClass('rating__opasity');
                     }
                     }
                 }
