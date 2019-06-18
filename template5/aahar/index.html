@@ -69,6 +69,7 @@
             $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].OpisENG);
         })
         //alert('p');
+        toSerbian();
         cartSet();
         deleteCart();
      }
@@ -111,6 +112,10 @@
             $(".items-number").text(localStorage.getItem('cart-items-number'));
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
+     }
+     function toSerbian(){
+         //alert('to serbian');
+         $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/index.html','_self');});
      }
  </script>
 </head>
@@ -168,7 +173,7 @@
                                     <span style="width: 5px"></span>
                                     <div class="shopping__cart">
                                     <div class="log__in">
-                                            <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                            <a  class="accountbox-trigger" href="#"><img class='serbianlang' style="height: 17px" src="images/slike/serbia.png"></a>
                                     </div>
                                 </div>
                                 <div class="shopping__cart">

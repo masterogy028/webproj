@@ -45,7 +45,7 @@
             //alert(str.proizvodi.length);
             var x=parseInt(str.proizvodi.length/3)+parseInt(1);
             var y=4-x;
-            
+            toSerbian();
             if(y==1){
                 $(".foodrow4").remove();
                 if(parseInt(str.proizvodi.length%3)==0){
@@ -204,6 +204,10 @@
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
+     function toSerbian(){
+         //alert('to serbian');
+         $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/restoran.html','_self');});
+     }
     </script>
 </head>
 <body onload="onLoad()">
@@ -260,7 +264,7 @@
                                         <span style="width: 5px"></span>
                                         <div class="shopping__cart">
                                         <div class="log__in">
-                                                <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                                <a  class="accountbox-trigger" href="#"><img class='serbianlang' style="height: 17px" src="images/slike/serbia.png"></a>
                                         </div>
                                     </div>
                                     <div class="shopping__cart">
