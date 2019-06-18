@@ -735,13 +735,13 @@ a#scrollUp {
   background-position: center center; }
 
 .bg-image--20 {
-  background-image: url(images/bg/20.jpg);
-  background-repeat: no-repeat;
+/*   background-image: url(images/bg/20.jpg);
+ */  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
 
 .bg-image--21 {
-  background-image: url(images/bg/21.jpg);
+  /* background-image: url(images/bg/21.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }

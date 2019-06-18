@@ -45,9 +45,14 @@
             //alert(str.proizvodi.length);
             var x=parseInt(str.proizvodi.length/3)+parseInt(1);
             var y=4-x;
-            
+            toSerbian();
             if(y==1){
                 $(".foodrow4").remove();
+                if(parseInt(str.proizvodi.length%3)==0){
+                    $(".foodrow3 > .foodcol3").remove();
+                    $(".foodrow3 > .foodcol2").remove();
+                    $(".foodrow3 > .foodcol1").remove();
+                }
                 if(parseInt(str.proizvodi.length%3)==1){
                     $(".foodrow3 > .foodcol3").remove();
                     $(".foodrow3 > .foodcol2").remove();
@@ -60,6 +65,11 @@
                 //alert(y);
                 $(".foodrow4").remove();
                 $(".foodrow3").remove();
+                if(parseInt(str.proizvodi.length%3)==0){
+                    $(".foodrow2 > .foodcol3").remove();
+                    $(".foodrow2 > .foodcol2").remove();
+                    $(".foodrow2 > .foodcol1").remove();
+                }
                 if(parseInt(str.proizvodi.length%3)==1){
                     $(".foodrow2 > .foodcol3").remove();
                     $(".foodrow2 > .foodcol2").remove();
@@ -72,6 +82,11 @@
                 $(".foodrow2").remove();
                 $(".foodrow3").remove();
                 $(".foodrow4").remove();
+                if(parseInt(str.proizvodi.length%3)==0){
+                    $(".foodrow1 > .foodcol3").remove();
+                    $(".foodrow1 > .foodcol2").remove();
+                    $(".foodrow1 > .foodcol1").remove();
+                }
                 if(parseInt(str.proizvodi.length%3)==1){
                     $(".foodrow1 > .foodcol3").remove();
                     $(".foodrow1 > .foodcol2").remove();
@@ -86,8 +101,11 @@
                  
                  $("#"+(i+1)).text(str.proizvodi[i].naziv);
                  $("#"+(i+1)+"prc").text(str.proizvodi[i].cena+"rsd");
-                 //$("#"+(i+1)+"img").attr('src',str.proizvodi[i].slika);
+                 $("#"+(i+1)+"img").attr('src',str.proizvodi[i].slika);
+                //alert(str.proizvodi[0].slika.toString());
             }
+          
+
             ////////////////
             cartSet();
             //if(str.proizvodi.length){}
@@ -186,6 +204,10 @@
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
+     function toSerbian(){
+         //alert('to serbian');
+         $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/restoran.html','_self');});
+     }
     </script>
 </head>
 <body onload="onLoad()">
@@ -228,26 +250,9 @@
                                                     <li><a href="search-restaurants.html">Search restaurants</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <!-- <li class="drop"><a href="blog-mesonry.html">Blog</a>
-                                                <ul class="dropdown__menu">
-                                                    <li><a href="blog-mesonry.html">Blog Mesonry</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li> -->
                                             <li><a href="about-us.html">About</a></li>
-                                            <!-- <li class="drop"><a href="#">Pages</a>
-                                                <ul class="dropdown__menu">
-                                                    <li><a href="service.html">Service</a></li>
-                                                    <li><a href="cart.html">Cart Page</a></li>
-                                                    <li><a href="checkout.html">Checkout Page</a></li>
-                                                    <li><a href="contact.html">Contact Page</a></li>
-                                                </ul>
-                                            </li> -->
-                                            <li><a href="contact.html">Contact</a></li>
                                         </ul>
-                                    </nav>
-                                    
+                                    </nav>                               
                                 </div>
                             </div>
                             <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
@@ -259,7 +264,7 @@
                                         <span style="width: 5px"></span>
                                         <div class="shopping__cart">
                                         <div class="log__in">
-                                                <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                                <a  class="accountbox-trigger" href="#"><img class='serbianlang' style="height: 17px" src="images/slike/serbia.png"></a>
                                         </div>
                                     </div>
                                     <div class="shopping__cart">
