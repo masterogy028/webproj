@@ -41,6 +41,7 @@
                     setDescription();
                     cartSet();
                     deleteCart();
+                    toSerbian();
                     }
                 );
             }
@@ -150,6 +151,10 @@
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
+     function toSerbian(){
+         //alert('to serbian');
+         $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/vozdovac-district.html','_self');});
+     }
     </script>
 </head>
 <body onload="onLoad()">
@@ -160,66 +165,66 @@
 	<div class="wrapper" id="wrapper">
 		<!-- Start Header Area -->
         <header class="htc__header bg--white">
-            <!-- Start Mainmenu Area -->
-            <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="images/logo/foody.png" alt="logo images">
-                                </a>
+                <!-- Start Mainmenu Area -->
+                <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="images/logo/foody.png" alt="logo images">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-9 col-sm-4 col-md-2 order-3 order-lg-2">
-                            <div class="main__menu__wrap">
-                                <nav class="main__menu__nav d-none d-lg-block">
-                                    <ul class="mainmenu">
-                                        <li class="drop"><a href="index.html">Home</a></li>
-                                        
-                                        <li class="drop"><a href="#">Restaurants</a>
-                                            <ul class="dropdown__menu">
-                                                <li><a href="vracar-district.html">Vračar district</a></li>
-                                                <li><a href="zvezdara-district.html">Zvezdara district</a></li>
-                                                <li><a href="stari-grad-district.html">Stari grad district</a></li>
-                                                <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
-                                                <li><a href="vozdovac-district.html">Voždovac district</a></li>
-                                                <li><a href="search-restaurants.html">Search restaurants</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about-us.html">About</a></li>
-                                    </ul>
-                                </nav>                               
+                            <div class="col-lg-9 col-sm-4 col-md-2 order-3 order-lg-2">
+                                <div class="main__menu__wrap">
+                                    <nav class="main__menu__nav d-none d-lg-block">
+                                        <ul class="mainmenu">
+                                            <li class="drop"><a href="index.html">Home</a></li>
+                                            
+                                            <li class="drop"><a href="#">Restaurants</a>
+                                                <ul class="dropdown__menu">
+                                                    <li><a href="vracar-district.html">Vračar district</a></li>
+                                                    <li><a href="zvezdara-district.html">Zvezdara district</a></li>
+                                                    <li><a href="stari-grad-district.html">Stari grad district</a></li>
+                                                    <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
+                                                    <li><a href="vozdovac-district.html">Voždovac district</a></li>
+                                                    <li><a href="search-restaurants.html">Search restaurants</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="about-us.html">About</a></li>
+                                        </ul>
+                                    </nav>                               
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
-                            
-                            <div class="header__right d-flex just   ify-content-end">
-                                    <div class="log__in">
-                                            <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                            <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                                
+                                <div class="header__right d-flex just   ify-content-end">
+                                        <div class="log__in">
+                                                <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                        </div>
+                                        <span style="width: 5px"></span>
+                                        <div class="shopping__cart">
+                                        <div class="log__in">
+                                                <a  class="accountbox-trigger" href="#"><img class='serbianlang' style="height: 17px" src="images/slike/serbia.png"></a>
+                                        </div>
                                     </div>
-                                    <span style="width: 5px"></span>
                                     <div class="shopping__cart">
-                                    <div class="log__in">
-                                            <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
-                                    </div>
-                                </div>
-                                <div class="shopping__cart">
-                                    <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
-                                    <div class="shop__qun">
-                                        <span class='items-number'>03</span>
+                                        <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
+                                        <div class="shop__qun">
+                                            <span class='items-number'>03</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu d-block d-lg-none"></div>
+                        <!-- Mobile Menu -->
                     </div>
-                    <!-- Mobile Menu -->
-                    <div class="mobile-menu d-block d-lg-none"></div>
-                    <!-- Mobile Menu -->
                 </div>
-            </div>
-            <!-- End Mainmenu Area -->
-        </header>
+                <!-- End Mainmenu Area -->
+            </header>
         <!-- End Header Area -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area ">

@@ -40,6 +40,7 @@
                     //alert('p');
                     cartSet();
                     deleteCart();
+                    toSerbian();
                  }
                  function deleteCart(){
                     for(var i=0;i<8;i++){
@@ -81,6 +82,10 @@
                         $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                              localStorage.setItem('total-price',totalPrice);
                  }
+                 function toSerbian(){
+                    //alert('to serbian');
+                    $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/about-us.html','_self');});
+                }
              </script>
             </head>
 <body onload="onLoad()">
@@ -137,7 +142,7 @@
                                         <span style="width: 5px"></span>
                                         <div class="shopping__cart">
                                         <div class="log__in">
-                                                <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                                <a  class="accountbox-trigger" href="#"><img class='serbianlang' style="height: 17px" src="images/slike/serbia.png"></a>
                                         </div>
                                     </div>
                                     <div class="shopping__cart">
