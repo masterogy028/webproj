@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Aahar || Food Delivery Html5 Template</title>
+	<title>Ala dostava || Početna</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -69,7 +69,7 @@
             $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].OpisENG);
         })
         //alert('p');
-        toSerbian();
+        toEnglish();
         cartSet();
         deleteCart();
      }
@@ -113,9 +113,9 @@
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
-     function toSerbian(){
+     function toEnglish(){
          //alert('to serbian');
-         $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/index.html','_self');});
+         $(".englishlang").click(function(){localStorage.setItem('language','english'); window.open('../index.html','_self');});
      }
  </script>
 </head>
@@ -147,19 +147,19 @@
                             <div class="main__menu__wrap">
                                 <nav class="main__menu__nav d-none d-lg-block">
                                     <ul class="mainmenu">
-                                        <li class="drop"><a href="index.html">Home</a></li>
+                                        <li class="drop"><a href="index.html">Početna</a></li>
                                         
-                                        <li class="drop"><a href="#">Restaurants</a>
+                                        <li class="drop"><a href="#">Restorani</a>
                                             <ul class="dropdown__menu">
-                                                <li><a href="vracar-district.html">Vračar district</a></li>
-                                                <li><a href="zvezdara-district.html">Zvezdara district</a></li>
-                                                <li><a href="stari-grad-district.html">Stari grad district</a></li>
-                                                <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
-                                                <li><a href="vozdovac-district.html">Voždovac district</a></li>
-                                                <li><a href="search-restaurants.html">Search restaurants</a></li>
+                                                <li><a href="vracar-district.html">Opština Vračar</a></li>
+                                                <li><a href="zvezdara-district.html">Opština Zvezdara</a></li>
+                                                <li><a href="stari-grad-district.html">Opština Stari grad </a></li>
+                                                <li><a href="dorcol-district.html">Opština Dorćol</a></li>                                               
+                                                <li><a href="vozdovac-district.html"> Opština Voždovac</a></li>
+                                                <li><a href="search-restaurants.html"> Pretraži restorane</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="about-us.html">About</a></li>
+                                        <li><a href="about-us.html">O nama</a></li>
                                     </ul>
                                 </nav>                               
                             </div>
@@ -168,7 +168,7 @@
                             
                             <div class="header__right d-flex just   ify-content-end">
                                     <div class="log__in">
-                                            <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                            <a class="accountbox-trigger" href="#"><img class='englishlang'  style="height: 16px" src="images/slike/uk.jpg"></a>
                                     </div>
                                     <span style="width: 5px"></span>
                                     <div class="shopping__cart">
@@ -205,7 +205,7 @@
                                     <div class="slider__inner">
                                         <h2>Ala</h2>
                                         <h2>Dostava</h2>
-                                        <h1>food delivery</h1>
+                                        <h1>dostava hrane</h1>
                                         <!-- <div class="slider__input">
                                             <input type="text" placeholder="Type Place, City.Division">
                                             <input class="res__search" type="text" placeholder="Restaurant">
@@ -228,7 +228,7 @@
                     <div class="col-md-12 col-lg-12">
                         <div class="section__title service__align--left">
                             <p></p>
-                            <h2 class="title__line">Top restaurants</h2>
+                            <h2 class="title__line">Najbolji restorani</h2>
                         </div>
                     </div>
                 </div>
@@ -247,7 +247,7 @@
                                 <!-- <span>1st Feb, 2o17</span> -->
                                 <p name='pile_prase_opis'>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
                                 <div class="blog__btn">
-                                    <a  class="pile-prase food__btn btn--green theme--hover" href="#">Read More</a>
+                                    <a  class="pile-prase food__btn btn--green theme--hover" href="#">Saznaj više</a>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
                                 <!-- <span>1st jan, 2o17</span> -->
                                 <p name='napoli_opis'>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
                                 <div class="blog__btn">
-                                    <a class="napoli food__btn btn--green theme--hover" href="#">Read More</a>
+                                    <a class="napoli food__btn btn--green theme--hover" href="#">Saznaj više</a>
                                 </div>
                             </div>
                         </div>
@@ -285,7 +285,7 @@
                                 <!-- <span>1st Dec, 2o17</span> -->
                                 <p name='poncho_opis'>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
                                 <div class="blog__btn">
-                                    <a class="poncho food__btn btn--green theme--hover" href="#">Read More</a>
+                                    <a class="poncho food__btn btn--green theme--hover" href="#">Saznaj više</a>
                                 </div>
                             </div>
                         </div>

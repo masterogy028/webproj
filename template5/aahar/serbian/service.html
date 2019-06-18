@@ -25,12 +25,12 @@
 <script>
     function onLoad(){
         $(document).ready(function(){
-            toSerbian();
+            
             cartSet();
-        deleteCart();
-        });
-       
-    }
+            deleteCart();
+            });
+            toEnglish();
+        }
     function deleteCart(){
         for(var i=0;i<8;i++){
         var mystr='cartbox__item'+(i+1)+'trash';
@@ -71,15 +71,12 @@
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
-     function toSerbian(){
+     function toEnglish(){
          //alert('to serbian');
-         $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/service.html','_self');});
+         $(".englishlang").click(function(){localStorage.setItem('language','english'); window.open('../service.html','_self');});
      }
 </script>
 <body onload="onLoad">
-	<!--[if lte IE 9]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-	<![endif]-->
 
 	<!-- Add your site or application content here -->
 	
@@ -104,19 +101,19 @@
                                 <div class="main__menu__wrap">
                                     <nav class="main__menu__nav d-none d-lg-block">
                                         <ul class="mainmenu">
-                                            <li class="drop"><a href="index.html">Home</a></li>
+                                            <li class="drop"><a href="index.html">Početna</a></li>
                                             
-                                            <li class="drop"><a href="#">Restaurants</a>
+                                            <li class="drop"><a href="#">Restorani</a>
                                                 <ul class="dropdown__menu">
-                                                    <li><a href="vracar-district.html">Vračar district</a></li>
-                                                    <li><a href="zvezdara-district.html">Zvezdara district</a></li>
-                                                    <li><a href="stari-grad-district.html">Stari grad district</a></li>
-                                                    <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
-                                                    <li><a href="vozdovac-district.html">Voždovac district</a></li>
-                                                    <li><a href="search-restaurants.html">Search restaurants</a></li>
+                                                    <li><a href="vracar-district.html">Opština Vračar</a></li>
+                                                    <li><a href="zvezdara-district.html">Opština Zvezdara</a></li>
+                                                    <li><a href="stari-grad-district.html">Opština Stari grad </a></li>
+                                                    <li><a href="dorcol-district.html">Opština Dorćol</a></li>                                               
+                                                    <li><a href="vozdovac-district.html"> Opština Voždovac</a></li>
+                                                    <li><a href="search-restaurants.html"> Pretraži restorane</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="about-us.html">About</a></li>
+                                            <li><a href="about-us.html">O nama</a></li>
                                         </ul>
                                     </nav>                               
                                 </div>
@@ -125,7 +122,7 @@
                                 
                                 <div class="header__right d-flex just   ify-content-end">
                                         <div class="log__in">
-                                                <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                                <a class="accountbox-trigger" href="#"><img class='englishlang'  style="height: 16px" src="images/slike/uk.jpg"></a>
                                         </div>
                                         <span style="width: 5px"></span>
                                         <div class="shopping__cart">
@@ -149,7 +146,7 @@
                 </div>
                 <!-- End Mainmenu Area -->
             </header>
-        <!-- End Header Area -->
+            <!-- End Header Area -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area bg-image--18">
             <div class="ht__bradcaump__wrap d-flex align-items-center">
@@ -157,13 +154,13 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="bradcaump__inner text-center">
-                                <h2 class="bradcaump-title">Checkout</h2>
+                                <h2 class="bradcaump-title">Dostava</h2>
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="index.html">Home</a>
+                                  <a class="breadcrumb-item" href="index.html">Početna</a>
                                   <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
-                                  <a class="breadcrumb-item" href="checkout.html">Checkout</a>
+                                  <a class="breadcrumb-item" href="checkout.html">Narudžbina</a>
                                   <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
-                                  <span class="breadcrumb-item active">Delivery</span>
+                                  <span class="breadcrumb-item active">Dostava</span>
                                 </nav>
                             </div>
                         </div>
@@ -177,7 +174,7 @@
             <div class="container service__container">
                 <div style="text-align: center; color: rgb(0, 116, 0)" class="row">
                     <h1>
-                        We have accepted your delivery! You will have your food delivered in no time!
+                        Prihvatili smo vašu dostavu! Hrana će vam bidi dostavljena ubrzo!
                     </h1>
                     
                 </div>
@@ -187,7 +184,7 @@
                         <div class="service--2">
                             <div class="service__inner">
                                 <div class="service__content">
-                                    <h2><a href="service-details.html">fast delivery</a></h2>
+                                    <h2><a href="service-details.html">brza dostava</a></h2>
                                     <div class="ser__icon">
                                         <img src="images/shape/service/1.png" alt="icon images">
                                     </div>
@@ -195,11 +192,11 @@
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
                                         <h4><a href="service-details.html">fast delivery</a></h4>
-                                        <p>Couple things you'd have to know about our delivery propositions: </p>
+                                        <p>Par stvari koje trebate znati o nasoj dostavi: </p>
                                         <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Food being hot when delivered!</a></li>
+                                            <li><a href="#">1.Jeftina dostava</a></li>
+                                            <li><a href="#">2.Dostava u pravo vreme</a></li>
+                                            <li><a href="#">3.Hrana će biti dostavljena vruća!</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -212,19 +209,19 @@
                         <div class="service--2">
                             <div class="service__inner">
                                 <div class="service__content">
-                                    <h2><a href="service-details.html">quality food</a></h2>
+                                    <h2><a href="service-details.html">kvalitetna hrana</a></h2>
                                     <div class="ser__icon">
                                         <img src="images/shape/service/3.png" alt="icon images">
                                     </div>
                                 </div>
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
-                                        <h4><a href="service-details.html">quality food</a></h4>
-                                        <p>We only choose to cooperate with serious restaurants that fulfil our demands and high criticism standards: </p>
+                                        <h4><a href="service-details.html">kvalitetna hrana</a></h4>
+                                        <p>Mi biramo saradnju sa samo najvoljim restoranima u Beogradu, i to onima koji ispunjavaju nase uslove: </p>
                                         <ul>
-                                            <li><a href="#">1.Groceries quality</a></li>
-                                            <li><a href="#">2.Well prepared food</a></li>
-                                            <li><a href="#">3.Expirianced staff</a></li>
+                                            <li><a href="#">1.Kvalitet namirnica</a></li>
+                                            <li><a href="#">2.Dobro pripremljena hrana</a></li>
+                                            <li><a href="#">3.Iskusno osoblje</a></li>
                                         </ul>
                                     </div>
                                 </div>

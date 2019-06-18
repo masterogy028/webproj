@@ -40,7 +40,7 @@
                     //alert('p');
                     cartSet();
                     deleteCart();
-                    toSerbian();
+                    toEnglish();
                  }
                  function deleteCart(){
                     for(var i=0;i<8;i++){
@@ -82,9 +82,9 @@
                         $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                              localStorage.setItem('total-price',totalPrice);
                  }
-                 function toSerbian(){
+                 function toEnglish(){
                     //alert('to serbian');
-                    $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/about-us.html','_self');});
+                    $(".englishlang").click(function(){localStorage.setItem('language','english'); window.open('../about-us.html','_self');});
                 }
              </script>
             </head>
@@ -116,19 +116,19 @@
                                 <div class="main__menu__wrap">
                                     <nav class="main__menu__nav d-none d-lg-block">
                                         <ul class="mainmenu">
-                                            <li class="drop"><a href="index.html">Home</a></li>
+                                            <li class="drop"><a href="index.html">Početna</a></li>
                                             
-                                            <li class="drop"><a href="#">Restaurants</a>
+                                            <li class="drop"><a href="#">Restorani</a>
                                                 <ul class="dropdown__menu">
-                                                    <li><a href="vracar-district.html">Vračar district</a></li>
-                                                    <li><a href="zvezdara-district.html">Zvezdara district</a></li>
-                                                    <li><a href="stari-grad-district.html">Stari grad district</a></li>
-                                                    <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
-                                                    <li><a href="vozdovac-district.html">Voždovac district</a></li>
-                                                    <li><a href="search-restaurants.html">Search restaurants</a></li>
+                                                    <li><a href="vracar-district.html">Opština Vračar</a></li>
+                                                    <li><a href="zvezdara-district.html">Opština Zvezdara</a></li>
+                                                    <li><a href="stari-grad-district.html">Opština Stari grad </a></li>
+                                                    <li><a href="dorcol-district.html">Opština Dorćol</a></li>                                               
+                                                    <li><a href="vozdovac-district.html"> Opština Voždovac</a></li>
+                                                    <li><a href="search-restaurants.html"> Pretraži restorane</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="about-us.html">About</a></li>
+                                            <li><a href="about-us.html">O nama</a></li>
                                         </ul>
                                     </nav>                               
                                 </div>
@@ -137,7 +137,7 @@
                                 
                                 <div class="header__right d-flex just   ify-content-end">
                                         <div class="log__in">
-                                                <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                                <a class="accountbox-trigger" href="#"><img class='englishlang'  style="height: 16px" src="images/slike/uk.jpg"></a>
                                         </div>
                                         <span style="width: 5px"></span>
                                         <div class="shopping__cart">
@@ -169,11 +169,11 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="bradcaump__inner text-center">
-                                    <h2 class="bradcaump-title" name="naziv_restorana">About us</h2>
+                                    <h2 class="bradcaump-title" name="naziv_restorana">O nama</h2>
                                     <nav class="bradcaump-inner">
-                                      <a class="breadcrumb-item" href="index.html">Home</a>
+                                      <a class="breadcrumb-item" href="index.html">Početna</a>
                                       <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span>
-                                      <a name="opstina" class="breadcrumb-item" >about us</a>
+                                      <a name="opstina" class="breadcrumb-item" >o nama</a>
                                       
                                     </nav>
                                 </div>
@@ -189,8 +189,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section__title title__style--2 service__align--center">
-                            <h2 class="title__line">Why Choose Us</h2>
-                            <p>The process of our service </p>
+                            <h2 class="title__line">Zašto Mi</h2>
+                            <p>Naša usluga </p>
                         </div>
                     </div>
                 </div>
@@ -199,12 +199,13 @@
                         <div class="food__container">
                             <div class="food__inner">
                                 <h2>Ala dostava</h2>
-                                <p>New food delivery organization stationed in Belgrade.</p>
+                                <p>Nova organizacija dostave u Beogradu.</p>
                             </div>
                             <div class="food__details">
-                                <p>Hello! Greetings from members of Ala Dostava company! </p>
-                                <p>We might be new, but, we are very experienced in satisfying our costumers. Driven by all the years of working on food delivery abroad, our co-founders Aleksandar Pantić and Ognjen Bogićević
-                                    decided to open a food delivery company in Belgrade. Now knowing all the ups and downs this job carries, we feel very ready to be on your service.   </p>
+                                <p>Zdravo! Pozdrav od članova kompanije Ala Dostava! </p>
+                                <p>Možda smo novi ali, vrlo smo iskusni u zadovoljavanju mušterija. Pokrenuti godinama rada u inostranstvu, naši vlasnici Aleksandar Pantić i Ognjen Bogićević
+                                    odlučuju da otvore kompaniju za dostavu hrane u Beogradu. Sada, posedujući neizmerno znanje i veštinu, osećamo se spremni da vam budemo na usluzi.                           
+                                      </p>
                             </div>
                             <div class="food__tab">
                                 
@@ -222,8 +223,8 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="section__title title__style--2 service__align--center section__bg__black">
-                            <h2 style="color: rgb(63, 63, 63)" class="title__line">Meet Our Team</h2>
-                            <p style="color: grey">The process of our service </p>
+                            <h2 style="color: rgb(63, 63, 63)" class="title__line">Upoznajte naš tim</h2>
+                            <p style="color: grey"> </p>
                         </div>
                     </div>
                 </div>
@@ -239,7 +240,7 @@
                             <div class="team__content">
                                 <div class="team__info">
                                     <h4><a href="team-details.html">Ognjen Bogićević</a></h4>
-                                    <h6>Co-Founder</h6>
+                                    <h6>Vlasnik</h6>
                                 </div>
                                 <ul class="team__social__net">
                                     <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
@@ -262,7 +263,7 @@
                             <div class="team__content">
                                 <div class="team__info">
                                     <h4><a href="team-details.html">Aleksandar Pantić</a></h4>
-                                    <h6>Co-Founder</h6>
+                                    <h6>Vlasnik</h6>
                                 </div>
                                 <ul class="team__social__net">
                                     <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
