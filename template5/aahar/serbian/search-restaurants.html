@@ -47,6 +47,7 @@
                     setRestaurants();
                     setListeners();
                     setImages();
+                    toSerbian();
                     //setDescription();
                     cartSet();
                     deleteCart();
@@ -96,6 +97,7 @@
                     var s='single-restaurant'+i.toString();
                     $('.food__list__tab__content').append(myDivs[i-1]);
                 }
+                setListeners();
                 for(var i=1;i<11;i++){
                     var s='single-restaurant'+i.toString();
                         
@@ -139,9 +141,9 @@
                     $(s).attr('src',sortFilterRestaurants[i-1].slika);
                     var s='ocena'+i.toString();
                     if(localStorage.getItem('language')=='english')
-                    $("[name*="+s+"]").text('rating: '+sortFilterRestaurants[i-1].prosekOcena);
+                        $("[name*="+s+"]").text('rating: '+sortFilterRestaurants[i-1].prosekOcena);
                     else
-                    $("[name*="+s+"]").text('ocena: '+sortFilterRestaurants[i-1].prosekOcena);
+                        $("[name*="+s+"]").text('ocena: '+sortFilterRestaurants[i-1].prosekOcena);
                 }
             }
             function SortRestaurants(sort){
@@ -246,6 +248,7 @@
             function setListeners(){
                 if(sortFilterRestaurants.length==0){sortFilterRestaurants=allRestaurants}
                 $(".goRestaurant1").click(function(){
+                //alert('restaurant');
                 localStorage.setItem('restoran',JSON.stringify(sortFilterRestaurants[0]));
                 window.open("restoran.html", '_self');
                 });
@@ -331,6 +334,10 @@
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
+     function toSerbian(){
+         //alert('to serbian');
+         $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/search-restaurants.html','_self');});
+     }
     </script>
 </head>
 <body onload="onLoad()">
@@ -368,26 +375,9 @@
                                                     <li><a href="search-restaurants.html">Search restaurants</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <!-- <li class="drop"><a href="blog-mesonry.html">Blog</a>
-                                                <ul class="dropdown__menu">
-                                                    <li><a href="blog-mesonry.html">Blog Mesonry</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li> -->
                                             <li><a href="about-us.html">About</a></li>
-                                            <!-- <li class="drop"><a href="#">Pages</a>
-                                                <ul class="dropdown__menu">
-                                                    <li><a href="service.html">Service</a></li>
-                                                    <li><a href="cart.html">Cart Page</a></li>
-                                                    <li><a href="checkout.html">Checkout Page</a></li>
-                                                    <li><a href="contact.html">Contact Page</a></li>
-                                                </ul>
-                                            </li> -->
-                                            <li><a href="contact.html">Contact</a></li>
                                         </ul>
-                                    </nav>
-                                    
+                                    </nav>                               
                                 </div>
                             </div>
                             <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
@@ -399,7 +389,7 @@
                                         <span style="width: 5px"></span>
                                         <div class="shopping__cart">
                                         <div class="log__in">
-                                                <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                                <a  class="accountbox-trigger" href="#"><img class='serbianlang' style="height: 17px" src="images/slike/serbia.png"></a>
                                         </div>
                                     </div>
                                     <div class="shopping__cart">
@@ -418,7 +408,7 @@
                 </div>
                 <!-- End Mainmenu Area -->
             </header>
-            <!-- End Header Area -->
+        <!-- End Header Area -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area ">
             <div class="ht__bradcaump__wrap d-flex align-items-center">

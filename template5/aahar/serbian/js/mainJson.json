@@ -7,8 +7,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=Kralja%20Petra%2013%2F1&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"roštilj",
         "tipENG":"barbeque",
-        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase pverenje.",
-        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase poverenje.",
+        "OpisENG":"Pile i prase, modern restauran which is available 24/7. We are we thanking you for your gratitude and trust.",
         "slika":"images/slike/pile_prase.jpg",
         "slikaBG":"images/slike/pile_prase.jpg",
         "senderhtml":"dorcol-district.html",
@@ -16,7 +16,8 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":4.7,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":320, "naziv":"pileće belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pileće belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -26,7 +27,7 @@
         "tip":"pica",
         "tipENG":"pizza",           
         "Opis":"Picerija Bergamo sa vama vec 10 godina. Najbolja picerija u gradu sa najzanimljivijim ukusima.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "OpisENG":"Pizza Bergamo with you more than 10 years. Best pizza in town with most delighted tastes.",
         "slika":"images/slike/bergamo.jpg",
         "slikaBG":"images/slike/bergamo.jpg",
         "senderhtml":"dorcol-district.html",
@@ -34,7 +35,7 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":4.9,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -43,8 +44,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=Kralja%20Aleksandra%201%2F3&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"pica",
         "tipENG":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "Opis":"Big Pizza, sve što pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
+        "OpisENG":"Big Pizza, anything you want from now on in your neighborhood! Unforgettable taste that you always come back.",
         "slika":"images/slike/big_pizza.jpg",
         "slikaBG":"images/slike/big_pizza.jpg",
         "senderhtml":"dorcol-district.html",
@@ -52,8 +53,7 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":3.2,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -62,8 +62,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=Cviji%C4%87eva%2056%2F12&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"roštilj",
         "tipENG":"barbeque",
-        "Opis":"Walter, sve sto ste oduvek zeleli! Najbolji cevapi od juneceg mesa i dugogodisnja tradicija je ono sto nas opisuje.",
-        "OpisENG":"Walter, sve sto pozelite",
+        "Opis":"Walter, sve što ste oduvek želeli! Najbolji ćevapi od junećeg mesa i dugogodisnja tradicija je ono što nas opisuje.",
+        "OpisENG":"Walter, everything you always wanted! The best cevaps made of coward meat and last-long tradition is what describes us. ",
         "slika":"images/slike/walter.jpg",
         "slikaBG":"images/slike/walter.jpg",
         "senderhtml":"dorcol-district.html",
@@ -71,7 +71,7 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":4.2,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"ćevapi od junetine","slika":"images/slike/cevapi3.jpg"},{"cena":350, "naziv":"ćevapi sa kajmakom","slika":"images/slike/cevapi1.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     }
     ,
@@ -82,7 +82,7 @@
         "tip":"piletina",
         "tipENG":"chicken",
         "Opis":"KFC, sirom sveta poznat brend. Svetska kompanija nudi razne ukuse kojim ne mozete da odolite. Uvek tu za Vas.",
-        "OpisENG":"KFC, sve sto pozelite",
+        "OpisENG":"KFC, world wide known brand. The global company offers you various tastes that you can't resist. Always there for you.",
         "slika":"images/slike/KFC.jpg",
         "slikaBG":"images/slike/KFC.jpg",
         "senderhtml":"dorcol-district.html",
@@ -90,7 +90,7 @@
         "Opstina":"Dorćol",
         "brOcena":7,
         "prosekOcena":2.2,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"krilca","slika":"images/slike/krilca.jpg"},{"cena":350,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     } 
     ]
@@ -102,8 +102,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=Vojislava%20Ili%C4%87a%2011%2F5&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"kineska",
         "tipENG":"chinese",
-        "Opis":"Dva stapica, azijska hrana o kojoj ste oduvek mastali! Lagan obrok visokog kvaliteta spremljen sa puno paznje i ljubavi",
-        "OpisENG":"Dva stapica, sve sto pozelite",
+        "Opis":"Dva stapica, azijska hrana o kojoj ste oduvek mastali! Lagan obrok visokog kvaliteta spremljen sa puno paznje i ljubavi.",
+        "OpisENG":"Dva stapica, asian food you've always been dreaming of! Light meal with high quality, made with  alot of attention and love.",
         "slika":"images/slike/dva_stapica.jpg",
         "slikaBG":"images/slike/dva_stapica.jpg",
         "senderhtml":"zvezdara-district.html",
@@ -112,7 +112,7 @@
         "brOcena":12,
         "prosekOcena":2.5,
         
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":420, "naziv":"pasta carbonare","slika":"images/slike/pasta.jpg"},{"cena":450,"naziv":"ramen","slika":"images/slike/ramen.jpg"},{"cena":490,"naziv":"sushi","slika":"images/slike/sushi.jpg"},{"cena":150,"naziv":"pirinac","slika":"images/slike/pirinac.jpg"},{"cena":670, "naziv":"filet lososa","slika":"images/slike/riba.jpg"}]
         
     }
     ,
@@ -122,17 +122,16 @@
         "linkAdrese":"https://maps.google.com/maps?q=Bulevar%20Oslobo%C4%91enja%2033%2F4&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"pica",
         "tipENG":"pizza",
-        "Opis":"Napoli picerija, tradicionalna italijanska pica i kod nas! Nasi vrhunski majstori na tradicionalan nacin prave zadovoljstvo kojem ne mozete da odolite",
-        "OpisENG":", sve sto pozelite",
+        "Opis":"Napoli picerija, tradicionalna italijanska pica i kod nas! Nasi vrhunski majstori na tradicionalan nacin prave zadovoljstvo kojem ne mozete da odolite.",
+        "OpisENG":"Napoli picerija, tradicional italian pizza in our neighborhood! Our top chefs are making pleasure in tradicional way that you can't resist to.",
         "slika":"images/slike/napoli.jpg",
         "slikaBG":"images/slike/napoli.jpg",
         "senderhtml":"zvezdara-district.html",
         "Naziv":"Napoli picerija",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":1.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "prosekOcena":4.8,
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -142,7 +141,7 @@
         "tip":"burgeri",
         "tipENG":"burgers",
         "Opis":"McDonalds, hrana kojoj ne mozete da odolite. Svetska kompanija donosi eksploziju ukusa kojoj nijedna generacija ne moze da odoli.",
-        "OpisENG":", sve sto pozelite",
+        "OpisENG":"McDonalds, food that you can't resist to. World wide company brings you explosion of flavors. No generetarion can't resist to that.",
         "slika":"images/slike/mcDonalds.jpg",
         "slikaBG":"images/slike/mcDonalds.jpg",
         "senderhtml":"zvezdara-district.html",
@@ -150,7 +149,7 @@
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":450, "naziv":"hamburger","slika":"images/slike/burger.jpg"},{"cena":200,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     }
     ,
@@ -161,7 +160,7 @@
         "tip":"roštilj",
         "tipENG":"barbeque",
         "Opis":"Poncho, najkvaliteniji domaći roštilj! Domaća brza hrana koja je tu za Vas non stop, i u koju imate najvise poverenja.",
-        "OpisENG":", sve sto pozelite",
+        "OpisENG":"Poncho, the best quality home kitchen. Home fast food is here for you non-stop. We know you trust us.",
         "slika":"images/slike/poncho.jpg",
         "slikaBG":"images/slike/poncho.jpg",
         "senderhtml":"zvezdara-district.html",
@@ -169,8 +168,8 @@
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":290, "naziv":"slatka palacinka","slika":"images/slike/palacinka.jpg"},{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":320, "naziv":"pileće belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pileće belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ]
     
@@ -183,7 +182,7 @@
         "tip":"roštilj",
         "tipENG":"barbeque",
         "Opis":"Pink cevabdzinice, hrana bez premca! Velika ponuda svih vrsta mesa vrhunskog kvaliteta. Zaljubicete se u ukus na prvi zalogaj.",
-        "OpisENG":", restoran uvek sa vama",
+        "OpisENG":"Pink cevabdzinice, unrivaled food! Great offer of all types of high quality meat. You will fall in love on first bite.",
         "slika":"images/slike/pink.jpg",
         "slikaBG":"images/slike/pink.jpg",
         "senderhtml":"vozdovac-district.html",
@@ -191,7 +190,26 @@
         "Opstina":"Vozdovac",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"pileće belo meso","slika":"images/slike/belomeso.jpg"},{"cena":300,"naziv":"ćevapi","slika":"images/slike/cevapi2.jpg"},{"cena":350,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":350,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+        
+    }
+    ,
+    {
+        
+        "adresa":"Njegoseva 7",
+        "linkAdrese":"https://maps.google.com/maps?q=Njegoseva%207&t=&z=13&ie=UTF8&iwloc=&output=embed",
+        "tip":"roštilj",
+        "tipENG":"barbeque",
+        "Opis":"Walter, sve što ste oduvek želeli! Najbolji ćevapi od junećeg mesa i dugogodisnja tradicija je ono što nas opisuje.",
+        "OpisENG":"Walter, everything you always wanted! The best cevaps made of coward meat and last-long tradition is what describes us. ",
+        "slika":"images/slike/walter.jpg",
+        "slikaBG":"images/slike/walter.jpg",
+        "senderhtml":"vozdovac-district.html",
+        "Naziv":"Walter",
+        "Opstina":"Vozdovac",
+        "brOcena":12,
+        "prosekOcena":4.2,
+        "proizvodi":[{"cena":350, "naziv":"ćevapi od junetine","slika":"images/slike/cevapi3.jpg"},{"cena":350, "naziv":"ćevapi sa kajmakom","slika":"images/slike/cevapi1.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     }
     ,
@@ -202,7 +220,7 @@
         "tip":"pica",
         "tipENG":"pizza",           
         "Opis":"Picerija Bergamo sa vama vec 10 godina. Najbolja picerija u gradu sa najzanimljivijim ukusima.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "OpisENG":"Pizza Bergamo with you more than 10 years. Best pizza in town with most delighted tastes.",
         "slika":"images/slike/bergamo.jpg",
         "slikaBG":"images/slike/bergamo.jpg",
         "senderhtml":"vozdovac-district.html",
@@ -210,8 +228,26 @@
         "Opstina":"Vozdovac",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    },
+    {
+        
+        "adresa":"Bulevar JNA 66",
+        "linkAdrese":"https://maps.google.com/maps?q=bulevar%20JNA%2066&t=&z=13&ie=UTF8&iwloc=&output=embed",
+        "tip":"kineska",
+        "tipENG":"chinese",
+        "Opis":"Dva stapica, azijska hrana o kojoj ste oduvek mastali! Lagan obrok visokog kvaliteta spremljen sa puno paznje i ljubavi.",
+        "OpisENG":"Dva stapica, asian food you've always been dreaming of! Light meal with high quality, made with  alot of attention and love.",
+        "slika":"images/slike/dva_stapica.jpg",
+        "slikaBG":"images/slike/dva_stapica.jpg",
+        "senderhtml":"vozdovac-district.html",
+        "Naziv":"Dva stapica",
+        "Opstina":"Vozdovac",
+        "brOcena":12,
+        "prosekOcena":2.5,
+        
+        "proizvodi":[{"cena":420, "naziv":"pasta carbonare","slika":"images/slike/pasta.jpg"},{"cena":450,"naziv":"ramen","slika":"images/slike/ramen.jpg"},{"cena":490,"naziv":"sushi","slika":"images/slike/sushi.jpg"},{"cena":150,"naziv":"pirinac","slika":"images/slike/pirinac.jpg"},{"cena":670, "naziv":"filet lososa","slika":"images/slike/riba.jpg"}]
+        
     }
     ,
     {
@@ -220,8 +256,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=bulevar%20oslobodjenja%203&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"pica",
         "tipENG":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "Opis":"Big Pizza, sve što pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
+        "OpisENG":"Big Pizza, anything you want from now on in your neighborhood! Unforgettable taste that you always come back.",
         "slika":"images/slike/big_pizza.jpg",
         "slikaBG":"images/slike/big_pizza.jpg",
         "senderhtml":"vozdovac-district.html",
@@ -229,30 +265,49 @@
         "Opstina":"Vozdovac",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
-    }       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    }     
     ]
     
     ,
     
-        "stari_grad":[
+ "stari_grad":[
     {
+        
+                "adresa":"Cara Dusana 78",
+                "linkAdrese":"https://maps.google.com/maps?q=cara%20dusana%2078&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                "tip":"kineska",
+                "tipENG":"chinese",
+                "Opis":"Dva stapica, azijska hrana o kojoj ste oduvek mastali! Lagan obrok visokog kvaliteta spremljen sa puno paznje i ljubavi.",
+                "OpisENG":"Dva stapica, asian food you've always been dreaming of! Light meal with high quality, made with  alot of attention and love.",
+                "slika":"images/slike/dva_stapica.jpg",
+                "slikaBG":"images/slike/dva_stapica.jpg",
+                "senderhtml":"stari-grad-district.html",
+                "Naziv":"Dva stapica",
+                "Opstina":"Stari grad",
+                "brOcena":12,
+                "prosekOcena":2.5,
+                
+                "proizvodi":[{"cena":420, "naziv":"pasta carbonare","slika":"images/slike/pasta.jpg"},{"cena":450,"naziv":"ramen","slika":"images/slike/ramen.jpg"},{"cena":490,"naziv":"sushi","slika":"images/slike/sushi.jpg"},{"cena":150,"naziv":"pirinac","slika":"images/slike/pirinac.jpg"},{"cena":670, "naziv":"filet lososa","slika":"images/slike/riba.jpg"}]
+                
+     }
+     ,
+    {   
         "adresa":"Dunavska 19",
         "linkAdrese":"https://maps.google.com/maps?q=dunavska%2019&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"roštilj",
         "tipENG":"barbeque",
-        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase pverenje.",
-        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase poverenje.",
+        "OpisENG":"Pile i prase, modern restauran which is available 24/7. We are we thanking you for your gratitude and trust.",
         "slika":"images/slike/pile_prase.jpg",
         "slikaBG":"images/slike/pile_prase.jpg",
         "senderhtml":"stari-grad-district.html",
         "Naziv":"Pile Prase",
         "Opstina":"Stari grad",
         "brOcena":12,
-        "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "prosekOcena":4.1,
+        "proizvodi":[{"cena":320, "naziv":"pileće belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pileće belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -262,7 +317,7 @@
         "tip":"pica",
         "tipENG":"pizza",           
         "Opis":"Picerija Bergamo sa vama vec 10 godina. Najbolja picerija u gradu sa najzanimljivijim ukusima.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "OpisENG":"Pizza Bergamo with you more than 10 years. Best pizza in town with most delighted tastes.",
         "slika":"images/slike/bergamo.jpg",
         "slikaBG":"images/slike/bergamo.jpg",
         "senderhtml":"stari-grad-district.html",
@@ -270,8 +325,7 @@
         "Opstina":"Stari grad",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -280,8 +334,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=dzordza%20vasingtona%2019&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"pica",
         "tipENG":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "Opis":"Big Pizza, sve što pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
+        "OpisENG":"Big Pizza, anything you want from now on in your neighborhood! Unforgettable taste that you always come back.",
         "slika":"images/slike/big_pizza.jpg",
         "slikaBG":"images/slike/big_pizza.jpg",
         "senderhtml":"stari-grad-district.html",
@@ -289,9 +343,8 @@
         "Opstina":"Stari grad",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
-    }       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    }     
     ]
     ,
         "vracar":[
@@ -300,8 +353,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=maksima%20gorkog%2054&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"roštilj",
         "tipENG":"barbeque",
-        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase pverenje.",
-        "OpisENG":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "Opis":"Pile i prase, moderan restoran koji je dostupan 24/7. Mi ukazujemo Vama zahavnost za Vase poverenje.",
+        "OpisENG":"Pile i prase, modern restauran which is available 24/7. We are we thanking you for your gratitude and trust.",
         "slika":"images/slike/pile_prase.jpg",
         "slikaBG":"images/slike/pile_prase.jpg",
         "senderhtml":"vracar-district.html",
@@ -309,8 +362,8 @@
         "Opstina":"vracar",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":320, "naziv":"pileće belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pileće belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -319,7 +372,7 @@
         "tip":"pica",
         "tipENG":"pizza",           
         "Opis":"Picerija Bergamo sa vama vec 10 godina. Najbolja picerija u gradu sa najzanimljivijim ukusima.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "OpisENG":"Pizza Bergamo with you more than 10 years. Best pizza in town with most delighted tastes.",
         "slika":"images/slike/bergamo.jpg",
         "slikaBG":"images/slike/bergamo.jpg",
         "senderhtml":"vracar-district.html",
@@ -327,8 +380,7 @@
         "Opstina":"vracar",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -337,8 +389,8 @@
         "linkAdrese":"https://maps.google.com/maps?q=novopazarska%207&t=&z=13&ie=UTF8&iwloc=&output=embed",
         "tip":"pica",
         "tipENG":"pizza",
-        "Opis":"Big Pizza, sve sto pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
-        "OpisENG":", restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
+        "Opis":"Big Pizza, sve što pozelite od sada Vam je na dohvat ruke! Nezaboravan ukus kojem se uvek vracate.",
+        "OpisENG":"Big Pizza, anything you want from now on in your neighborhood! Unforgettable taste that you always come back.",
         "slika":"images/slike/big_pizza.jpg",
         "slikaBG":"images/slike/big_pizza.jpg",
         "senderhtml":"vracar-district.html",
@@ -346,9 +398,26 @@
         "Opstina":"vracar",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}    ]
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    }    
+    ,
+    {
         
-    }       
+        "adresa":"Juzni Bulevar 26",
+        "linkAdrese":"https://maps.google.com/maps?q=juzni%20bulevar%2026&t=&z=13&ie=UTF8&iwloc=&output=embed",
+        "tip":"pica",
+        "tipENG":"pizza",
+        "Opis":"Napoli picerija, tradicionalna italijanska pica i kod nas! Nasi vrhunski majstori na tradicionalan nacin prave zadovoljstvo kojem ne mozete da odolite.",
+        "OpisENG":"Napoli picerija, tradicional italian pizza in our neighborhood! Our top chefs are making pleasure in tradicional way that you can't resist to.",
+        "slika":"images/slike/napoli.jpg",
+        "slikaBG":"images/slike/napoli.jpg",
+        "senderhtml":"vracar-district.html",
+        "Naziv":"Napoli picerija",
+        "Opstina":"vracar",
+        "brOcena":12,
+        "prosekOcena":1.5,
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    }
     ]
     
     
