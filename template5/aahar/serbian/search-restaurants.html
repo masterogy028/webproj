@@ -149,6 +149,7 @@
             function SortRestaurants(sort){
                 sortFilterRestaurants=allRestaurants;
                 //alert('sort '+sort);
+                
                 switch(sort){
                     case 2:{
                         for(var i=0;i<sortFilterRestaurants.length;i++){
@@ -199,10 +200,10 @@
                 sortFilterRestaurants=[];
                 //alert('pre filtera: '+sortFilterRestaurants.length);
                 for(var i=0;i<allRestaurants.length;i++){
-                    if(localStorage.getItem('language')=='english')
-                        if(allRestaurants[i].tipENG==filter){sortFilterRestaurants.push(allRestaurants[i]);
+                    if(localStorage.getItem('language')=='english'){
+                        if(allRestaurants[i].tipENG==filter){sortFilterRestaurants.push(allRestaurants[i]);}else{}
                     }else
-                    if(allRestaurants[i].tip==filter){sortFilterRestaurants.push(allRestaurants[i]);}
+                        if(allRestaurants[i].tip==filter){sortFilterRestaurants.push(allRestaurants[i]);}
                 }
                 setRestaurantStuff();
                 //alert('posle filtera: '+sortFilterRestaurants.length);
