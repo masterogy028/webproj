@@ -39,30 +39,53 @@
                     setListeners();
                     setImages();
                     setDescription();
-                    cartSet();
-                    deleteCart();
+                  
                     toSerbian();
                     }
                 );
+                cartSet();
+                    deleteCart();
             }
             function deleteCart(){
-                for(var i=0;i<8;i++){
-                var mystr='cartbox__item'+(i+1)+'trash';
-                $("[name*="+mystr+"]").on('click',function(){
-                    //alert('delete');
-                    i=$(this).attr('name');
-                    var some=i.split('item');
-                    i=parseInt(some[1].charAt(0))-1;
-                    //alert(i);
-                    for(var j=i;j<localStorage.getItem('cart-items-number');j++){
-                        localStorage.setItem('cart-item'+(j),localStorage.getItem('cart-item'+(j+1)));
-                    }
-                    var p=localStorage.getItem('cart-items-number');p--;
-                    localStorage.setItem('cart-items-number',p);
-                    cartSet();
-                })
+        for(var i=0;i<8;i++){
+        var mystr='cartbox__item'+(i+1)+'trash';
+        $("[name*="+mystr+"]").on('click',function(){
+            //alert('delete');
+            i=$(this).attr('name');
+            var some=i.split('item');
+            i=parseInt(some[1].charAt(0))-1;
+            //alert(i);
+            for(var j=i;j<localStorage.getItem('cart-items-number');j++){
+                localStorage.setItem('cart-item'+(j),localStorage.getItem('cart-item'+(j+1)));
+            }
+            var p=localStorage.getItem('cart-items-number');p--;
+            localStorage.setItem('cart-items-number',p);
+            cartSet();
+        })
+        }
+     }
+     function cartSet(){
+        //alert("cartSet");   
+        var totalPrice=0;
+            for(var i=12;i>0;i--)
+            {
+                if(localStorage.getItem('cart-items-number')<i){
+                var mys='cartbox__item'+i.toString();
+                $("[name*="+mys+"]").remove();
+                }else{
+                var mys='cartbox__item'+i.toString()+'price';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
+                 mys='cartbox__item'+i.toString()+'name';
+                
+                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
+                totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
                 }
             }
+            $(".items-number").text(localStorage.getItem('cart-items-number'));
+            $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
+                 localStorage.setItem('total-price',totalPrice);
+     }
             function setListeners(){
                 $(".goRestaurant1").click(function(){
                 var jsonObj=JSON.parse(localStorage.getItem('mainJson')).stari_grad[0];
@@ -130,27 +153,7 @@
                     }
                 }
             }
-            function cartSet(){
-              var totalPrice=0;
-                for(var i=12;i>0;i--)
-                {
-                    if(localStorage.getItem('cart-items-number')<i){
-                    var mys='cartbox__item'+i.toString();
-                    $("[name*="+mys+"]").remove();
-                    }else{
-                    var mys='cartbox__item'+i.toString()+'price';
-                    
-                    $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
-                    mys='cartbox__item'+i.toString()+'name';
-                    
-                    $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
-                    totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
-                    }
-                }
-            $(".items-number").text(localStorage.getItem('cart-items-number'));
-            $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
-                 localStorage.setItem('total-price',totalPrice);
-     }
+           
      function toSerbian(){
          //alert('to serbian');
          $(".serbianlang").click(function(){localStorage.setItem('language','serbian'); window.open('serbian/stari-grad-district.html','_self');});
