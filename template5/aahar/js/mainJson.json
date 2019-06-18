@@ -130,7 +130,7 @@
         "Naziv":"Napoli picerija",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":1.5,
+        "prosekOcena":4.8,
         "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,

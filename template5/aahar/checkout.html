@@ -87,7 +87,8 @@
                     return;
                 }
                 $("[name*='message']").text('');
-                
+                localStorage.setItem('cart-items-number',0);
+                window.open('service.html');
             }
         </script>
 </head>
@@ -112,50 +113,45 @@
                                 <nav class="main__menu__nav d-none d-lg-block">
                                     <ul class="mainmenu">
                                         <li class="drop"><a href="index.html">Home</a></li>
+                                        
+                                        <li class="drop"><a href="#">Restaurants</a>
+                                            <ul class="dropdown__menu">
+                                                <li><a href="vracar-district.html">Vračar district</a></li>
+                                                <li><a href="zvezdara-district.html">Zvezdara district</a></li>
+                                                <li><a href="stari-grad-district.html">Stari grad district</a></li>
+                                                <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
+                                                <li><a href="vozdovac-district.html">Voždovac district</a></li>
+                                                <li><a href="search-restaurants.html">Search restaurants</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="about-us.html">About</a></li>
-                                        <li class="drop"><a href="menu-list.html">Menu</a>
-                                            <ul class="dropdown__menu">
-                                                <li><a href="menu-list.html">Menu List</a></li>
-                                                <li><a href="menu-details.html">Menu Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li class="drop"><a href="blog-mesonry.html">Blog</a>
-                                            <ul class="dropdown__menu">
-                                                <li><a href="blog-mesonry.html">Blog Mesonry</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="#">Pages</a>
-                                            <ul class="dropdown__menu">
-                                                <li><a href="service.html">Service</a></li>
-                                                <li><a href="cart.html">Cart Page</a></li>
-                                                <li><a href="checkout.html">Checkout Page</a></li>
-                                                <li><a href="contact.html">Contact Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
-                                </nav>
-                                
+                                </nav>                               
                             </div>
                         </div>
                         <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
-                            <div class="header__right d-flex justify-content-end">
-                                <div class="log__in">
-                                    <a class="accountbox-trigger" href="#"><i class="zmdi zmdi-account-o"></i></a>
+                            
+                            <div class="header__right d-flex just   ify-content-end">
+                                    <div class="log__in">
+                                            <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                    </div>
+                                    <span style="width: 5px"></span>
+                                    <div class="shopping__cart">
+                                    <div class="log__in">
+                                            <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                    </div>
                                 </div>
                                 <div class="shopping__cart">
                                     <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
                                     <div class="shop__qun">
-                                        <span>03</span>
+                                        <span class='items-number'>03</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Mobile Menu -->
-                        <div class="mobile-menu d-block d-lg-none"></div>
+                    <div class="mobile-menu d-block d-lg-none"></div>
                     <!-- Mobile Menu -->
                 </div>
             </div>

@@ -25,7 +25,8 @@
      function onLoad(){
         $(document).ready(function(){
             
-           //localStorage.clear();
+                    //localStorage.clear();
+
             if(localStorage.getItem("loadedJson")!='loaded'){
                 localStorage.setItem('language','english');
                 localStorage.setItem('cart-items-number',0);
@@ -36,6 +37,36 @@
                 alert( localStorage.getItem("mainJson"));
                 });
             }
+            //console.log(localStorage.getItem('mainJson'));
+            
+
+            $('.pile-prase').click(function(){
+                localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).dorcol[0]));
+                window.open("restoran.html", '_self');
+            });
+            $('.poncho').click(function(){
+                localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3]));
+                window.open("restoran.html", '_self');
+            });
+            $('.napoli').click(function(){
+                localStorage.setItem('restoran',JSON.stringify(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1]));
+                window.open("restoran.html", '_self');
+            });
+            var s='poncho_opis';
+            if(localStorage.getItem('language')=='serbian')
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3].Opis);
+            else
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[3].OpisENG);
+            var s='pile_prase_opis';
+            if(localStorage.getItem('language')=='serbian')
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[0].Opis);
+            else
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).dorcol[0].OpisENG);
+            var s='napoli_opis';
+            if(localStorage.getItem('language')=='serbian')
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].Opis);
+            else
+            $("[name*="+s+"]").text(JSON.parse(localStorage.getItem('mainJson')).zvezdara[1].OpisENG);
         })
         //alert('p');
         cartSet();
@@ -202,16 +233,16 @@
                     <div class="col-md-6 col-lg-4 col-sm-12 foo">
                         <div class="blog">
                             <div class="blog__thumb">
-                                <a href="blog-details.html">
-                                    <img src="images/slike/pile_prase.jpg" alt="blog images">
+                                <a href="#">
+                                    <img class="pile-prase" src="images/slike/pile_prase.jpg" alt="blog images">
                                 </a>
                             </div>
                             <div class="blog__details">
-                                <h2><a href="blog-details.html">Pile Prase</a></h2>
+                                <h2><a class="pile-prase" href="#">Pile Prase</a></h2>
                                 <!-- <span>1st Feb, 2o17</span> -->
                                 <p name='pile_prase_opis'>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
                                 <div class="blog__btn">
-                                    <a class="food__btn btn--green theme--hover" href="blog-details.html">Read More</a>
+                                    <a  class="pile-prase food__btn btn--green theme--hover" href="#">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -221,16 +252,16 @@
                     <div class="col-md-6 col-lg-4 col-sm-12 foo">
                         <div class="blog">
                             <div class="blog__thumb">
-                                <a href="blog-details.html">
-                                    <img src="images/slike/napoli.jpg" alt="blog images">
+                                <a class="napoli" href="#">
+                                    <img class='napoli' src="images/slike/napoli.jpg" alt="blog images">
                                 </a>
                             </div>
                             <div class="blog__details">
-                                <h2><a href="blog-details.html">Napoli</a></h2>
+                                <h2><a class="napoli" href="#">Napoli</a></h2>
                                 <!-- <span>1st jan, 2o17</span> -->
                                 <p name='napoli_opis'>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
                                 <div class="blog__btn">
-                                    <a class="food__btn btn--green theme--hover" href="blog-details.html">Read More</a>
+                                    <a class="napoli food__btn btn--green theme--hover" href="#">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -240,16 +271,16 @@
                     <div class="col-md-6 col-lg-4 col-sm-12 foo">
                         <div class="blog">
                             <div class="blog__thumb">
-                                <a href="blog-details.html">
-                                    <img src="images/slike/poncho.jpg" alt="blog images">
+                                <a class="poncho" href="#">
+                                    <img class='poncho' src="images/slike/poncho.jpg" alt="blog images">
                                 </a>
                             </div>
                             <div class="blog__details">
-                                <h2><a href="blog-details.html">Poncho</a></h2>
+                                <h2><a class='poncho' href="#">Poncho</a></h2>
                                 <!-- <span>1st Dec, 2o17</span> -->
                                 <p name='poncho_opis'>Lorem ipsum dolor sit amadipisicing elit, seddo eiusmoddolore magna aliqua. Ut enim ad miveniam, quis noion ullamco laboris nisi umt aliquip ex ea cequat.</p>
                                 <div class="blog__btn">
-                                    <a class="food__btn btn--green theme--hover" href="blog-details.html">Read More</a>
+                                    <a class="poncho food__btn btn--green theme--hover" href="#">Read More</a>
                                 </div>
                             </div>
                         </div>
