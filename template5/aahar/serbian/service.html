@@ -23,14 +23,16 @@
 	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <script>
+    
     function onLoad(){
         $(document).ready(function(){
             
             cartSet();
             deleteCart();
             });
-            toEnglish();
+            toEnglish(); 
         }
+        
     function deleteCart(){
         for(var i=0;i<8;i++){
         var mystr='cartbox__item'+(i+1)+'trash';
@@ -71,12 +73,12 @@
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
-     function toEnglish(){
-         //alert('to serbian');
-         $(".englishlang").click(function(){localStorage.setItem('language','english'); window.open('../service.html','_self');});
-     }
+        function toEnglish(){
+            //alert('to serbian');
+            $(".englishlang").click(function(){localStorage.setItem('language','english'); window.open('../about-us.html','_self');});
+        }
 </script>
-<body onload="onLoad">
+<body onload="onLoad()">
 
 	<!-- Add your site or application content here -->
 	
