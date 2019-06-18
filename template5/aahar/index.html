@@ -26,9 +26,8 @@
         $(document).ready(function(){
             
             //localStorage.clear();
-            //alert('loaded');
-            
             if(localStorage.getItem("loadedJson")!='loaded'){
+                localStorage.setItem('language','english');
                 localStorage.setItem('cart-items-number',0);
                 $.getJSON("js/mainJson.json", function(json) {
                     console.log(json); // this will show the info it in firebug console
@@ -36,9 +35,13 @@
                 localStorage.setItem("loadedJson","loaded");
                 alert( localStorage.getItem("mainJson"));
                 });
-            }})
+            }
+        })
         //alert('p');
         cartSet();
+        deleteCart();
+     }
+     function deleteCart(){
         for(var i=0;i<8;i++){
         var mystr='cartbox__item'+(i+1)+'trash';
         $("[name*="+mystr+"]").on('click',function(){
@@ -72,11 +75,9 @@
                 
                 $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
                 totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
-               
                 }
-                
-                
             }
+            $(".items-number").text(localStorage.getItem('cart-items-number'));
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
                  localStorage.setItem('total-price',totalPrice);
      }
@@ -119,6 +120,7 @@
                                                 <li><a href="stari-grad-district.html">Stari grad district</a></li>
                                                 <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
                                                 <li><a href="vozdovac-district.html">Voždovac district</a></li>
+                                                <li><a href="search-restaurants.html">Search restaurants</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="gallery.html">Gallery</a></li>
@@ -144,12 +146,21 @@
                             </div>
                         </div>
                         <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                            
                             <div class="header__right d-flex just   ify-content-end">
-
+                                    <div class="log__in">
+                                            <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                    </div>
+                                    <span style="width: 5px"></span>
+                                    <div class="shopping__cart">
+                                    <div class="log__in">
+                                            <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                    </div>
+                                </div>
                                 <div class="shopping__cart">
                                     <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
                                     <div class="shop__qun">
-                                        <span>03</span>
+                                        <span class='items-number'>03</span>
                                     </div>
                                 </div>
                             </div>

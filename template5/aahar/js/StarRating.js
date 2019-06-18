@@ -64,14 +64,55 @@ class StarRating extends HTMLElement {
             prs=(prs/(str.brOcena+1));str.brOcena++;
             str.prosekOcena=prs;
             /////(str.prosekOcena);
-            var restorani=JSON.parse(localStorage.getItem('mainJson'));
+            //var restorani=JSON.parse(localStorage.getItem('mainJson'));
             //restorani.dorcol[0]=str;
+            checkAndSet(str);
             ///////////////////////////////////
             localStorage.setItem('restoran',JSON.stringify(str));
-            localStorage.setItem('mainJson',JSON.stringify(restorani));
+            //localStorage.setItem('mainJson',JSON.stringify(restorani));
             let rateEvent = new Event('rate');
             this.dispatchEvent(rateEvent);
         });
+        function checkAndSet(restoran){
+            var restorani=JSON.parse(localStorage.getItem('mainJson'));
+            for(var i=0;i<restorani.dorcol.length;i++){
+                if(restorani.dorcol[i].Naziv==restoran.Naziv){
+                    restorani.dorcol[i]=restoran;
+                    localStorage.setItem('mainJson',JSON.stringify(restorani));
+                    //return;
+                }
+            }
+            for(var i=0;i<restorani.vozdovac.length;i++){
+                if(restorani.vozdovac[i].Naziv==restoran.Naziv){
+                    restorani.vozdovac[i]=restoran;
+                    localStorage.setItem('mainJson',JSON.stringify(restorani));
+                    //return;
+                }
+            }
+            for(var i=0;i<restorani.zvezdara.length;i++){
+                if(restorani.zvezdara[i].Naziv==restoran.Naziv){
+                    restorani.zvezdara[i]=restoran;
+                    localStorage.setItem('mainJson',JSON.stringify(restorani));
+                    //return;
+                }
+            }
+            for(var i=0;i<restorani.stari_grad.length;i++){
+                //alert('as');
+                if(restorani.stari_grad[i].Naziv==restoran.Naziv){
+                    
+                    restorani.stari_grad[i]=restoran;
+                    localStorage.setItem('mainJson',JSON.stringify(restorani));
+                    //return;
+                }
+            }
+            for(var i=0;i<restorani.vracar.length;i++){
+                if(restorani.vracar[i].Naziv==restoran.Naziv){
+                    restorani.vracar[i]=restoran;
+                    localStorage.setItem('mainJson',JSON.stringify(restorani));
+                    //return;
+                }
+            }
+        }
     }
 }
 

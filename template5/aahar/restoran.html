@@ -25,7 +25,7 @@
     <script>
         var carti=0;
         function onLoad(){
-            
+            localStorage.setItem('cart-items-number',carti);
             var str=JSON.parse(localStorage.getItem('restoran'));
             //alert(str.Opis);
             $("[name*='opstina']").text(str.Opstina);
@@ -79,27 +79,7 @@
                  $("#"+(i+1)+"prc").text(str.proizvodi[i].cena+"rsd");
             }
             ////////////////
-            var totalPrice=0;
-            for(var i=12;i>0;i--)
-            {
-                if(localStorage.getItem('cart-items-number')<i){
-                var mys='cartbox__item'+i.toString();
-                $("[name*="+mys+"]").remove();
-                }else{
-                var mys='cartbox__item'+i.toString()+'price';
-                
-                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
-                 
-                 mys='cartbox__item'+i.toString()+'name';
-                
-                $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
-                totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
-                //alert(totalPrice);  
-                }
-                
-            }
-            $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
-            localStorage.setItem('total-price',totalPrice);
+            cartSet();
             //if(str.proizvodi.length){}
             $('.myCart').on("click",function(){
             switch($(this).attr('name')){
@@ -140,35 +120,63 @@
                 localStorage.setItem('cart-item'+carti,JSON.stringify({'name':str.proizvodi[11].naziv, 'price':str.proizvodi[11].cena})); 
                 break;
             }
-            alert(localStorage.getItem('cart-item'+carti)+" "+carti);
+            //alert(localStorage.getItem('cart-item'+carti)+" "+carti);
             carti++;
             localStorage.setItem('cart-items-number',carti);
-            //alert(localStorage.getItem('cart-items-number'));
-            var totalPrice=0;
+            cartSet();
+            
+            
+
+        })
+        deleteCart();
+        }
+        
+        function deleteCart(){
+           // alert('deleteCart');
+        for(var i=0;i<8;i++){
+        var mystr='cartbox__item'+(i+1)+'trash';
+        $("[name*="+mystr+"]").on('click',function(){
+            //alert('delete');
+            i=$(this).attr('name');
+            var some=i.split('item');
+            i=parseInt(some[1].charAt(0))-1;
+            //alert(i);
+            for(var j=i;j<localStorage.getItem('cart-items-number');j++){
+                localStorage.setItem('cart-item'+(j),localStorage.getItem('cart-item'+(j+1)));
+            }
+            
+            var p=carti;p--;
+            //alert(p);
+            carti=p;
+            localStorage.setItem('cart-items-number',p);
+            cartSet();
+        })
+        }
+     }
+     function cartSet(){
+        //alert("cartSet");   
+        var totalPrice=0;
             for(var i=12;i>0;i--)
             {
                 if(localStorage.getItem('cart-items-number')<i){
                 var mys='cartbox__item'+i.toString();
-                $("[name*="+mys+"]").remove();
+                $("[name*="+mys+"]").hide();
                 }else{
+                var mys='cartbox__item'+i.toString();
+                $("[name*="+mys+"]").show();
                 var mys='cartbox__item'+i.toString()+'price';
-                
+              
                 $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).price+" rsd");
                  mys='cartbox__item'+i.toString()+'name';
                 
                 $("[name*="+mys+"]").text(JSON.parse(localStorage.getItem('cart-item'+(i-1))).name);
                 totalPrice+=JSON.parse(localStorage.getItem('cart-item'+(i-1))).price;
-                //alert(totalPrice);  
                 }
-                
             }
+            $(".items-number").text(localStorage.getItem('cart-items-number'));
             $("[name*='total-price']").text(totalPrice.toString()+ ' rsd');
-            localStorage.setItem('total-price',totalPrice);
-
-        })
-        }
-        
-        
+                 localStorage.setItem('total-price',totalPrice);
+     }
     </script>
 </head>
 <body onload="onLoad()">
@@ -190,7 +198,7 @@
                         <div class="row">
                             <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
                                 <div class="logo">
-                                    <a href="index.html" >
+                                    <a href="index.html">
                                         <img src="images/logo/foody.png" alt="logo images">
                                     </a>
                                 </div>
@@ -208,6 +216,7 @@
                                                     <li><a href="stari-grad-district.html">Stari grad district</a></li>
                                                     <li><a href="dorcol-district.html">Dorćol district</a></li>                                               
                                                     <li><a href="vozdovac-district.html">Voždovac district</a></li>
+                                                    <li><a href="search-restaurants.html">Search restaurants</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="gallery.html">Gallery</a></li>
@@ -221,7 +230,7 @@
                                             <!-- <li class="drop"><a href="#">Pages</a>
                                                 <ul class="dropdown__menu">
                                                     <li><a href="service.html">Service</a></li>
-                                                    <li><a href="#">Cart Page</a></li>
+                                                    <li><a href="cart.html">Cart Page</a></li>
                                                     <li><a href="checkout.html">Checkout Page</a></li>
                                                     <li><a href="contact.html">Contact Page</a></li>
                                                 </ul>
@@ -233,12 +242,21 @@
                                 </div>
                             </div>
                             <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                                
                                 <div class="header__right d-flex just   ify-content-end">
-    
+                                        <div class="log__in">
+                                                <a class="accountbox-trigger" href="#"><img style="height: 16px" src="images/slike/uk.jpg"></a>
+                                        </div>
+                                        <span style="width: 5px"></span>
+                                        <div class="shopping__cart">
+                                        <div class="log__in">
+                                                <a class="accountbox-trigger" href="#"><img style="height: 17px" src="images/slike/serbia.png"></a>
+                                        </div>
+                                    </div>
                                     <div class="shopping__cart">
                                         <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
                                         <div class="shop__qun">
-                                            <span>03</span>
+                                            <span class='items-number'>03</span>
                                         </div>
                                     </div>
                                 </div>
@@ -251,7 +269,7 @@
                 </div>
                 <!-- End Mainmenu Area -->
             </header>
-        <!-- End Header Area -->
+            <!-- End Header Area -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area ">
                 <div class="ht__bradcaump__wrap d-flex align-items-center">
@@ -668,8 +686,8 @@
                                     
                                     <span name="cartbox__item1price" class="price">$15</span>
                                 </div>
-                                <button class="cartbox__item__remove">
-                                    <i class="fa fa-trash"></i>
+                                <button  class="cartbox__item__remove">
+                                    <i name="cartbox__item1trash" class="fa fa-trash"></i>
                                 </button>
                             </div><!-- //Cartbox Single Item -->
                            <!-- Cartbox Single Item -->
@@ -685,7 +703,7 @@
                                     <span name="cartbox__item2price" class="price">$15</span>
                                 </div>
                                 <button class="cartbox__item__remove">
-                                    <i class="fa fa-trash"></i>
+                                    <i name="cartbox__item2trash" class="fa fa-trash"></i>
                                 </button>
                             </div><!-- //Cartbox Single Item -->
                             <!-- Cartbox Single Item -->
@@ -701,7 +719,7 @@
                                         <span name="cartbox__item3price" class="price">$15</span>
                                     </div>
                                     <button class="cartbox__item__remove">
-                                        <i class="fa fa-trash"></i>
+                                        <i name="cartbox__item3trash" class="fa fa-trash"></i>
                                     </button>
                                 </div><!-- //Cartbox Single Item -->
                                 <!-- Cartbox Single Item -->
@@ -717,7 +735,7 @@
                                         <span name="cartbox__item4price" class="price">$15</span>
                                     </div>
                                     <button class="cartbox__item__remove">
-                                        <i class="fa fa-trash"></i>
+                                        <i name="cartbox__item4trash" class="fa fa-trash"></i>
                                     </button>
                                 </div><!-- //Cartbox Single Item -->
                                 <!-- Cartbox Single Item -->
@@ -733,7 +751,7 @@
                                         <span name="cartbox__item5price" class="price">$15</span>
                                     </div>
                                     <button class="cartbox__item__remove">
-                                        <i class="fa fa-trash"></i>
+                                        <i name="cartbox__item5trash" class="fa fa-trash"></i>
                                     </button>
                                 </div><!-- //Cartbox Single Item -->
                                 <!-- Cartbox Single Item -->
@@ -749,7 +767,7 @@
                                         <span name="cartbox__item6price" class="price">$15</span>
                                     </div>
                                     <button class="cartbox__item__remove">
-                                        <i class="fa fa-trash"></i>
+                                        <i name="cartbox__item6trash" class="fa fa-trash"></i>
                                     </button>
                                 </div><!-- //Cartbox Single Item -->
                                 <!-- Cartbox Single Item -->
@@ -765,7 +783,7 @@
                                         <span name="cartbox__item7price" class="price">$15</span>
                                     </div>
                                     <button class="cartbox__item__remove">
-                                        <i class="fa fa-trash"></i>
+                                        <i name="cartbox__item7trash" class="fa fa-trash"></i>
                                     </button>
                                 </div><!-- //Cartbox Single Item -->
                                 <!-- Cartbox Single Item -->
@@ -781,7 +799,7 @@
                                         <span name="cartbox__item8price" class="price">$15</span>
                                     </div>
                                     <button class="cartbox__item__remove">
-                                        <i class="fa fa-trash"></i>
+                                        <i name="cartbox__item8trash" class="fa fa-trash"></i>
                                     </button>
                                 </div><!-- //Cartbox Single Item -->
                         </div>
@@ -797,7 +815,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- //Cartbox -->      
+            </div><!-- //Cartbox -->        
 	</div><!-- //Main wrapper -->
 
 	<!-- JS Files -->

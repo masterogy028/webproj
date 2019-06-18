@@ -3,40 +3,40 @@
     "dorcol":
     [
     {
-        "Opis":"Pile prase, restoran uvek sa vama",
+        "Opis":"Pile prase, restoran uvek sa vama afdasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasfasfasfasfa",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
         "Naziv":"Pile Prase",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5,
+        "prosekOcena":4.7,
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
     }
     ,
     {
                             
-        "Opis":"Picerija Bergamo sa vama vec 10 godina",
+        "Opis":"Picerija Bergamo sa vama vec 10 godina asfasdfasdfasdfasdfasdfasdfasdfdasfas df asdf asd fasd fasd fas dfasd fas dfas fasd a",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
         "Naziv":"Pizzeria Bergamo",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5,
+        "prosekOcena":4.9,
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
     }
     ,
     {
         
-        "Opis":"Big Pizza, sve sto pozelite",
+        "Opis":"Big Pizza, sve sto pozelite asdf asfas dfas fas dfas dfas dfas as asd asf asdas asd fasdfasd fas f",
         "slika":"",
         "slikaBG":"",
         "senderhtml":"dorcol-district.html",
         "Naziv":"Big Pizza",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5,
+        "prosekOcena":3.2,
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
@@ -50,7 +50,7 @@
         "Naziv":"Walter",
         "Opstina":"Dorćol",
         "brOcena":12,
-        "prosekOcena":4.5,
+        "prosekOcena":4.2,
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
@@ -64,7 +64,7 @@
         "Naziv":"KFC",
         "Opstina":"Dorćol",
         "brOcena":7,
-        "prosekOcena":3.7,
+        "prosekOcena":2.2,
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     } 
@@ -82,7 +82,7 @@
         "Naziv":"Dva stapica",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.5,
+        "prosekOcena":2.5,
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
@@ -96,7 +96,7 @@
         "Naziv":"Big Pizza",
         "Opstina":"Zvezdara",
         "brOcena":12,
-        "prosekOcena":4.5,
+        "prosekOcena":1.5,
         "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
         
     }
@@ -177,7 +177,7 @@
     
     ,
     
-        "stari-grad":[
+        "stari_grad":[
     {
         "Opis":"Pile prase, restoran uvek sa vama",
         "slika":"",
