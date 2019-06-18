@@ -16,7 +16,8 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":4.7,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":320, "naziv":"pilece belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pilece belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -34,7 +35,7 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":4.9,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -52,8 +53,7 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":3.2,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -71,7 +71,7 @@
         "Opstina":"Dorćol",
         "brOcena":12,
         "prosekOcena":4.2,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"cevapi od junetine","slika":"images/slike/cevapi3.jpg"},{"cena":350, "naziv":"cevapi sa kajmakom","slika":"images/slike/cevapi1.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     }
     ,
@@ -90,7 +90,7 @@
         "Opstina":"Dorćol",
         "brOcena":7,
         "prosekOcena":2.2,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"krilca","slika":"images/slike/krilca.jpg"},{"cena":350,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     } 
     ]
@@ -112,7 +112,7 @@
         "brOcena":12,
         "prosekOcena":2.5,
         
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":420, "naziv":"pasta carbonare","slika":"images/slike/pasta.jpg"},{"cena":450,"naziv":"ramen","slika":"images/slike/ramen.jpg"},{"cena":490,"naziv":"sushi","slika":"images/slike/sushi.jpg"},{"cena":150,"naziv":"pirinac","slika":"images/slike/pirinac.jpg"},{"cena":670, "naziv":"filet lososa","slika":"images/slike/riba.jpg"}]
         
     }
     ,
@@ -131,8 +131,7 @@
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":1.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -150,7 +149,7 @@
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":450, "naziv":"hamburger","slika":"images/slike/burger.jpg"},{"cena":200,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     }
     ,
@@ -169,8 +168,8 @@
         "Opstina":"Zvezdara",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":290, "naziv":"slatka palacinka","slika":"images/slike/palacinka.jpg"},{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":320, "naziv":"pilece belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pilece belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ]
     
@@ -191,7 +190,7 @@
         "Opstina":"Vozdovac",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
+        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":"images/slike/belomeso.jpg"},{"cena":300,"naziv":"cevapi","slika":"images/slike/cevapi2.jpg"},{"cena":350,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":350,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
         
     }
     ,
@@ -210,8 +209,7 @@
         "Opstina":"Vozdovac",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -229,9 +227,8 @@
         "Opstina":"Vozdovac",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
-    }       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    }     
     ]
     
     ,
@@ -250,9 +247,8 @@
         "Naziv":"Pile Prase",
         "Opstina":"Stari grad",
         "brOcena":12,
-        "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":320, "naziv":"pilece belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pilece belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -270,8 +266,7 @@
         "Opstina":"Stari grad",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -289,9 +284,8 @@
         "Opstina":"Stari grad",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
-    }       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    }     
     ]
     ,
         "vracar":[
@@ -309,8 +303,8 @@
         "Opstina":"vracar",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-        
+        "proizvodi":[{"cena":320, "naziv":"pilece belo meso","slika":"images/slike/belomeso.jpg"},{"cena":350,"naziv":"pohovano pilece belo","slika":"images/slike/pohovanobelo.jpg"},
+            {"cena":300,"naziv":"pljeskavica","slika":"images/slike/pljeskavica.jpg"},{"cena":150,"naziv":"pomfrit","slika":"images/slike/pomfrit.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -327,8 +321,7 @@
         "Opstina":"vracar",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}]
-       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
     }
     ,
     {
@@ -346,9 +339,8 @@
         "Opstina":"vracar",
         "brOcena":12,
         "prosekOcena":4.5,
-        "proizvodi":[{"cena":350, "naziv":"pilece belo meso","slika":""},{"cena":350,"naziv":"pilece belo meso u susamu","slika":""},{"cena":350,"naziv":"pljeskavica","slika":""},{"cena":350,"naziv":"pomfrit","slika":""}    ]
-        
-    }       
+        "proizvodi":[{"cena":350, "naziv":"capricciosa","slika":"images/slike/pica.jpg"},{"cena":350, "naziv":"Napolitana","slika":"images/slike/pica2.jpg"},{"cena":350, "naziv":"Vezuvio","slika":"images/slike/pica3.jpg"},{"cena":350, "naziv":"peperoni","slika":"images/slike/pica4.jpg"},{"cena":100,"naziv":"coca cola","slika":"images/slike/cocacola.jpg"},{"cena":100,"naziv":"fanta","slika":"images/slike/fanta.jpg"}]
+    }    
     ]
     
     

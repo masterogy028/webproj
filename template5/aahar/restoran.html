@@ -86,8 +86,11 @@
                  
                  $("#"+(i+1)).text(str.proizvodi[i].naziv);
                  $("#"+(i+1)+"prc").text(str.proizvodi[i].cena+"rsd");
-                 //$("#"+(i+1)+"img").attr('src',str.proizvodi[i].slika);
+                 $("#"+(i+1)+"img").attr('src',str.proizvodi[i].slika);
+                //alert(str.proizvodi[0].slika.toString());
             }
+          
+
             ////////////////
             cartSet();
             //if(str.proizvodi.length){}
